@@ -1,21 +1,24 @@
 package com.lh.kete.data
 
+import com.google.gson.annotations.SerializedName
+
 /**
  * Created by Tien Loc Bui on 18/03/2019.
  */
-class KeteConfig {
 
-    val version: Int
-    val buttonNumber: Int
-    val buttonConfig: Array<ButtonConfig>
+class KeteConfig : AbstractConfig {
+    @SerializedName("version")
+    val version: Int = 0
 
-    constructor(
-        version: Int = 0,
-        buttonNumber: Int = 0,
-        buttonConfig: Array<ButtonConfig>
-    ) {
-        this.version = version
-        this.buttonNumber = buttonNumber
-        this.buttonConfig = buttonConfig
-    }
+    @SerializedName("id")
+    val id: String = ""
+
+    @SerializedName("button")
+    val buttonConfig: Array<ButtonConfig> = arrayOf()
+
+    @SerializedName("commonButtonUI")
+    val ui = UserInterfaceConfig()
+
+    @SerializedName("otherConfig")
+    val otherConfig = LayoutConfig()
 }

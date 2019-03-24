@@ -1,5 +1,8 @@
 package com.lh.kete
 
+import com.google.gson.Gson
+import com.lh.kete.data.ButtonConfig
+import com.lh.kete.data.KeteConfig
 import org.junit.Test
 
 import org.junit.Assert.*
@@ -12,6 +15,6 @@ import org.junit.Assert.*
 class ExampleUnitTest {
     @Test
     fun addition_isCorrect() {
-        assertEquals(4, 2 + 2)
+
     }
 }
