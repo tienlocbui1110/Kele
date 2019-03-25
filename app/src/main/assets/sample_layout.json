@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "00001",
+  "button": [
+    {
+      "char": "a",
+      "width": 10,
+      "height": 10,
+      "x": 0,
+      "y": 0
+    },
+    {
+      "char": "b",
+      "width": 20,
+      "height": 20,
+      "x": 30,
+      "y": 30
+    }
+  ],
+  "otherConfig": {
+    "backgroundColor": "#482659"
+  }
+}

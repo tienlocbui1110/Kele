@@ -1,6 +1,8 @@
 package com.lh.kete.data
 
+import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
+import com.lh.kete.defs.KeteDefs
 
 /**
  * Created by Tien Loc Bui on 18/03/2019.
@@ -8,17 +10,22 @@ import com.google.gson.annotations.SerializedName
 
 class KeteConfig : AbstractConfig {
     @SerializedName("version")
-    val version: Int = 0
+    @Expose
+    val version: Int? = null
 
     @SerializedName("id")
-    val id: String = ""
+    @Expose
+    val id: String? = null
 
     @SerializedName("button")
+    @Expose
     val buttonConfig: Array<ButtonConfig> = arrayOf()
 
     @SerializedName("commonButtonUI")
-    val ui = UserInterfaceConfig()
+    @Expose
+    val ui: UserInterfaceConfig? = null
 
     @SerializedName("otherConfig")
-    val otherConfig = LayoutConfig()
+    @Expose
+    val otherConfig: LayoutConfig = LayoutConfig()
 }
