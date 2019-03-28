@@ -26,7 +26,7 @@ class UserInterfaceConfig : AbstractConfig {
     companion object {
         private const val BACKGROUND_COLOR_DEFAULT = "#FFFFFF"
         private const val TEXT_COLOR_DEFAULT = "#000000"
-        private const val FONT_SIZE_DEFAULT = 30
+        private const val FONT_SIZE_DEFAULT = 14
 
         fun backgroundColorDefault(): String {
             return BACKGROUND_COLOR_DEFAULT

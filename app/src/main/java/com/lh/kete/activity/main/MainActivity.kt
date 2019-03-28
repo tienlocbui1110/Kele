@@ -7,11 +7,7 @@ import android.support.annotation.IdRes
 import android.support.annotation.MainThread
 import android.support.v7.app.AppCompatActivity
 import android.view.View
-import android.widget.FrameLayout
 import android.widget.TextView
-import com.google.gson.ExclusionStrategy
-import com.google.gson.FieldNamingPolicy
-import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.lh.kete.R
 import com.lh.kete.data.KeteConfig
@@ -24,12 +20,14 @@ import com.lh.kete.views.KeteLayout
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var rootView: FrameLayout
+    private lateinit var keteView: KeteLayout
     private val SAMPLE_LAYOUT_JSON_ASSET = "sample_layout.json"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         try {
+            setContentView(R.layout.activity_main)
+            keteView = bind(R.id.kete) as KeteLayout
             init()
         } catch (e: Exception) {
             showErrorLayout(e)
@@ -61,7 +59,7 @@ class MainActivity : AppCompatActivity() {
                 .excludeFieldsWithoutExposeAnnotation()
                 .create()
                 .fromJson(jsonLayout, KeteConfig::class.java)
-        setContentView(KeteLayout(this, keteConfig))
+        keteView.setLayoutData(keteConfig)
     }
 
     private fun bind(@IdRes id: Int): View {

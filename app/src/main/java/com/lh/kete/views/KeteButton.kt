@@ -33,6 +33,10 @@ class KeteButton : FrameLayout, KeteV<ButtonConfig?> {
         requestViewFromCurrentConfig()
     }
 
+    override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec)
+    }
+
     override fun getConfig(): ButtonConfig? {
         return layoutConfig
     }

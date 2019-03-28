@@ -13,6 +13,9 @@ class KeteUtils {
             return (base * percent / 100).toInt()
         }
 
+        fun dpToPx(dp: Int, context: Context): Int {
+            return (dp * context.resources.displayMetrics.density).toInt()
+        }
         fun readJsonConfigFromAssets(context: Context, assetName: String): String {
             val inputStream = context.assets.open(assetName)
             val stringReader = BufferedReader(InputStreamReader(inputStream))

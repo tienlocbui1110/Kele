@@ -10,21 +10,29 @@ import com.google.gson.annotations.SerializedName
 class LayoutConfig : AbstractConfig {
     @SerializedName("minWidth")
     @Expose
-    val minWidth: Int = 500
+    val minWidth: Int = -1
 
     @SerializedName("minHeight")
     @Expose
-    val minHeight: Int = 500
+    val minHeight: Int = -1
 
     @SerializedName("maxWidth")
     @Expose
-    val maxWidth: Int = 500
+    val maxWidth: Int = -1
 
     @SerializedName("maxHeight")
     @Expose
-    val maxHeight: Int = 500
+    val maxHeight: Int = -1
 
     @SerializedName("backgroundColor")
     @Expose
-    val backgroundColor: String = "#FFFFFF"
+    val backgroundColor: String = backgroundColorDefault()
+
+    companion object {
+        private const val BACKGROUND_COLOR_DEFAULT = "#FFFFFF"
+
+        fun backgroundColorDefault(): String {
+            return BACKGROUND_COLOR_DEFAULT
+        }
+    }
 }
