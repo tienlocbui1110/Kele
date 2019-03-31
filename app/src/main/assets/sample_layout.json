@@ -3,21 +3,193 @@
   "id": "00001",
   "button": [
     {
-      "char": "a",
-      "width": 10,
-      "height": 10,
+      "char": "Q",
+      "width": 9.1,
+      "height": 30.6,
       "x": 0,
-      "y": 0
+      "y": 2
     },
     {
-      "char": "b",
-      "width": 20,
-      "height": 20,
-      "x": 30,
-      "y": 30
+      "char": "W",
+      "width": 9.1,
+      "height": 30.6,
+      "x": 10.1,
+      "y": 2
+    },
+    {
+      "char": "E",
+      "width": 9.1,
+      "height": 30.6,
+      "x": 20.2,
+      "y": 2
+    },
+    {
+      "char": "R",
+      "width": 9.1,
+      "height": 30.6,
+      "x": 30.3,
+      "y": 2
+    },
+    {
+      "char": "T",
+      "width": 9.1,
+      "height": 30.6,
+      "x": 40.4,
+      "y": 2
+    },
+    {
+      "char": "Y",
+      "width": 9.1,
+      "height": 30.6,
+      "x": 50.5,
+      "y": 2
+    },
+    {
+      "char": "U",
+      "width": 9.1,
+      "height": 30.6,
+      "x": 60.6,
+      "y": 2
+    },
+    {
+      "char": "I",
+      "width": 9.1,
+      "height": 30.6,
+      "x": 70.7,
+      "y": 2
+    },
+    {
+      "char": "O",
+      "width": 9.1,
+      "height": 30.6,
+      "x": 80.8,
+      "y": 2
+    },
+    {
+      "char": "P",
+      "width": 9.1,
+      "height": 30.6,
+      "x": 90.9,
+      "y": 2
+    },
+    {
+      "char": "A",
+      "width": 9.1,
+      "height": 30.6,
+      "x": 4.55,
+      "y": 34.6
+    },
+    {
+      "char": "S",
+      "width": 9.1,
+      "height": 30.6,
+      "x": 14.65,
+      "y": 34.6
+    },
+    {
+      "char": "D",
+      "width": 9.1,
+      "height": 30.6,
+      "x": 24.75,
+      "y": 34.6
+    },
+    {
+      "char": "F",
+      "width": 9.1,
+      "height": 30.6,
+      "x": 34.85,
+      "y": 34.6
+    },
+    {
+      "char": "G",
+      "width": 9.1,
+      "height": 30.6,
+      "x": 44.95,
+      "y": 34.6
+    },
+    {
+      "char": "H",
+      "width": 9.1,
+      "height": 30.6,
+      "x": 55.05,
+      "y": 34.6
+    },
+    {
+      "char": "J",
+      "width": 9.1,
+      "height": 30.6,
+      "x": 65.15,
+      "y": 34.6
+    },
+    {
+      "char": "K",
+      "width": 9.1,
+      "height": 30.6,
+      "x": 75.25,
+      "y": 34.6
+    },
+    {
+      "char": "L",
+      "width": 9.1,
+      "height": 30.6,
+      "x": 85.35,
+      "y": 34.6
+    },
+    {
+      "char": "Z",
+      "width": 9.1,
+      "height": 30.6,
+      "x": 14.65,
+      "y": 67.26
+    },
+    {
+      "char": "X",
+      "width": 9.1,
+      "height": 30.6,
+      "x": 24.75,
+      "y": 67.26
+    },
+    {
+      "char": "C",
+      "width": 9.1,
+      "height": 30.6,
+      "x": 34.85,
+      "y": 67.26
+    },
+    {
+      "char": "V",
+      "width": 9.1,
+      "height": 30.6,
+      "x": 44.95,
+      "y": 67.26
+    },
+    {
+      "char": "B",
+      "width": 9.1,
+      "height": 30.6,
+      "x": 55.05,
+      "y": 67.26
+    },
+    {
+      "char": "N",
+      "width": 9.1,
+      "height": 30.6,
+      "x": 65.15,
+      "y": 67.26
+    },
+    {
+      "char": "M",
+      "width": 9.1,
+      "height": 30.6,
+      "x": 75.25,
+      "y": 67.26
     }
   ],
   "otherConfig": {
-    "backgroundColor": "#482659"
+    "backgroundColor": "#482659",
+    "maxHeight": 15
+  },
+  "commonButtonUI": {
+    "fontSize": 16
   }
 }

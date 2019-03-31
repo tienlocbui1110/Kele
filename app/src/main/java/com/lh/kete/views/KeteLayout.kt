@@ -121,7 +121,8 @@ class KeteLayout : FrameLayout, KeteV<KeteConfig?> {
     }
 
     private fun addKeteButton(buttonConfig: ButtonConfig, rootUI: UserInterfaceConfig?) {
-        addView(KeteButton(context, buttonConfig, rootUI))
+        val child = KeteButton(context, buttonConfig, rootUI)
+        addView(child)
     }
 
     private fun changeState(@State state: Int) {
@@ -171,8 +172,8 @@ class KeteLayout : FrameLayout, KeteV<KeteConfig?> {
     private fun layoutChild(child: KeteButton, left: Int, top: Int, right: Int, bottom: Int) {
         val mWidth = right - left
         val mHeight = bottom - top
-        val childLeft = left + KeteUtils.percentToPx(mWidth, child.getConfig()?.x)
-        val childTop = top + KeteUtils.percentToPx(mHeight, child.getConfig()?.y)
+        val childLeft = KeteUtils.percentToPx(mWidth, child.getConfig()?.x)
+        val childTop = KeteUtils.percentToPx(mHeight, child.getConfig()?.y)
         val childRight = childLeft + child.measuredWidth
         val childBottom = childTop + child.measuredHeight
 
