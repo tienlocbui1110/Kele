@@ -2,7 +2,6 @@ package com.lh.kete.data
 
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
-import com.lh.kete.defs.KeteDefs
 
 /**
  * Created by Tien Loc Bui on 18/03/2019.

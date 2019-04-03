@@ -1,37 +1,103 @@
 package com.lh.kete.views
 
 import android.content.Context
-import android.graphics.Color
+import android.graphics.*
+import android.graphics.drawable.BitmapDrawable
+import android.graphics.drawable.Drawable
 import android.os.Handler
 import android.os.Looper
 import android.support.annotation.IntDef
+import android.support.annotation.UiThread
+import android.support.v4.view.GestureDetectorCompat
 import android.util.AttributeSet
+import android.util.Log
+import android.view.GestureDetector
 import android.view.Gravity
+import android.view.MotionEvent
 import android.widget.FrameLayout
 import android.widget.TextView
 import com.lh.kete.R
+import com.lh.kete.adapter.FindView
+import com.lh.kete.adapter.GestureAdapter
 import com.lh.kete.data.ButtonConfig
 import com.lh.kete.data.KeteConfig
 import com.lh.kete.data.LayoutConfig
 import com.lh.kete.data.UserInterfaceConfig
+import com.lh.kete.listener.KeteGestureListener
+import com.lh.kete.listener.KeteGestureListenerAdapter
 import com.lh.kete.utils.KeteUtils
+import java.util.*
+import kotlin.collections.ArrayList
 
 
 /**
  * Created by Tien Loc Bui on 18/03/2019.
  */
 
-class KeteLayout : FrameLayout, KeteV<KeteConfig?> {
+class KeteLayout : FrameLayout, KeteV<KeteConfig?>, FindView<KeteButton> {
 
     private var _layoutData: KeteConfig? = null
     @State
     private var state: Int = INVALID
+    private val mGestureListener: KeteGestureListenerAdapter
+    private val mGestureAdapter: GestureAdapter
+    private val mGestureDetector: GestureDetectorCompat
+    private val mSwipeAnimation: LinkedList<AnimationDrawable>
+
 
     constructor(context: Context, attrs: AttributeSet?) : super(context, attrs)
 
     constructor(context: Context, keteConfig: KeteConfig?) : this(context, null as AttributeSet?) {
         this._layoutData = keteConfig
         changeState(VALID)
+        this.callOnClick()
+    }
+
+    init {
+        this.setWillNotDraw(false)
+        mSwipeAnimation = LinkedList()
+        mGestureListener = object : KeteGestureListenerAdapter() {
+            private var firstBtn: KeteButton? = null
+            @UiThread
+            override fun onPressDown(event: MotionEvent?, button: KeteButton) {
+                Log.d("KeteLayout", "Init animation when first keydown")
+                super.onPressDown(event, button)
+                if (firstBtn == null) {
+                    firstBtn = button
+                }
+                firstBtn?.onPressDown()
+                mSwipeAnimation.add(AnimationDrawable(this@KeteLayout))
+            }
+
+            @UiThread
+            override fun onKeyUp(event: MotionEvent?) {
+                super.onKeyUp(event)
+                firstBtn?.onKeyUp()
+                firstBtn = null
+            }
+
+            @UiThread
+            override fun onSwipe(
+                startPos: MotionEvent?,
+                endPos: MotionEvent?,
+                startButton: KeteButton?,
+                endButton: KeteButton?
+            ) {
+                super.onSwipe(startPos, endPos, startButton, endButton)
+                firstBtn?.let {
+                    it.onKeyUp()
+                    firstBtn = null
+                }
+                endPos?.let {
+                    if (mSwipeAnimation.size != 0)
+                        mSwipeAnimation.last.addNextPoint(it.x, it.y)
+                }
+                invalidate()
+            }
+        }
+
+        mGestureAdapter = GestureAdapter(mGestureListener, this)
+        mGestureDetector = GestureDetectorCompat(context, mGestureAdapter)
     }
 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
@@ -96,8 +162,44 @@ class KeteLayout : FrameLayout, KeteV<KeteConfig?> {
         }
     }
 
+    @UiThread
+    override fun onTouchEvent(event: MotionEvent?): Boolean {
+        super.onTouchEvent(event)
+        mGestureDetector.onTouchEvent(event)
+        mGestureAdapter.onHandleEvent(event)
+        return true
+    }
+
+    override fun dispatchDraw(canvas: Canvas?) {
+        super.dispatchDraw(canvas)
+        // Draw swipe animation
+        val itr = mSwipeAnimation.iterator()
+        while (itr.hasNext()) {
+            val nextAnimation = itr.next()
+            if (!nextAnimation.hasDone()) {
+                nextAnimation.draw(canvas)
+            } else if (itr.hasNext()) {
+                nextAnimation.reset()
+                itr.remove()
+            }
+        }
+    }
+
     override fun getConfig(): KeteConfig? {
         return _layoutData
+    }
+
+    override fun getViewFromPosition(x: Float, y: Float): KeteButton? {
+        val rect = RectF()
+        for (i in 0 until childCount) {
+            val child = getChildAt(i) as? KeteButton ?: continue
+            rect.top = child.top.toFloat()
+            rect.bottom = child.bottom.toFloat()
+            rect.left = child.left.toFloat()
+            rect.right = child.right.toFloat()
+            if (rect.contains(x, y)) return child else continue
+        }
+        return null
     }
 
     fun setLayoutData(config: KeteConfig?) {
@@ -106,8 +208,17 @@ class KeteLayout : FrameLayout, KeteV<KeteConfig?> {
         changeState(VALID)
     }
 
+    fun setOnGestureListener(listener: KeteGestureListener) {
+        mGestureListener.setExternal(listener)
+    }
+
     fun resetLayout() {
         removeAllViews()
+        val itr = mSwipeAnimation.iterator()
+        while (itr.hasNext()) {
+            itr.next().reset()
+            itr.remove()
+        }
     }
 
     private fun requestViewFromCurrentConfig() {

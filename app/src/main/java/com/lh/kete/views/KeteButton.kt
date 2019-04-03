@@ -1,6 +1,7 @@
 package com.lh.kete.views
 
 import android.content.Context
+import android.graphics.Canvas
 import android.graphics.Color
 import android.text.Layout
 import android.util.TypedValue
@@ -33,14 +34,23 @@ class KeteButton : FrameLayout, KeteV<ButtonConfig?> {
         requestViewFromCurrentConfig()
     }
 
-    override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
-        super.onMeasure(widthMeasureSpec, heightMeasureSpec)
-    }
-
     override fun getConfig(): ButtonConfig? {
         return layoutConfig
     }
 
+    internal fun onPressDown() {
+        // Set background color to pressedColor
+    }
+    internal fun onKeyUp() {
+        // Set background color to default color
+        getConfig()?.let {
+            val buttonUI = it.ui
+            val backgroundColor: String = buttonUI?.backgroundColor
+                ?: defaultUIConfig?.backgroundColor
+                ?: UserInterfaceConfig.backgroundColorDefault()
+            setBackgroundColor(Color.parseColor(backgroundColor))
+        }
+    }
     private fun requestViewFromCurrentConfig() {
         getConfig()?.let {
             val buttonUI = it.ui
@@ -73,5 +83,4 @@ class KeteButton : FrameLayout, KeteV<ButtonConfig?> {
             addView(textView, lp)
         }
     }
-
 }
