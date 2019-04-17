@@ -1,11 +1,13 @@
 package com.lh.kete.activity.main
 
+import android.animation.ValueAnimator
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.support.annotation.IdRes
 import android.support.annotation.MainThread
 import android.support.v7.app.AppCompatActivity
+import android.util.Log
 import android.view.MotionEvent
 import android.view.View
 import android.widget.TextView
@@ -35,10 +37,12 @@ class MainActivity : AppCompatActivity() {
             setContentView(R.layout.activity_main)
             keteLayout = bind(R.id.kete) as KeteLayout
             textPreview = bind(R.id.text_preview) as TextView
-            init()
+            textPreview.text = intent.getStringExtra("hello")?: ""
+            init(null)
         } catch (e: Exception) {
             showErrorLayout(e)
         }
+        val z = ValueAnimator.ofInt(0, 100)
     }
 
     fun showErrorLayout(e: Exception) {
@@ -58,8 +62,8 @@ class MainActivity : AppCompatActivity() {
         textError.text = message?.let { it }
     }
 
-    private fun init() {
-        val jsonLayout = KeteUtils.readJsonConfigFromAssets(this, SAMPLE_LAYOUT_JSON_ASSET)
+    private fun init(jsonIntent: String?) {
+        val jsonLayout = jsonIntent ?: KeteUtils.readJsonConfigFromAssets(this, SAMPLE_LAYOUT_JSON_ASSET)
         val keteConfig =
             GsonBuilder()
                 .serializeNulls()

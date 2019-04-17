@@ -4,6 +4,7 @@ import com.android.ddmlib.AndroidDebugBridge;
 import com.android.ddmlib.IDevice;
 import com.lh.kete.annotations.BackgroundThread;
 import com.lh.kete.annotations.UiThread;
+import com.lh.kete.util.Command;
 import com.lh.kete.util.ThreadUtils;
 import com.lh.kete.util.UI;
 import com.lh.kete.views.devicechooser.DeviceChooser;
@@ -52,6 +53,7 @@ class PresenterImpl extends MainPresenter {
         if (!adb.isConnected()) {
             Loader.hide();
             UI.run(() -> JOptionPane.showConfirmDialog(getView().getComponent(), "ADB isn't ready."));
+            return;
         }
 
         // On connected
@@ -99,6 +101,9 @@ class PresenterImpl extends MainPresenter {
     @BackgroundThread
     private void onStartActivity(IDevice currentDevice, String json) {
         // TODO: start preview
+        byte[] result = Command.exec("adb shell am start -n com.lh.kete/.activity.main.MainActivity --es hello '" + json + "'");
+        String res = new String(result);
+        int i = 5;
     }
 
     @BackgroundThread

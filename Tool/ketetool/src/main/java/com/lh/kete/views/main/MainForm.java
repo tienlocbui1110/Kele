@@ -34,7 +34,6 @@ public class MainForm implements MainView {
     }
 
     private void createUIComponents() {
-        // TODO: place custom component creation code here
         textArea = new RSyntaxTextArea();
         textArea.setSyntaxEditingStyle(SyntaxConstants.SYNTAX_STYLE_JSON_WITH_COMMENTS);
         textArea.setCodeFoldingEnabled(true);

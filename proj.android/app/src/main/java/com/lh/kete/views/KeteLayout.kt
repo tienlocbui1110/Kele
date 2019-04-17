@@ -1,5 +1,6 @@
 package com.lh.kete.views
 
+import android.animation.ValueAnimator
 import android.content.Context
 import android.graphics.*
 import android.graphics.drawable.BitmapDrawable
@@ -182,6 +183,16 @@ class KeteLayout : FrameLayout, KeteV<KeteConfig?>, FindView<KeteButton> {
                 nextAnimation.reset()
                 itr.remove()
             }
+        }
+    }
+
+    override fun onDetachedFromWindow() {
+        super.onDetachedFromWindow()
+        val itr = mSwipeAnimation.iterator()
+        while (itr.hasNext()) {
+            val nextAnimation = itr.next()
+            nextAnimation.reset()
+            itr.remove()
         }
     }
 

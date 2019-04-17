@@ -28,9 +28,11 @@ public class DeviceChooser {
      * @noinspection ALL
      */
     private void $$$setupUI$$$() {
+        createUIComponents();
         final JPanel panel1 = new JPanel();
         panel1.setLayout(new GridLayoutManager(2, 2, new Insets(20, 20, 20, 20), -1, -1));
-        cmbDevices = new JComboBox();
+        final DefaultComboBoxModel defaultComboBoxModel1 = new DefaultComboBoxModel();
+        cmbDevices.setModel(defaultComboBoxModel1);
         panel1.add(cmbDevices, new GridConstraints(0, 1, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, 1, null, null, null, 0, false));
         final JLabel label1 = new JLabel();
         label1.setText("Devices");
