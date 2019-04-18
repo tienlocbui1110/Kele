@@ -2,14 +2,20 @@ package com.lh.kete.views.devicechooser;
 
 import com.intellij.uiDesigner.core.GridConstraints;
 import com.intellij.uiDesigner.core.GridLayoutManager;
+import com.intellij.uiDesigner.core.Spacer;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class DeviceChooser {
     private String[] devices;
-    public JComboBox cmbDevices;
+    public JComboBox<String> cmbDevices;
     public JCheckBox remembered;
+    private JPanel mainPanel;
+    private JButton okButton;
+    private OnChosenListener chosenListener;
 
     public static DeviceChooser getView(String[] devices) {
         return new DeviceChooser(devices);
@@ -18,6 +24,15 @@ public class DeviceChooser {
     private DeviceChooser(String[] devices) {
         this.devices = devices;
         $$$setupUI$$$();
+        cmbDevices.setModel(new DefaultComboBoxModel<>(devices));
+        okButton.addActionListener(e -> {
+            if (chosenListener != null)
+                chosenListener.onChosen(cmbDevices.getSelectedIndex(), remembered.isSelected());
+        });
+    }
+
+    public void setOnChosenListener(OnChosenListener listener) {
+        this.chosenListener = listener;
     }
 
     /**
@@ -29,20 +44,37 @@ public class DeviceChooser {
      */
     private void $$$setupUI$$$() {
         createUIComponents();
-        final JPanel panel1 = new JPanel();
-        panel1.setLayout(new GridLayoutManager(2, 2, new Insets(20, 20, 20, 20), -1, -1));
+        mainPanel = new JPanel();
+        mainPanel.setLayout(new GridLayoutManager(4, 2, new Insets(20, 20, 20, 20), -1, -1));
         final DefaultComboBoxModel defaultComboBoxModel1 = new DefaultComboBoxModel();
         cmbDevices.setModel(defaultComboBoxModel1);
-        panel1.add(cmbDevices, new GridConstraints(0, 1, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, 1, null, null, null, 0, false));
+        mainPanel.add(cmbDevices, new GridConstraints(0, 1, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, 1, null, null, null, 0, false));
         final JLabel label1 = new JLabel();
         label1.setText("Devices");
-        panel1.add(label1, new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, 1, null, null, null, 0, false));
+        mainPanel.add(label1, new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, 1, null, null, null, 0, false));
         remembered = new JCheckBox();
         remembered.setText("Remember?");
-        panel1.add(remembered, new GridConstraints(1, 1, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, 1, null, null, null, 0, false));
+        mainPanel.add(remembered, new GridConstraints(1, 1, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, 1, null, null, null, 0, false));
+        final Spacer spacer1 = new Spacer();
+        mainPanel.add(spacer1, new GridConstraints(3, 1, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_VERTICAL, 1, GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
+        okButton = new JButton();
+        okButton.setText("OK");
+        mainPanel.add(okButton, new GridConstraints(2, 0, 1, 2, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_NONE, 1, 1, null, null, null, 0, false));
+    }
+
+    /**
+     * @noinspection ALL
+     */
+    public JComponent $$$getRootComponent$$$() {
+        return mainPanel;
+    }
+
+    public interface OnChosenListener {
+        void onChosen(int deviceIndex, boolean isRemembered);
     }
 
     private void createUIComponents() {
-        cmbDevices = new JComboBox<>(devices);
+        cmbDevices = new JComboBox<>();
     }
+
 }

@@ -5,6 +5,7 @@ import com.android.ddmlib.IDevice;
 import com.lh.kete.annotations.BackgroundThread;
 import com.lh.kete.annotations.UiThread;
 import com.lh.kete.util.Command;
+import com.lh.kete.util.Command.CommandException;
 import com.lh.kete.util.ThreadUtils;
 import com.lh.kete.util.UI;
 import com.lh.kete.views.devicechooser.DeviceChooser;
@@ -13,6 +14,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import javax.swing.*;
+import java.awt.*;
 
 class PresenterImpl extends MainPresenter {
     private IDevice rememberedDevice;
@@ -41,7 +43,7 @@ class PresenterImpl extends MainPresenter {
             onPrepareAdb(json);
         } else {
             Loader.hide();
-            UI.run(() -> JOptionPane.showConfirmDialog(getView().getComponent(), "Invalid JSON."));
+            UI.run(() -> UI.showError("Checking JSON", "Invalid JSON."));
         }
     }
 
@@ -77,33 +79,38 @@ class PresenterImpl extends MainPresenter {
 
         // Number of devices > 1
         Loader.hide();
-        DeviceChooser component;
         String[] deviceNames = new String[devices.length];
         for (int i = 0; i < devices.length; i++)
-            deviceNames[i] = devices[i].getAvdName();
+            deviceNames[i] = devices[i].getSerialNumber();
 
-        component = DeviceChooser.getView(deviceNames);
-        UI.run(() -> {
-            boolean check = showDeviceChooser(component);
-            if (!check)
-                return;
-            // Get device and start activity
-            IDevice device = devices[component.cmbDevices.getSelectedIndex()];
-            if (component.remembered.isSelected())
-                PresenterImpl.this.rememberedDevice = device;
-            else
-                PresenterImpl.this.rememberedDevice = null;
-            new Thread(() -> onStartActivity(device, json)).start();
-            Loader.show();
-        });
+        UI.run(() ->
+                showDeviceChooser(deviceNames, (deviceIndex, isRemembered) -> {
+                    // Get device and start activity
+                    IDevice device = devices[deviceIndex];
+                    if (isRemembered)
+                        PresenterImpl.this.rememberedDevice = device;
+                    else
+                        PresenterImpl.this.rememberedDevice = null;
+                    new Thread(() -> onStartActivity(device, json)).start();
+                    Loader.show();
+                }));
     }
 
     @BackgroundThread
     private void onStartActivity(IDevice currentDevice, String json) {
         // TODO: start preview
-        byte[] result = Command.exec("adb shell am start -n com.lh.kete/.activity.main.MainActivity --es hello '" + json + "'");
-        String res = new String(result);
-        int i = 5;
+        try {
+            String result = Command.exec(String.format("adb -s %s shell am start -n com.lh.kete/.activity.main.MainActivity --es hello '" + json + "'", currentDevice.getSerialNumber()));
+            if (result == null)
+                return;
+            if (result.contains("error")) {
+                Loader.hide();
+                UI.showError("Start Activity", result);
+            }
+        } catch (CommandException e) {
+            Loader.hide();
+            UI.showError("Start Activity", e.getMessage());
+        }
     }
 
     @BackgroundThread
@@ -117,8 +124,18 @@ class PresenterImpl extends MainPresenter {
     }
 
     @UiThread
-    private boolean showDeviceChooser(DeviceChooser component) {
-        // TODO: show device chooser
-        return false;
+    private void showDeviceChooser(String[] devices, DeviceChooser.OnChosenListener onChosenListener) {
+        JDialog dialog = new JDialog();
+        DeviceChooser chooser = DeviceChooser.getView(devices);
+        dialog.setModalityType(Dialog.ModalityType.APPLICATION_MODAL);
+        dialog.setContentPane(chooser.$$$getRootComponent$$$());
+        dialog.setSize(300, 150);
+        dialog.setMinimumSize(new Dimension(250, 100));
+        dialog.setLocationRelativeTo(null);
+        chooser.setOnChosenListener((deviceIndex, isRemembered) -> {
+            onChosenListener.onChosen(deviceIndex, isRemembered);
+            dialog.dispose();
+        });
+        dialog.setVisible(true);
     }
 }
