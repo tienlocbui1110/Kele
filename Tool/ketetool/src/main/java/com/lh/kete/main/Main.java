@@ -6,6 +6,8 @@ import com.lh.kete.util.UI;
 import com.lh.kete.views.main.MainForm;
 
 import javax.swing.*;
+import java.awt.event.ComponentAdapter;
+import java.awt.event.ComponentEvent;
 
 public class Main {
     public static void main(String[] args) {

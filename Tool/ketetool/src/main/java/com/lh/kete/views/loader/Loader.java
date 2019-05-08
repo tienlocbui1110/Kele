@@ -1,5 +1,7 @@
 package com.lh.kete.views.loader;
 
+import com.lh.kete.util.UI;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -9,11 +11,17 @@ public final class Loader {
 
     private boolean ready = true;
     private final JDialog loaderDialog;
+    private final LoaderView mView;
 
     private Loader() {
         loaderDialog = new JDialog();
         loaderDialog.setMaximumSize(new Dimension(1920, 200));
         loaderDialog.setMinimumSize(new Dimension(200, 200));
+        loaderDialog.setModalityType(Dialog.ModalityType.MODELESS);
+        loaderDialog.setLocationRelativeTo(null);
+        loaderDialog.setAlwaysOnTop(true);
+        mView = new LoaderView();
+        loaderDialog.setContentPane(mView.$$$getRootComponent$$$());
     }
 
     public static void show() {
@@ -22,6 +30,7 @@ public final class Loader {
             return;
         synchronized (LOCK) {
             sInstance.ready = false;
+            UI.run(() -> sInstance.loaderDialog.setVisible(true));
         }
     }
 
@@ -30,8 +39,8 @@ public final class Loader {
         if (sInstance.ready)
             return;
         synchronized (LOCK) {
-            init();
             sInstance.ready = true;
+            UI.run(() -> sInstance.loaderDialog.setVisible(false));
         }
     }
 
@@ -40,7 +49,7 @@ public final class Loader {
         if (sInstance.ready)
             return;
         synchronized (LOCK) {
-            init();
+            UI.run(() -> sInstance.mView.text.setText(text));
         }
     }
 

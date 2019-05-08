@@ -8,19 +8,29 @@ import org.fife.ui.rtextarea.RTextScrollPane;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.InputEvent;
+import java.awt.event.KeyEvent;
 
 public class MainForm implements MainView {
     private JPanel mainPanel;
     private RTextScrollPane textAreaScrollPane;
     private RSyntaxTextArea textArea;
     private JButton preview;
+    private JMenuBar menuBar;
 
     private MainPresenter mPresenter;
+    private ActionListener mPreviewListener;
 
     public MainForm() {
+        // Construct listener & component
         mPresenter = new PresenterImpl(this);
+        mPreviewListener = e -> mPresenter.onPreview();
         $$$setupUI$$$();
-        preview.addActionListener(e -> mPresenter.onPreview());
+
+        // After installing component, add listener for remaining component.
+        preview.addActionListener(mPreviewListener);
     }
 
     @Override
@@ -39,6 +49,21 @@ public class MainForm implements MainView {
         textArea.setCodeFoldingEnabled(true);
         textArea.setHighlightCurrentLine(false);
         textAreaScrollPane = new RTextScrollPane(textArea);
+        menuBar = new JMenuBar();
+
+        //Build the first menu.
+        JMenu menu = new JMenu("Menu");
+        menuBar.add(menu);
+
+        //a group of JMenuItems
+        JMenuItem menuItem = new JMenuItem("Preview",
+                KeyEvent.VK_P);
+        menuItem.setAccelerator(KeyStroke.getKeyStroke(
+                KeyEvent.VK_P, InputEvent.CTRL_MASK));
+        menu.add(menuItem);
+
+        // Add Listener
+        menuItem.addActionListener(mPreviewListener);
     }
 
     /**
@@ -51,11 +76,13 @@ public class MainForm implements MainView {
     private void $$$setupUI$$$() {
         createUIComponents();
         mainPanel = new JPanel();
-        mainPanel.setLayout(new GridLayoutManager(2, 1, new Insets(0, 0, 0, 0), -1, -1));
-        mainPanel.add(textAreaScrollPane, new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
+        mainPanel.setLayout(new GridLayoutManager(3, 1, new Insets(0, 0, 0, 0), -1, -1));
         preview = new JButton();
         preview.setText("Preview");
-        mainPanel.add(preview, new GridConstraints(1, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, null, null, null, 0, false));
+        mainPanel.add(preview, new GridConstraints(2, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_WANT_GROW, 1, null, null, null, 0, false));
+        mainPanel.add(textAreaScrollPane, new GridConstraints(1, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
+        textAreaScrollPane.setViewportView(textArea);
+        mainPanel.add(menuBar, new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_VERTICAL, GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
     }
 
     /**
@@ -64,4 +91,5 @@ public class MainForm implements MainView {
     public JComponent $$$getRootComponent$$$() {
         return mainPanel;
     }
+
 }

@@ -1,13 +1,13 @@
 package com.lh.kete.activity.main
 
 import android.animation.ValueAnimator
+import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.support.annotation.IdRes
 import android.support.annotation.MainThread
 import android.support.v7.app.AppCompatActivity
-import android.util.Log
 import android.view.MotionEvent
 import android.view.View
 import android.widget.TextView
@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
     private val CHAR_REMOVE_NUMBER = 100
 
     private lateinit var keteLayout: KeteLayout
-    private val SAMPLE_LAYOUT_JSON_ASSET = "sample_layout.json"
+    private val DEFAULT_LAYOUT = "default_layout.json"
     private lateinit var textPreview: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -37,12 +37,11 @@ class MainActivity : AppCompatActivity() {
             setContentView(R.layout.activity_main)
             keteLayout = bind(R.id.kete) as KeteLayout
             textPreview = bind(R.id.text_preview) as TextView
-            textPreview.text = intent.getStringExtra("hello")?: ""
-            init(null)
+            val jsonIntent = intent.getStringExtra(KeteConfig.KETE_STRING_EXTRAS) ?: null
+            init(jsonIntent)
         } catch (e: Exception) {
             showErrorLayout(e)
         }
-        val z = ValueAnimator.ofInt(0, 100)
     }
 
     fun showErrorLayout(e: Exception) {
@@ -63,7 +62,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun init(jsonIntent: String?) {
-        val jsonLayout = jsonIntent ?: KeteUtils.readJsonConfigFromAssets(this, SAMPLE_LAYOUT_JSON_ASSET)
+        val jsonLayout = jsonIntent ?: KeteUtils.readJsonConfigFromAssets(this, DEFAULT_LAYOUT)
         val keteConfig =
             GsonBuilder()
                 .serializeNulls()

@@ -27,4 +27,8 @@ class KeteConfig : AbstractConfig {
     @SerializedName("otherConfig")
     @Expose
     val otherConfig: LayoutConfig = LayoutConfig()
+
+    companion object {
+        const val KETE_STRING_EXTRAS = "kete"
+    }
 }

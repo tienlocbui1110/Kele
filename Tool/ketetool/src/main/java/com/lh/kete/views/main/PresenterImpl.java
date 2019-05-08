@@ -6,6 +6,7 @@ import com.lh.kete.annotations.BackgroundThread;
 import com.lh.kete.annotations.UiThread;
 import com.lh.kete.util.Command;
 import com.lh.kete.util.Command.CommandException;
+import com.lh.kete.util.ShellParser;
 import com.lh.kete.util.ThreadUtils;
 import com.lh.kete.util.UI;
 import com.lh.kete.views.devicechooser.DeviceChooser;
@@ -26,21 +27,26 @@ class PresenterImpl extends MainPresenter {
     @Override
     @UiThread
     void onPreview() {
-        final String json = getView().getCurrentText();
-        new Thread(() -> onPreview(json)).start();
-        Loader.show();
+        // Only loading if have Loader.
+        if (Loader.isReady()) {
+            final String json = getView().getCurrentText();
+            new Thread(() -> onPreview(json)).start();
+            Loader.show();
+        }
     }
 
     @BackgroundThread
     private void onPreview(String json) {
-        // Only loading if have Loader.
-        if (Loader.isReady())
-            return;
         // Set text
         Loader.updateText("Checking JSON...");
-        ThreadUtils.sleep(500);
+        ThreadUtils.sleep(200);
         if (checkValid(json)) {
-            onPrepareAdb(json);
+            // Minified JSON
+            onPrepareAdb(
+                    ShellParser.parse(
+                            new JSONObject(json).toString()
+                    )
+            );
         } else {
             Loader.hide();
             UI.run(() -> UI.showError("Checking JSON", "Invalid JSON."));
@@ -50,7 +56,7 @@ class PresenterImpl extends MainPresenter {
     @BackgroundThread
     private void onPrepareAdb(String json) {
         Loader.updateText("Preparing ADB...");
-        ThreadUtils.sleep(500);
+        ThreadUtils.sleep(200);
         AndroidDebugBridge adb = AndroidDebugBridge.getBridge();
         if (!adb.isConnected()) {
             Loader.hide();
@@ -98,19 +104,36 @@ class PresenterImpl extends MainPresenter {
 
     @BackgroundThread
     private void onStartActivity(IDevice currentDevice, String json) {
-        // TODO: start preview
+        boolean hidden = false;
         try {
-            String result = Command.exec(String.format("adb -s %s shell am start -n com.lh.kete/.activity.main.MainActivity --es hello '" + json + "'", currentDevice.getSerialNumber()));
-            if (result == null)
-                return;
-            if (result.contains("error")) {
-                Loader.hide();
-                UI.showError("Start Activity", result);
+            String result = Command.exec(String.format("adb -s %s shell am start -n com.lh.kete/.activity.main.MainActivity --es kete '" + json + "'", currentDevice.getSerialNumber()));
+            if (result != null) {
+                System.out.println(result);
+                if (result.contains("error")) {
+                    hidden = true;
+                    Loader.hide();
+                    UI.showError("Start Activity", result);
+                }
+                if (result.contains("Activity not started, its current task has been brought to the front")) {
+                    // Force stop
+                    Command.exec(String.format("adb -s %s shell am force-stop com.lh.kete", currentDevice.getSerialNumber()));
+                    result = Command.exec(String.format("adb -s %s shell am start -a android.intent.action.MAIN -n com.lh.kete/.activity.main.MainActivity --es kete '" + json + "'", currentDevice.getSerialNumber()));
+                    if (result != null && result.contains("error")) {
+                        hidden = true;
+                        Loader.hide();
+                        UI.showError("Start Activity", result);
+                    }
+                    System.out.println(result);
+                }
             }
         } catch (CommandException e) {
+            hidden = true;
             Loader.hide();
             UI.showError("Start Activity", e.getMessage());
         }
+
+        if (!hidden)
+            Loader.hide();
     }
 
     @BackgroundThread
