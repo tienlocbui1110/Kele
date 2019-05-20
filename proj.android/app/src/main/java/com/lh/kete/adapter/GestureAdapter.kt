@@ -13,7 +13,8 @@ class GestureAdapter : GestureDetector.SimpleOnGestureListener {
     private var mPressState = NONE
 
     // Swipe cache
-    private var previousEvent: MotionEvent? = null
+    private lateinit var previousEvent: MotionEvent
+    private var previousEventCheck = false
     private var previousButton: KeteButton? = null
 
     constructor(listener: KeteGestureListener, findView: FindView<KeteButton>) : super() {
@@ -22,8 +23,8 @@ class GestureAdapter : GestureDetector.SimpleOnGestureListener {
     }
 
     override fun onScroll(
-        e1: MotionEvent?,
-        e2: MotionEvent?,
+        e1: MotionEvent,
+        e2: MotionEvent,
         distanceX: Float,
         distanceY: Float
     ): Boolean {
@@ -31,18 +32,23 @@ class GestureAdapter : GestureDetector.SimpleOnGestureListener {
             return false
 
         mPressState = SWIPE
-        val currentButton = if (e2 != null) getButton(e2) else null
-        mListener.onSwipe(previousEvent, e2, previousButton, currentButton)
+        val currentButton = getButton(e2)
+        if (!previousEventCheck) {
+            mListener.onSwipe(e1, e2, previousButton, currentButton)
+            previousEventCheck = true
+        } else {
+            mListener.onSwipe(previousEvent, e2, previousButton, currentButton)
+        }
         previousEvent = e2
         previousButton = currentButton
         return true
     }
 
-    override fun onLongPress(e: MotionEvent?) {
+    override fun onLongPress(e: MotionEvent) {
         if (mPressState != PRESS)
             return
         mPressState = LONG_PRESS
-        val button = if (e != null) getButton(e) else null
+        val button = getButton(e)
         button?.let {
             mListener.onLongClick(e, it)
         }
@@ -52,7 +58,7 @@ class GestureAdapter : GestureDetector.SimpleOnGestureListener {
         if (mPressState != PRESS) {
             mPressState = PRESS
             e?.let {
-                getButton(e)?.let {
+                getButton(e).let {
                     mListener.onPressDown(e, it)
                 }
             }
@@ -60,19 +66,20 @@ class GestureAdapter : GestureDetector.SimpleOnGestureListener {
         return true
     }
 
-    fun onHandleEvent(ev: MotionEvent?) {
-        if (ev?.action == ACTION_UP && mPressState == PRESS) {
+    fun onHandleEvent(ev: MotionEvent) {
+        if (ev.action == ACTION_UP && mPressState == PRESS) {
             val button = getButton(ev)
             button?.let {
                 mListener.onClick(ev, it)
             }
-            // Reset Adapter
-            resetAdapter()
         }
 
         // Handle Up and Down
-        if (ev?.action == ACTION_UP)
+        if (ev.action == ACTION_UP) {
             mListener.onKeyUp(ev)
+            // Reset Adapter
+            resetAdapter()
+        }
     }
 
     private fun getButton(ev: MotionEvent): KeteButton? {
@@ -82,8 +89,7 @@ class GestureAdapter : GestureDetector.SimpleOnGestureListener {
     private fun resetAdapter() {
         mPressState = NONE
         previousButton = null
-        previousEvent = null
-
+        previousEventCheck = false
     }
 
     companion object {

@@ -7,7 +7,7 @@ dependencies {
 
 jar {
     manifest {
-        attributes "Main-Class": "com.loki.MainClass"
+        attributes "Main-Class": "com.lh.kete.main.Main"
     }
 
     from {

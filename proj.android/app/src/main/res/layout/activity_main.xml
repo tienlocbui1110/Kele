@@ -9,14 +9,12 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="center"
-        android:ellipsize="start"
         android:padding="20dp"
-        android:singleLine="true"
         android:textSize="16sp" />
 
     <com.lh.kete.views.KeteLayout
         android:id="@+id/kete"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="bottom" />
 </FrameLayout>

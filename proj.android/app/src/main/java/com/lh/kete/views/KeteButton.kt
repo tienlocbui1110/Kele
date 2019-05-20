@@ -39,17 +39,10 @@ class KeteButton : FrameLayout, KeteV<ButtonConfig?> {
     }
 
     internal fun onPressDown() {
-        // Set background color to pressedColor
+
     }
     internal fun onKeyUp() {
-        // Set background color to default color
-        getConfig()?.let {
-            val buttonUI = it.ui
-            val backgroundColor: String = buttonUI?.backgroundColor
-                ?: defaultUIConfig?.backgroundColor
-                ?: UserInterfaceConfig.backgroundColorDefault()
-            setBackgroundColor(Color.parseColor(backgroundColor))
-        }
+
     }
     private fun requestViewFromCurrentConfig() {
         getConfig()?.let {
@@ -78,7 +71,6 @@ class KeteButton : FrameLayout, KeteV<ButtonConfig?> {
             textView.setTextSize(TypedValue.COMPLEX_UNIT_SP, fontSize.toFloat())
 
             val lp = ViewGroup.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT)
-            // TODO: Will customize in later version
             textView.gravity = Gravity.CENTER
             addView(textView, lp)
         }
