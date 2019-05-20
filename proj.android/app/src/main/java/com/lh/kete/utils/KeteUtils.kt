@@ -19,6 +19,10 @@ class KeteUtils {
             return (dp * context.resources.displayMetrics.density).toInt()
         }
 
+        fun distance(x1: Float, y1: Float, x2: Float, y2: Float): Float {
+            return Math.sqrt(((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1)).toDouble()).toFloat()
+        }
+
         fun readJsonConfigFromAssets(context: Context, assetName: String): String {
             val inputStream = context.assets.open(assetName)
             val stringReader = BufferedReader(InputStreamReader(inputStream))

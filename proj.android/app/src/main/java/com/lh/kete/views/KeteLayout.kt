@@ -58,40 +58,22 @@ class KeteLayout : FrameLayout, KeteV<KeteConfig?>, FindView<KeteButton> {
         this.setWillNotDraw(false)
         mSwipeAnimation = LinkedList()
         mGestureListener = object : KeteGestureListenerAdapter() {
-            private var firstBtn: KeteButton? = null
             @UiThread
-            override fun onPressDown(event: MotionEvent?, button: KeteButton) {
+            override fun onPressDown(event: MotionEvent, button: KeteButton?) {
                 Log.d("KeteLayout", "Init animation when first keydown")
                 super.onPressDown(event, button)
-                if (firstBtn == null) {
-                    firstBtn = button
-                }
-                firstBtn?.onPressDown()
                 mSwipeAnimation.add(AnimationDrawable(this@KeteLayout))
+                mSwipeAnimation.last.addNextPoint(event.x, event.y)
             }
 
             @UiThread
-            override fun onKeyUp(event: MotionEvent?) {
-                super.onKeyUp(event)
-                firstBtn?.onKeyUp()
-                firstBtn = null
-            }
-
-            @UiThread
-            override fun onSwipe(
-                startPos: MotionEvent?,
-                endPos: MotionEvent?,
-                startButton: KeteButton?,
-                endButton: KeteButton?
-            ) {
+            override fun onSwipe(startPos: MotionEvent, endPos: MotionEvent,
+                                 startButton: KeteButton?, endButton: KeteButton?) {
                 super.onSwipe(startPos, endPos, startButton, endButton)
-                firstBtn?.let {
-                    it.onKeyUp()
-                    firstBtn = null
-                }
-                endPos?.let {
-                    if (mSwipeAnimation.size != 0)
+                endPos.let {
+                    if (mSwipeAnimation.size != 0) {
                         mSwipeAnimation.last.addNextPoint(it.x, it.y)
+                    }
                 }
                 invalidate()
             }
@@ -118,8 +100,8 @@ class KeteLayout : FrameLayout, KeteV<KeteConfig?>, FindView<KeteButton> {
             changeState(VALID)
 
             val maxWidth =
-                if (it.otherConfig.maxWidth >= 0) KeteUtils.dpToPx(it.otherConfig.maxWidth, context)
-                else widthSize
+                    if (it.otherConfig.maxWidth >= 0) KeteUtils.dpToPx(it.otherConfig.maxWidth, context)
+                    else widthSize
             when (widthMode) {
                 MeasureSpec.EXACTLY -> width = widthSize
                 MeasureSpec.AT_MOST -> width = Math.min(widthSize, maxWidth)
@@ -127,11 +109,11 @@ class KeteLayout : FrameLayout, KeteV<KeteConfig?>, FindView<KeteButton> {
             }
 
             val maxHeight =
-                if (it.otherConfig.maxHeight >= 0) KeteUtils.dpToPx(
-                    it.otherConfig.maxHeight,
-                    context
-                )
-                else heightSize
+                    if (it.otherConfig.maxHeight >= 0) KeteUtils.dpToPx(
+                            it.otherConfig.maxHeight,
+                            context
+                    )
+                    else heightSize
             when (heightMode) {
                 MeasureSpec.EXACTLY -> height = heightSize
                 MeasureSpec.AT_MOST -> height = Math.min(heightSize, maxHeight)
@@ -164,10 +146,10 @@ class KeteLayout : FrameLayout, KeteV<KeteConfig?>, FindView<KeteButton> {
     }
 
     @UiThread
-    override fun onTouchEvent(event: MotionEvent?): Boolean {
+    override fun onTouchEvent(event: MotionEvent): Boolean {
         super.onTouchEvent(event)
-        mGestureDetector.onTouchEvent(event)
         mGestureAdapter.onHandleEvent(event)
+        mGestureDetector.onTouchEvent(event)
         return true
     }
 

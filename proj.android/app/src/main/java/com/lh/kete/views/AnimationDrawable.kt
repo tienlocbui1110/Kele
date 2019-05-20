@@ -20,11 +20,14 @@ class AnimationDrawable(view: View) {
     fun addNextPoint(x: Float, y: Float) {
         addNextPoint(x, y, System.currentTimeMillis())
         invalidateSelf()
+    }
 
+    fun isEmpty(): Boolean {
+        return mPoints.isEmpty()
     }
 
     fun draw(canvas: Canvas?) {
-        Log.d(TAG, String.format("Draw Animation with %d points.", mPoints.size))
+//        Log.d(TAG, String.format("Draw Animation with %d points.", mPoints.size))
         if (canvas == null)
             return
         bitmapDrawable?.let {
