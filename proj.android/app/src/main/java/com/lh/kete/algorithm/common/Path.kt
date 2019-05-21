@@ -28,6 +28,10 @@ class Path private constructor(private val mPoints: List<Point>) {
         return mLength
     }
 
+    internal fun isValid(): Boolean {
+        return mPoints.size > 1
+    }
+
     class Builder {
         private var nPoints = LinkedList<Point>()
 

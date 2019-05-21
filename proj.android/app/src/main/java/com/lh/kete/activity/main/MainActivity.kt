@@ -117,12 +117,8 @@ private class Presenter(view: MainActivity, keteConfig: KeteConfig) : Algorithm.
 
     init {
         gestureListener = object : KeteGestureListenerAdapter() {
-            override fun onSwipe(
-                    startPos: MotionEvent,
-                    endPos: MotionEvent,
-                    startButton: KeteButton?,
-                    endButton: KeteButton?
-            ) {
+            override fun onSwipe(startPos: MotionEvent, endPos: MotionEvent,
+                                 startButton: KeteButton?, endButton: KeteButton?) {
                 super.onSwipe(startPos, endPos, startButton, endButton)
                 pathBuilder.appendPoint(getPercentagePosition(endPos.x, endPos.y))
             }
@@ -137,7 +133,7 @@ private class Presenter(view: MainActivity, keteConfig: KeteConfig) : Algorithm.
                 super.onKeyUp(event)
                 val path = pathBuilder.build()
                 pathBuilder.reset()
-                if (path.getPointList().isNotEmpty()) {
+                if (path.isValid()) {
                     Thread {
                         val begin = System.currentTimeMillis()
                         predictor.doCalculate(path, this@Presenter)
@@ -160,8 +156,12 @@ private class Presenter(view: MainActivity, keteConfig: KeteConfig) : Algorithm.
         val stringList = result.getResult()
         val builder = StringBuilder()
         for (i in 0 until stringList.size) {
-            builder.append(String.format("Predict: %s  -- Average distance: %f", stringList[i].second,
-                                         stringList[i].first)).append("\n")
+            builder.append(
+                    String.format(
+                            "Predict: %s  -- Average distance: %f", stringList[i].second,
+                            stringList[i].first
+                    )
+            ).append("\n")
         }
         Handler(Looper.getMainLooper()).post {
             mainView.setTextPreview(builder.toString())
