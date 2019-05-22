@@ -28,6 +28,11 @@ import com.lh.kete.utils.KeteUtils
 import com.lh.kete.views.KeteButton
 import com.lh.kete.views.KeteLayout
 import java.lang.StringBuilder
+import java.util.LinkedList
+import java.util.concurrent.BlockingDeque
+import java.util.concurrent.LinkedBlockingDeque
+import java.util.concurrent.ThreadPoolExecutor
+import java.util.concurrent.TimeUnit
 
 /**
  * Created by Tien Loc Bui on 18/03/2019.
@@ -135,10 +140,7 @@ private class Presenter(view: MainActivity, keteConfig: KeteConfig) : Algorithm.
                 pathBuilder.reset()
                 if (path.isValid()) {
                     Thread {
-                        val begin = System.currentTimeMillis()
                         predictor.doCalculate(path, this@Presenter)
-                        val end = System.currentTimeMillis() - begin
-                        Log.d("Calculate time", end.toString())
                     }.start()
                 }
             }

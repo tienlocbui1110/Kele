@@ -1,6 +1,7 @@
 package com.lh.kete.algorithm.simplegesture
 
 import android.app.Activity
+import android.util.Log
 import com.lh.kete.algorithm.Algorithm
 import com.lh.kete.algorithm.common.Path
 import com.lh.kete.algorithm.common.Point
@@ -38,23 +39,22 @@ class Predictor : Algorithm<Path, PredictorResult> {
         // Do bruteForce first
         val userModel = path.toPolylineModel().getPointList()
         val result = PredictorResult()
-
         baseModel.forEach {
             var avgDistance = 0f
             val currentModel = it.first.getPointList()
             // Optimize
             // Check if first character in range
             if (Math.abs(currentModel[0].x - userModel[0].x) >= X_RANGE
-                || Math.abs(currentModel[0].y - userModel[0].y) >= Y_RANGE
+                    || Math.abs(currentModel[0].y - userModel[0].y) >= Y_RANGE
             ) {
                 return@forEach
             }
             for (i in 0 until PolylineModel.N_POINTS) {
                 avgDistance += KeteUtils.distance(
-                    userModel[i].x,
-                    userModel[i].y,
-                    currentModel[i].x,
-                    currentModel[i].y
+                        userModel[i].x,
+                        userModel[i].y,
+                        currentModel[i].x,
+                        currentModel[i].y
                 )
             }
             result.addResult(it.second, avgDistance / PolylineModel.N_POINTS)
@@ -71,7 +71,7 @@ class Predictor : Algorithm<Path, PredictorResult> {
                 continue
             }
             val splitString = line.split(" - ")
-            if (splitString.size == 2) {
+            if (splitString.size == 2 && splitString[1].length > 1) {
                 baseModel.add(Pair(buildPolylineModelFromString(splitString[1]), splitString[0]))
             }
             line = inputStream.readLine()
