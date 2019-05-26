@@ -196,9 +196,12 @@ class KeteLayout : FrameLayout, KeteV<KeteConfig?>, FindView<KeteButton> {
     }
 
     fun setLayoutData(config: KeteConfig?) {
-        this._layoutData = config
-        resetLayout()
-        changeState(VALID)
+        changeState(NO_CONFIG)
+        config?.let {
+            this._layoutData = it
+            resetLayout()
+            changeState(VALID)
+        }
     }
 
     fun setOnGestureListener(listener: KeteGestureListener) {

@@ -20,6 +20,7 @@ class Path private constructor(private val mPoints: List<Point>) {
         return PolylineModel.Builder(this).build()
     }
 
+    // Unit: %
     internal fun getPointList(): List<Point> {
         return mPoints
     }

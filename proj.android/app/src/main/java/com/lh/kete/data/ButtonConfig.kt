@@ -9,9 +9,15 @@ import com.google.gson.annotations.SerializedName
 
 class ButtonConfig : AbstractConfig {
 
+    // Character display on UI
     @SerializedName("char")
     @Expose
     val char: String? = null
+
+    // Character will use at computing in dictionary
+    @SerializedName("computing_char")
+    @Expose
+    val computingChar: String? = null
 
     @SerializedName("width")
     @Expose
@@ -32,9 +38,4 @@ class ButtonConfig : AbstractConfig {
     @SerializedName("ui")
     @Expose
     val ui: UserInterfaceConfig? = null
-
-
-    @SerializedName("special_key")
-    @Expose
-    val specialKey: String? = null
 }
