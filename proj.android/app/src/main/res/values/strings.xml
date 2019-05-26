@@ -2,4 +2,7 @@
     <string name="app_name">Kete</string>
     <string name="kete_error">Keyboard size is invalid. It is  too small or too large to display correctly.</string>
     <string name="kete_no_config">Keyboard had no config!</string>
+    <string name="layout_qwerty">QWERTY</string>
+    <string name="layout_modern">MODERN</string>
+    <string name="menu_show_info">Info</string>
 </resources>

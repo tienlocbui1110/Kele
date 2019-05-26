@@ -66,7 +66,7 @@ class KeteButton : FrameLayout, KeteV<ButtonConfig?> {
             setBackgroundColor(Color.parseColor(backgroundColor))
 
             val textView = TextView(context)
-            textView.text = it.char
+            textView.text = it.char?: it.computingChar
             textView.setTextColor(Color.parseColor(textColor))
             textView.setTextSize(TypedValue.COMPLEX_UNIT_SP, fontSize.toFloat())
 
