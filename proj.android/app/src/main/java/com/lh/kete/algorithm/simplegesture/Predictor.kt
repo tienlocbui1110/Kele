@@ -8,12 +8,12 @@ import com.lh.kete.algorithm.Algorithm
 import com.lh.kete.algorithm.common.Path
 import com.lh.kete.algorithm.common.Point
 import com.lh.kete.algorithm.common.PolylineModel
+import com.lh.kete.data.Information
 import com.lh.kete.data.KeteConfig
 import com.lh.kete.db.KeteContract
 import com.lh.kete.db.SQLiteHelper
 import com.lh.kete.listener.OnWorkerThreadListener
 import com.lh.kete.utils.KeteUtils
-import java.lang.StringBuilder
 
 @Suppress("PARAMETER_NAME_CHANGED_ON_OVERRIDE")
 class Predictor : Algorithm<Path, PredictorResult> {
@@ -31,7 +31,7 @@ class Predictor : Algorithm<Path, PredictorResult> {
             val fY = button.y + button.height / 2
             buttonMapper[button.computingChar ?: button.char] = Point(fX, fY)
         }
-        buildBaseModel(activity, kete, listener)
+        buildBaseModel(activity, listener)
         listener.onCompleted()
     }
 
@@ -48,21 +48,56 @@ class Predictor : Algorithm<Path, PredictorResult> {
 
         // Get nearly model
         val cursor = db.rawQuery("""
-            SELECT ${KeteContract.PointModel.COL_MODEL}, ${KeteContract.AlternativeDictionary.COL_ORG_WORD}
+            SELECT ${KeteContract.PointModel.COL_ID}, ${KeteContract.PointModel.COL_N}, ${KeteContract.AltDictionary.COL_ORG_WORD}
             FROM ${KeteContract.TABLE_POINT_MODEL} model JOIN ${KeteContract.TABLE_ALTERNATIVE_DICTIONARY} dic
             ON ${KeteContract.PointModel.COL_FIRSTX} BETWEEN ? AND ?
                 AND ${KeteContract.PointModel.COL_FIRSTY} BETWEEN ? AND ?
-                AND model.${KeteContract.PointModel.COL_WORD} = dic.${KeteContract.AlternativeDictionary.COL_ALT_WORD}
-                AND model.${KeteContract.PointModel.COL_INPUT_METHOD} = dic.${KeteContract.AlternativeDictionary.COL_INPUT_METHOD}
-        """.trimIndent(), arrayOf(minX.toString(), maxX.toString(), minY.toString(), maxY.toString()))
+                AND model.${KeteContract.PointModel.COL_WORD} = dic.${KeteContract.AltDictionary.COL_ALT_WORD}
+                AND model.${KeteContract.PointModel.COL_INPUT_METHOD} = dic.${KeteContract.AltDictionary.COL_INPUT_METHOD}
+            """.trimIndent(), arrayOf(minX.toString(), maxX.toString(), minY.toString(), maxY.toString()))
         Log.d(Predictor::class.java.simpleName, "Number of found model: ${cursor.count}")
-        val modelIdx = cursor.getColumnIndex(KeteContract.PointModel.COL_MODEL)
-        val originIdx = cursor.getColumnIndex(KeteContract.AlternativeDictionary.COL_ORG_WORD)
-        if (cursor.count == 0)
+        val modelIdIdx = cursor.getColumnIndex(KeteContract.PointModel.COL_ID)
+        val nIdx = cursor.getColumnIndex(KeteContract.PointModel.COL_N)
+        val originIdx = cursor.getColumnIndex(KeteContract.AltDictionary.COL_ORG_WORD)
+        if (cursor.count == 0) {
+            cursor.close()
             return
+        }
+        // Run at every suitable model
         while (!cursor.isLast) {
             cursor.moveToNext()
-            val baseModel = PolylineModel.fromString(cursor.getString(modelIdx))
+            val pointId = cursor.getInt(modelIdIdx)
+            // Query point at polyline
+            val cursorDetails = db.rawQuery("""
+            SELECT ${KeteContract.PointModelDetails.COL_INDEX}, ${KeteContract.PointModelDetails.COL_X},
+                    ${KeteContract.PointModelDetails.COL_Y}
+            FROM ${KeteContract.TABLE_POINT_MODEL_DETAILS}
+            WHERE ${KeteContract.PointModelDetails.COL_MODEL}=?
+        """.trimIndent(), arrayOf(pointId.toString()))
+            if (cursorDetails.count == 0) {
+                cursorDetails.close()
+                continue
+            }
+
+            // Construct ArrayList
+            val points = arrayListOf<Point>()
+            for (i in 0 until cursor.getInt(nIdx))
+                points.add(Point(0f, 0f))
+
+
+            val iIdx = cursorDetails.getColumnIndex(KeteContract.PointModelDetails.COL_INDEX)
+            val xIdx = cursorDetails.getColumnIndex(KeteContract.PointModelDetails.COL_X)
+            val yIdx = cursorDetails.getColumnIndex(KeteContract.PointModelDetails.COL_Y)
+            while (!cursorDetails.isLast) {
+                cursorDetails.moveToNext()
+                val x = cursorDetails.getFloat(xIdx)
+                val y = cursorDetails.getFloat(yIdx)
+                val idx = cursorDetails.getInt(iIdx)
+                points[idx] = Point(x, y)
+            }
+
+            // Predict
+            val baseModel = PolylineModel.Builder(points, cursor.getFloat(nIdx)).build()
             val predictWord = cursor.getString(originIdx)
             var avgDistance = 0f
             for (i in 0 until PolylineModel.N_POINTS) {
@@ -74,55 +109,54 @@ class Predictor : Algorithm<Path, PredictorResult> {
                 )
             }
             result.addResult(predictWord, avgDistance / PolylineModel.N_POINTS)
+            cursorDetails.close()
         }
         cursor.close()
         db.close()
         callback.onDone(result)
     }
 
-    private val sampleBuilder = StringBuilder()
-
-    private fun buildBaseModel(activity: Activity, kete: KeteConfig, listener: OnWorkerThreadListener) {
-        val db = SQLiteHelper(activity)
+    private fun buildBaseModel(activity: Activity, listener: OnWorkerThreadListener) {
+        val dbHelper = SQLiteHelper(activity)
+        val db = dbHelper.writableDatabase
         // Check if current config have Point Model
-        val pointCursor = db.readableDatabase.rawQuery("""
+        val pointCursor = db.rawQuery("""
             SELECT * FROM ${KeteContract.TABLE_POINT_MODEL}
-            WHERE ${KeteContract.PointModel.COL_N_POINTS} = ${PolylineModel.N_POINTS} AND
-            ${KeteContract.PointModel.COL_LAYOUT} = "${kete.id}"
+            WHERE ${KeteContract.PointModel.COL_LAYOUT} = "${Information.LAYOUT_ID}"
         """.trimIndent(), null)
         // Database doesn't have model
         if (pointCursor.count == 0) {
             // Alternative Dictionary Cursor
-            val altDicCursor = db.readableDatabase.rawQuery("""
-                SELECT ${KeteContract.AlternativeDictionary.COL_ALT_WORD}, ${KeteContract.AlternativeDictionary.COL_INPUT_METHOD}
+            val altDicCursor = db.rawQuery("""
+                SELECT ${KeteContract.AltDictionary.COL_ALT_WORD}, ${KeteContract.AltDictionary.COL_INPUT_METHOD}
                 FROM ${KeteContract.TABLE_ALTERNATIVE_DICTIONARY}
             """.trimIndent(), null)
-            // Với mỗi từ trong bảng AlternativeDictionary, xây dựng PointModel từ đây.
-            val alternativeIndex = altDicCursor.getColumnIndex(KeteContract.AlternativeDictionary.COL_ALT_WORD)
-            val inputMethodIndex = altDicCursor.getColumnIndex(KeteContract.AlternativeDictionary.COL_INPUT_METHOD)
+            // Với mỗi từ trong bảng AltDictionary, xây dựng PointModel từ đây.
+            val alternativeIndex = altDicCursor.getColumnIndex(KeteContract.AltDictionary.COL_ALT_WORD)
+            val inputMethodIndex = altDicCursor.getColumnIndex(KeteContract.AltDictionary.COL_INPUT_METHOD)
             val infoText = "Building swipe model"
             try {
-                db.writableDatabase.beginTransaction()
+                db.beginTransaction()
                 while (!altDicCursor.isLast) {
                     altDicCursor.moveToNext()
                     val alternativeWord = altDicCursor.getString(alternativeIndex)
                     val inputMethod = altDicCursor.getInt(inputMethodIndex)
                     val model = buildPolylineModelFromString(alternativeWord)
-                    if (model.getPointList().size > 1)
-                        db.insertToModel(model, PolylineModel.N_POINTS, kete.id!!, model.getPointList()[0].x,
-                                         model.getPointList()[0].y, alternativeWord, inputMethod)
+                    if (model.isValid())
+                        dbHelper.insertToModel(model, PolylineModel.N_POINTS, Information.LAYOUT_ID!!, model.getPointList()[0].x,
+                                model.getPointList()[0].y, alternativeWord, inputMethod)
                     if (altDicCursor.position % 100 == 0) {
                         listener.onUpdate(altDicCursor.position * 100 / altDicCursor.count, infoText)
                     }
                 }
                 altDicCursor.close()
-                db.writableDatabase.setTransactionSuccessful()
+                db.setTransactionSuccessful()
             } finally {
-                db.writableDatabase.endTransaction()
+                db.endTransaction()
             }
         }
         pointCursor.close()
-        db.close()
+        dbHelper.close()
     }
 
     private fun buildPolylineModelFromString(charSeq: String): PolylineModel {

@@ -19,44 +19,18 @@ class PolylineModel private constructor(private val mPoints: ArrayList<Point>, p
         return mPoints.size == N_POINTS
     }
 
-    override fun toString(): String {
-        if (!isValid())
-            throw RuntimeException("PolylineModel invalid.")
-        // Format: 2.2,3.3-4.4,5.5-....-123213.21321321 ( length at last )
-        val builder = StringBuilder()
-        val iterator = mPoints.iterator()
-        while (iterator.hasNext()) {
-            val point = iterator.next()
-            builder.append(point.x).append(',')
-            builder.append(point.y).append('-')
-        }
-        builder.append(mLength)
-        return builder.toString()
-    }
-
     companion object {
         const val N_POINTS: Int = 25
-
-        fun fromString(model: String): PolylineModel {
-            val splitter = model.split("-")
-            val mPoints = ArrayList<Point>()
-            var mLength: Float = 0f
-            splitter.forEach {
-                val position = it.split(",")
-                if (position.size == 1) {
-                    mLength = position[0].toFloat()
-                } else {
-                    val point = Point(position[0].toFloat(), position[1].toFloat())
-                    mPoints.add(point)
-                }
-            }
-            return PolylineModel(mPoints, mLength)
-        }
     }
 
     class Builder {
         private var nPoints = ArrayList<Point>()
         private var mLength: Float
+
+        constructor(points: ArrayList<Point>, len: Float) {
+            this.nPoints = points
+            mLength = len
+        }
 
         constructor(path: Path) {
             mLength = path.getPathLength()

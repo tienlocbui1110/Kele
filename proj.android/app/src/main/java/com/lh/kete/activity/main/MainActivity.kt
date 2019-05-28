@@ -120,7 +120,6 @@ class MainActivity : AppCompatActivity(), OnWorkerThreadListener {
             progressText.text = ""
             progressInfoText.text = ""
             // IMPORTANT: Set layout_id to INFORMATION
-            Information.LAYOUT_ID = keteConfig.id
             // Set data to Keyboard
             keteLayout.setLayoutData(keteConfig)
             keteLayout.setOnGestureListener(mPresenter.gestureListener)
@@ -165,10 +164,12 @@ class MainActivity : AppCompatActivity(), OnWorkerThreadListener {
                 .append(BoldString(Information.LAYOUT_ID ?: "unknown"))
                 .newLine()
                 .append("Average distance:  ")
-                .append(BoldString(Information.AVERAGE_DISTANCE?.toString() ?: "invalid")).append("px")
+                .append(BoldString(Information.AVERAGE_DISTANCE?.toString()
+                        ?: "invalid")).append("px")
                 .newLine()
                 .append("Conflict:               ")
-                .append(BoldString(Information.CONFLICT_PERCENT?.toString() ?: "invalid")).append("%")
+                .append(BoldString(Information.CONFLICT_PERCENT?.toString()
+                        ?: "invalid")).append("%")
                 .newLine()
 
         AlertDialog.Builder(this).setMessage(infoBuilder.toCharSequence())
@@ -184,7 +185,8 @@ class MainActivity : AppCompatActivity(), OnWorkerThreadListener {
         KeteExec.doBackground(Runnable {
             try {
                 // Step 2: read json from file or intent
-                val jsonLayout = jsonIntent ?: KeteUtils.readJsonConfigFromAssets(this, Config.getLayoutAsset())
+                val jsonLayout = jsonIntent
+                        ?: KeteUtils.readJsonConfigFromAssets(this, Config.getLayoutAsset())
                 // Step 3: CalculateHash of layout
                 Information.LAYOUT_HASH = KeteUtils.md5(jsonLayout)
                 // Step 4: Convert json string to keyboard config.
@@ -193,6 +195,7 @@ class MainActivity : AppCompatActivity(), OnWorkerThreadListener {
                         .excludeFieldsWithoutExposeAnnotation()
                         .create()
                         .fromJson(jsonLayout, KeteConfig::class.java)
+                Information.LAYOUT_ID = keteConfig.id
                 // Step 5: Setup Presenter & callback when init done.
                 mPresenter = Presenter(this, keteConfig, this)
             } catch (e: Exception) {
@@ -224,7 +227,7 @@ private class Presenter : Algorithm.Callback<PredictorResult> {
     @WorkerThread
     constructor(view: MainActivity, keteConfig: KeteConfig, threadListener: OnWorkerThreadListener) {
         //Step 1: Init database
-        initDatabase(keteConfig, threadListener)
+        initDatabase(threadListener)
         predictor = Predictor(view, keteConfig, threadListener)
         mainView = view
 
@@ -247,7 +250,11 @@ private class Presenter : Algorithm.Callback<PredictorResult> {
                 pathBuilder.reset()
                 if (path.isValid()) {
                     KeteExec.doBackground(Runnable {
-                        predictor.doCalculate(path, this@Presenter)
+                        try {
+                            predictor.doCalculate(path, this@Presenter)
+                        } catch (e: Exception) {
+                            mainView.showErrorLayoutWithMessage("Database error. Please delete data and try again.")
+                        }
                     })
                 }
             }
@@ -255,10 +262,10 @@ private class Presenter : Algorithm.Callback<PredictorResult> {
     }
 
     @WorkerThread
-    private fun initDatabase(keteConfig: KeteConfig, threadListener: OnWorkerThreadListener) {
+    private fun initDatabase(threadListener: OnWorkerThreadListener) {
         val db = SQLiteHelper(MainApplication.getAppContext())
         // Step 1: verify database
-        db.verify(keteConfig, threadListener)
+        db.verify(threadListener)
         db.close()
     }
 

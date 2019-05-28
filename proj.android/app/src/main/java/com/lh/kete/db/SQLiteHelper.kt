@@ -2,13 +2,13 @@ package com.lh.kete.db
 
 import android.content.ContentValues
 import android.content.Context
+import android.database.SQLException
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
+import com.lh.kete.algorithm.common.Point
 import com.lh.kete.algorithm.common.PolylineModel
 import com.lh.kete.data.Information
-import com.lh.kete.data.KeteConfig
 import com.lh.kete.listener.OnWorkerThreadListener
-import java.lang.RuntimeException
 
 class SQLiteHelper(context: Context) : SQLiteOpenHelper(context, DB_NAME, null, DB_VERSION) {
     companion object {
@@ -25,7 +25,7 @@ class SQLiteHelper(context: Context) : SQLiteOpenHelper(context, DB_NAME, null, 
         )"""
 
         private const val CREATE_TABLE_ORIGINAL_DICTIONARY = """CREATE TABLE ${KeteContract.TABLE_ORIGINAL_DICTIONARY}(
-            ${KeteContract.OriginalDictionary.COL_WORD} TEXT PRIMARY KEY NOT NULL
+            ${KeteContract.OrgDictionary.COL_WORD} TEXT PRIMARY KEY NOT NULL
         )"""
 
         private const val CREATE_TABLE_INPUT_METHOD = """CREATE TABLE ${KeteContract.TABLE_INPUT_METHOD}(
@@ -34,20 +34,19 @@ class SQLiteHelper(context: Context) : SQLiteOpenHelper(context, DB_NAME, null, 
         )"""
 
         private const val CREATE_TABLE_ALTERNATIVE_DICTIONARY = """CREATE TABLE ${KeteContract.TABLE_ALTERNATIVE_DICTIONARY}(
-            ${KeteContract.AlternativeDictionary.COL_ALT_WORD} TEXT NOT NULL,
-            ${KeteContract.AlternativeDictionary.COL_INPUT_METHOD} INTEGER,
-            ${KeteContract.AlternativeDictionary.COL_ORG_WORD} TEXT,
-            PRIMARY KEY (${KeteContract.AlternativeDictionary.COL_ALT_WORD}, ${KeteContract.AlternativeDictionary.COL_INPUT_METHOD}),
-            FOREIGN KEY(${KeteContract.AlternativeDictionary.COL_INPUT_METHOD}) REFERENCES
+            ${KeteContract.AltDictionary.COL_ALT_WORD} TEXT NOT NULL,
+            ${KeteContract.AltDictionary.COL_INPUT_METHOD} INTEGER,
+            ${KeteContract.AltDictionary.COL_ORG_WORD} TEXT,
+            PRIMARY KEY (${KeteContract.AltDictionary.COL_ALT_WORD}, ${KeteContract.AltDictionary.COL_INPUT_METHOD}),
+            FOREIGN KEY(${KeteContract.AltDictionary.COL_INPUT_METHOD}) REFERENCES
                 ${KeteContract.TABLE_INPUT_METHOD}(${KeteContract.InputMethod.COL_ID}),
-            FOREIGN KEY(${KeteContract.AlternativeDictionary.COL_ORG_WORD}) REFERENCES
-                ${KeteContract.TABLE_ORIGINAL_DICTIONARY}(${KeteContract.OriginalDictionary.COL_WORD})
+            FOREIGN KEY(${KeteContract.AltDictionary.COL_ORG_WORD}) REFERENCES
+                ${KeteContract.TABLE_ORIGINAL_DICTIONARY}(${KeteContract.OrgDictionary.COL_WORD})
         )"""
 
         private const val CREATE_TABLE_POINT_MODEL = """CREATE TABLE ${KeteContract.TABLE_POINT_MODEL}(
             ${KeteContract.PointModel.COL_ID} INTEGER PRIMARY KEY AUTOINCREMENT,
-            ${KeteContract.PointModel.COL_MODEL} TEXT NOT NULL,
-            ${KeteContract.PointModel.COL_N_POINTS} INTEGER,
+            ${KeteContract.PointModel.COL_N} INTEGER NOT NULL,
             ${KeteContract.PointModel.COL_LAYOUT} TEXT,
             ${KeteContract.PointModel.COL_FIRSTX} REAL,
             ${KeteContract.PointModel.COL_FIRSTY} REAL,
@@ -56,12 +55,30 @@ class SQLiteHelper(context: Context) : SQLiteOpenHelper(context, DB_NAME, null, 
             FOREIGN KEY(${KeteContract.PointModel.COL_LAYOUT}) REFERENCES
                 ${KeteContract.TABLE_LAYOUT}(${KeteContract.Layout.COL_ID}),
             FOREIGN KEY(${KeteContract.PointModel.COL_WORD}, ${KeteContract.PointModel.COL_INPUT_METHOD}) REFERENCES
-                ${KeteContract.TABLE_ALTERNATIVE_DICTIONARY}(${KeteContract.AlternativeDictionary.COL_ALT_WORD},
-                 ${KeteContract.AlternativeDictionary.COL_INPUT_METHOD})
+                ${KeteContract.TABLE_ALTERNATIVE_DICTIONARY}(${KeteContract.AltDictionary.COL_ALT_WORD},
+                 ${KeteContract.AltDictionary.COL_INPUT_METHOD})
+        )"""
+
+        private const val CREATE_TABLE_POINT = """CREATE TABLE ${KeteContract.TABLE_POINT}(
+            ${KeteContract.Point.COL_X} REAL,
+            ${KeteContract.Point.COL_Y} REAL,
+            PRIMARY KEY (${KeteContract.Point.COL_X}, ${KeteContract.Point.COL_Y})
+        )"""
+
+        private const val CREATE_TABLE_POINT_MODEL_DETAILS = """CREATE TABLE ${KeteContract.TABLE_POINT_MODEL_DETAILS}(
+            ${KeteContract.PointModelDetails.COL_MODEL} INTEGER,
+            ${KeteContract.PointModelDetails.COL_INDEX} INTEGER,
+            ${KeteContract.PointModelDetails.COL_X} REAL,
+            ${KeteContract.PointModelDetails.COL_Y} REAL,
+            PRIMARY KEY (${KeteContract.PointModelDetails.COL_MODEL}, ${KeteContract.PointModelDetails.COL_INDEX}),
+            FOREIGN KEY(${KeteContract.PointModelDetails.COL_X}, ${KeteContract.PointModelDetails.COL_Y}) REFERENCES
+                ${KeteContract.TABLE_POINT}(${KeteContract.Point.COL_X},${KeteContract.Point.COL_Y})
         )"""
 
         private const val CREATE_INDEX_POINT_MODEL_FIRST_SEARCHING = """CREATE INDEX PointModel_firstX_firstY
-            ON ${KeteContract.TABLE_POINT_MODEL}(${KeteContract.PointModel.COL_FIRSTX}, ${KeteContract.PointModel.COL_FIRSTY})
+            ON ${KeteContract.TABLE_POINT_MODEL}(${KeteContract.PointModel.COL_LAYOUT},
+            ${KeteContract.PointModel.COL_FIRSTX},
+            ${KeteContract.PointModel.COL_FIRSTY})
         """
     }
 
@@ -74,6 +91,8 @@ class SQLiteHelper(context: Context) : SQLiteOpenHelper(context, DB_NAME, null, 
             execSQL(CREATE_TABLE_ORIGINAL_DICTIONARY)
             execSQL(CREATE_TABLE_ALTERNATIVE_DICTIONARY)
             execSQL(CREATE_TABLE_POINT_MODEL)
+            execSQL(CREATE_TABLE_POINT)
+            execSQL(CREATE_TABLE_POINT_MODEL_DETAILS)
             execSQL(CREATE_INDEX_POINT_MODEL_FIRST_SEARCHING)
         }
     }
@@ -90,6 +109,8 @@ class SQLiteHelper(context: Context) : SQLiteOpenHelper(context, DB_NAME, null, 
             execSQL("DROP TABLE IF EXISTS " + KeteContract.TABLE_ALTERNATIVE_DICTIONARY)
             execSQL("DROP TABLE IF EXISTS " + KeteContract.TABLE_INPUT_METHOD)
             execSQL("DROP TABLE IF EXISTS " + KeteContract.TABLE_POINT_MODEL)
+            execSQL("DROP TABLE IF EXISTS " + KeteContract.TABLE_POINT_MODEL_DETAILS)
+            execSQL("DROP TABLE IF EXISTS " + KeteContract.TABLE_POINT)
         }
     }
 
@@ -107,20 +128,29 @@ class SQLiteHelper(context: Context) : SQLiteOpenHelper(context, DB_NAME, null, 
 
     fun insertToModel(model: PolylineModel, nPoints: Int, layoutId: String, firstX: Float, firstY: Float,
                       altWord: String, inputMethod: Int) {
-        val contentValues = ContentValues()
+        val contentValues1 = ContentValues()
 
-        contentValues.put(KeteContract.PointModel.COL_MODEL, model.toString())
-        contentValues.put(KeteContract.PointModel.COL_N_POINTS, nPoints)
-        contentValues.put(KeteContract.PointModel.COL_LAYOUT, layoutId)
-        contentValues.put(KeteContract.PointModel.COL_FIRSTX, firstX)
-        contentValues.put(KeteContract.PointModel.COL_FIRSTY, firstY)
-        contentValues.put(KeteContract.PointModel.COL_WORD, altWord)
-        contentValues.put(KeteContract.PointModel.COL_INPUT_METHOD, inputMethod)
-
-        writableDatabase.insert(KeteContract.TABLE_POINT_MODEL, null, contentValues)
+        // Step 1: Put word and input method to db
+        contentValues1.put(KeteContract.PointModel.COL_LAYOUT, layoutId)
+        contentValues1.put(KeteContract.PointModel.COL_N, nPoints)
+        contentValues1.put(KeteContract.PointModel.COL_FIRSTX, firstX)
+        contentValues1.put(KeteContract.PointModel.COL_FIRSTY, firstY)
+        contentValues1.put(KeteContract.PointModel.COL_WORD, altWord)
+        contentValues1.put(KeteContract.PointModel.COL_INPUT_METHOD, inputMethod)
+        val modelId = writableDatabase.insert(KeteContract.TABLE_POINT_MODEL, null, contentValues1)
+        model.getPointList().forEachIndexed { index, point ->
+            addPoint(point)
+            val contentValues2 = ContentValues()
+            // ModelId is auto increment, so same as rowid
+            contentValues2.put(KeteContract.PointModelDetails.COL_MODEL, modelId)
+            contentValues2.put(KeteContract.PointModelDetails.COL_INDEX, index)
+            contentValues2.put(KeteContract.PointModelDetails.COL_X, point.x)
+            contentValues2.put(KeteContract.PointModelDetails.COL_Y, point.y)
+            writableDatabase.insert(KeteContract.TABLE_POINT_MODEL_DETAILS, null, contentValues2)
+        }
     }
 
-    fun verify(keteConfig: KeteConfig, threadListener: OnWorkerThreadListener) {
+    fun verify(threadListener: OnWorkerThreadListener) {
         var count = 0
 
         // Step 1: checking dictionary
@@ -188,29 +218,29 @@ class SQLiteHelper(context: Context) : SQLiteOpenHelper(context, DB_NAME, null, 
         }
 
         // Step 4: verify layout_hash
-        if (keteConfig.id == null)
+        if (Information.LAYOUT_ID == null)
             throw RuntimeException("Layout ID must not be null!")
         if (Information.LAYOUT_HASH == null)
             throw RuntimeException("Layout Hash error!")
-        val currentHash = getLayoutHash(keteConfig.id)
+        val currentHash = getLayoutHash(Information.LAYOUT_ID!!)
         if (currentHash == null || currentHash != Information.LAYOUT_HASH) {
-            cleanLayout(keteConfig.id)
-            addLayout(keteConfig.id, Information.LAYOUT_HASH!!)
+            cleanLayout(Information.LAYOUT_ID!!)
+            addLayout(Information.LAYOUT_ID!!, Information.LAYOUT_HASH!!)
         }
     }
 
     private fun addOriginalWord(word: String) {
         val contentValues = ContentValues()
-        contentValues.put(KeteContract.OriginalDictionary.COL_WORD, word)
+        contentValues.put(KeteContract.OrgDictionary.COL_WORD, word)
         writableDatabase.insert(KeteContract.TABLE_ORIGINAL_DICTIONARY, null, contentValues)
     }
 
     private fun addAlternativeWord(alternativeWord: String, inputMethod: Int, originalWord: String) {
         val contentValues = ContentValues()
 
-        contentValues.put(KeteContract.AlternativeDictionary.COL_ALT_WORD, alternativeWord)
-        contentValues.put(KeteContract.AlternativeDictionary.COL_INPUT_METHOD, inputMethod)
-        contentValues.put(KeteContract.AlternativeDictionary.COL_ORG_WORD, originalWord)
+        contentValues.put(KeteContract.AltDictionary.COL_ALT_WORD, alternativeWord)
+        contentValues.put(KeteContract.AltDictionary.COL_INPUT_METHOD, inputMethod)
+        contentValues.put(KeteContract.AltDictionary.COL_ORG_WORD, originalWord)
 
         writableDatabase.insert(KeteContract.TABLE_ALTERNATIVE_DICTIONARY, null, contentValues)
     }
@@ -227,13 +257,23 @@ class SQLiteHelper(context: Context) : SQLiteOpenHelper(context, DB_NAME, null, 
         contentValues.put(KeteContract.Layout.COL_ID, layoutId)
         contentValues.put(KeteContract.Layout.COL_HASH, layoutHash)
 
-        writableDatabase.insert(KeteContract.TABLE_LAYOUT, null, contentValues)
+        writableDatabase.insertOrThrow(KeteContract.TABLE_LAYOUT, null, contentValues)
+    }
+
+    private fun addPoint(point: Point) {
+        val contentValues = ContentValues()
+        contentValues.put(KeteContract.Point.COL_X, point.x)
+        contentValues.put(KeteContract.Point.COL_Y, point.y)
+        try {
+            writableDatabase.insertOrThrow(KeteContract.TABLE_POINT, null, contentValues)
+        } catch (ignored: SQLException) {
+        }
     }
 
     private fun getLayoutHash(layoutId: String): String? {
         var result: String? = null
         val cursor = readableDatabase.query(KeteContract.TABLE_LAYOUT, arrayOf(KeteContract.Layout.COL_HASH),
-                                            "${KeteContract.Layout.COL_ID}=?", arrayOf(layoutId), null, null, null)
+                "${KeteContract.Layout.COL_ID}=?", arrayOf(layoutId), null, null, null)
         if (cursor.count != 0) {
             cursor.moveToFirst()
             val colHashIndex = cursor.getColumnIndex(KeteContract.Layout.COL_HASH)
@@ -245,7 +285,7 @@ class SQLiteHelper(context: Context) : SQLiteOpenHelper(context, DB_NAME, null, 
 
     private fun getInputMethodId(type: String): Int? {
         val cursor = readableDatabase.query(KeteContract.TABLE_INPUT_METHOD, arrayOf(KeteContract.InputMethod.COL_ID),
-                                            "${KeteContract.InputMethod.COL_TYPE}=?", arrayOf(type), null, null, null)
+                "${KeteContract.InputMethod.COL_TYPE}=?", arrayOf(type), null, null, null)
         val result = if (cursor.count == 0) null else {
             cursor.moveToFirst()
             cursor.getInt(
@@ -256,10 +296,13 @@ class SQLiteHelper(context: Context) : SQLiteOpenHelper(context, DB_NAME, null, 
     }
 
     private fun cleanLayout(layoutId: String) {
-        // Delete PointModel
+        writableDatabase.delete(KeteContract.TABLE_POINT_MODEL_DETAILS,
+                """
+                    ${KeteContract.PointModelDetails.COL_MODEL} IN (SELECT id from ${KeteContract.TABLE_POINT_MODEL}
+                        where ${KeteContract.PointModel.COL_LAYOUT}=?)
+                """.trimIndent(), arrayOf(layoutId))
         writableDatabase
                 .delete(KeteContract.TABLE_POINT_MODEL, "${KeteContract.PointModel.COL_LAYOUT}=?", arrayOf(layoutId))
-        // Delete Layout
         writableDatabase.delete(KeteContract.TABLE_LAYOUT, "${KeteContract.Layout.COL_ID}=?", arrayOf(layoutId))
     }
 }

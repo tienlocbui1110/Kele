@@ -3,73 +3,67 @@
   "id": "00001",
   "button": [
     {
-      "char": "1",
+      "char": "´",
       "width": 9.1,
+      "computing_char": "1",
       "height": 22.5,
       "x": 0,
       "y": 2
     },
     {
-      "char": "2",
+      "char": "`",
+      "computing_char": "2",
       "width": 9.1,
       "height": 22.5,
       "x": 10.1,
       "y": 2
     },
     {
-      "char": "3",
+      "char": "?",
+      "computing_char": "3",
       "width": 9.1,
       "height": 22.5,
       "x": 20.2,
       "y": 2
     },
     {
-      "char": "4",
+      "char": "~",
+      "computing_char": "4",
       "width": 9.1,
       "height": 22.5,
       "x": 30.3,
       "y": 2
     },
     {
-      "char": "5",
+      "char": ".",
+      "computing_char": "5",
       "width": 9.1,
       "height": 22.5,
       "x": 40.4,
       "y": 2
     },
     {
-      "char": "6",
+      "char": "^",
+      "computing_char": "6",
       "width": 9.1,
       "height": 22.5,
       "x": 50.5,
       "y": 2
     },
     {
-      "char": "7",
+      "char": " ̉",
+      "computing_char": "7",
       "width": 9.1,
       "height": 22.5,
       "x": 60.6,
       "y": 2
     },
     {
-      "char": "8",
-      "width": 9.1,
-      "height": 22.5,
-      "x": 70.7,
-      "y": 2
-    },
-    {
-      "char": "9",
+      "char": "-",
+      "computing_char": "9",
       "width": 9.1,
       "height": 22.5,
       "x": 80.8,
-      "y": 2
-    },
-    {
-      "char": "0",
-      "width": 9.1,
-      "height": 22.5,
-      "x": 90.9,
       "y": 2
     },
     {
