@@ -10,6 +10,8 @@ class Config {
     }
 
     companion object {
+        const val HOST = "http://192.168.1.2:3000"
+
         private var layout: String = Layout.QWERTY
 
         fun getLayoutAsset(): String {

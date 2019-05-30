@@ -1,0 +1,49 @@
+{
+    "$id": "http://kete.com/user.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "User",
+    "type": "object",
+    "properties": {
+        "layoutId": {
+            "type": "string",
+            "minLength": 1
+        },
+        "predicted": {
+            "type": "string",
+            "minLength": 1
+        },
+        "chosen": {
+            "type": "string",
+            "minLength": 1
+        },
+        "input_method": {
+            "type": "string",
+            "minLength": 1
+        },
+        "time": {
+            "type": "number",
+            "minimum": 1
+        },
+        "points": {
+            "type": "array",
+            "minItems": 2,
+            "items": {
+                "type": "object",
+                "properties": {
+                    "x": {
+                        "type": "number",
+                        "minimum": 0,
+                        "maximum": 100
+                    },
+                    "y": {
+                        "type": "number",
+                        "minimum": 0,
+                        "maximum": 100
+                    }
+                },
+                "required": ["x", "y"]
+            }
+        }
+    },
+    "required": ["layoutId", "predicted", "chosen", "input_method", "time", "points"]
+}

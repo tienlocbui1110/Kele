@@ -28,14 +28,17 @@ import com.lh.kete.algorithm.string.BoldString
 import com.lh.kete.config.Config
 import com.lh.kete.data.Information
 import com.lh.kete.data.KeteConfig
+import com.lh.kete.db.KeteContract
 import com.lh.kete.db.SQLiteHelper
 import com.lh.kete.listener.KeteGestureListener
 import com.lh.kete.listener.KeteGestureListenerAdapter
 import com.lh.kete.listener.OnWorkerThreadListener
+import com.lh.kete.network.UserTracking
 import com.lh.kete.threadpool.KeteExec
 import com.lh.kete.utils.KeteUtils
 import com.lh.kete.views.KeteButton
 import com.lh.kete.views.KeteLayout
+import java.lang.RuntimeException
 import java.lang.StringBuilder
 
 /**
@@ -127,7 +130,7 @@ class MainActivity : AppCompatActivity(), OnWorkerThreadListener {
         }
     }
 
-    private fun showErrorLayout(e: Exception) {
+    fun showErrorLayout(e: Exception) {
         if (Looper.myLooper() == Looper.getMainLooper()) {
             showErrorLayoutWithMessage(e.message)
         } else {
@@ -232,6 +235,7 @@ private class Presenter : Algorithm.Callback<PredictorResult> {
         mainView = view
 
         gestureListener = object : KeteGestureListenerAdapter() {
+            private var startTime: Long = 0L
             override fun onSwipe(startPos: MotionEvent, endPos: MotionEvent,
                                  startButton: KeteButton?, endButton: KeteButton?) {
                 super.onSwipe(startPos, endPos, startButton, endButton)
@@ -240,20 +244,28 @@ private class Presenter : Algorithm.Callback<PredictorResult> {
 
             override fun onPressDown(event: MotionEvent, button: KeteButton?) {
                 super.onPressDown(event, button)
+                startTime = System.nanoTime()
                 pathBuilder.appendPoint(getPercentagePosition(event.x, event.y))
 
             }
 
             override fun onKeyUp(event: MotionEvent) {
                 super.onKeyUp(event)
+                val endTime = System.nanoTime() - startTime
                 val path = pathBuilder.build()
                 pathBuilder.reset()
                 if (path.isValid()) {
                     KeteExec.doBackground(Runnable {
                         try {
-                            predictor.doCalculate(path, this@Presenter)
+                            val builder = UserTracking.Builder()
+                                    .addLayoutId(Information.LAYOUT_ID!!)
+                                    .addTime(endTime / 1000000f)
+                                    .addInputMethod(SQLiteHelper.VNI_LAST_INPUT_METHOD)
+                                    .addPoint(path.toPolylineModel().getPointList())
+                            predictor.doCalculate(builder, path, this@Presenter)
                         } catch (e: Exception) {
-                            mainView.showErrorLayoutWithMessage("Database error. Please delete data and try again.")
+                            e.printStackTrace()
+                            mainView.showErrorLayout(RuntimeException("Database error. Please delete data and try again."))
                         }
                     })
                 }
@@ -277,7 +289,12 @@ private class Presenter : Algorithm.Callback<PredictorResult> {
     }
 
     @AnyThread
-    override fun onDone(result: PredictorResult) {
+    override fun onDone(obj: Any?, result: PredictorResult) {
+        if (obj != null && obj is UserTracking.Builder) {
+           obj.addPredicted(result.getResult()[0].second)
+            obj.addChosen(result.getResult()[0].second)
+            obj.request()
+        }
         val stringList = result.getResult()
         val builder = StringBuilder()
         for (i in 0 until stringList.size) {
