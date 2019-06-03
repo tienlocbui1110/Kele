@@ -35,7 +35,7 @@ class Predictor : Algorithm<Path, PredictorResult> {
         listener.onCompleted()
     }
 
-    override fun doCalculate(path: Path, callback: Algorithm.Callback<PredictorResult>) {
+    override fun doCalculate(obj: Any?, path: Path, callback: Algorithm.Callback<PredictorResult>) {
         val userModel = path.toPolylineModel()
         val result = PredictorResult()
         val db = SQLiteHelper(MainApplication.getAppContext()).readableDatabase
@@ -113,7 +113,7 @@ class Predictor : Algorithm<Path, PredictorResult> {
         }
         cursor.close()
         db.close()
-        callback.onDone(result)
+        callback.onDone(obj, result)
     }
 
     private fun buildBaseModel(activity: Activity, listener: OnWorkerThreadListener) {

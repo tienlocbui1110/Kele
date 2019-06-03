@@ -14,6 +14,7 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.MotionEvent
 import android.view.View
+import android.widget.Button
 import android.widget.TextView
 import com.google.gson.GsonBuilder
 import com.lh.kete.MainApplication
@@ -32,11 +33,16 @@ import com.lh.kete.db.SQLiteHelper
 import com.lh.kete.listener.KeteGestureListener
 import com.lh.kete.listener.KeteGestureListenerAdapter
 import com.lh.kete.listener.OnWorkerThreadListener
+import com.lh.kete.network.UserTracking
 import com.lh.kete.threadpool.KeteExec
 import com.lh.kete.utils.KeteUtils
 import com.lh.kete.views.KeteButton
 import com.lh.kete.views.KeteLayout
+import java.lang.RuntimeException
 import java.lang.StringBuilder
+import android.text.InputType
+import android.widget.EditText
+
 
 /**
  * Created by Tien Loc Bui on 18/03/2019.
@@ -51,6 +57,14 @@ class MainActivity : AppCompatActivity(), OnWorkerThreadListener {
     private lateinit var mPresenter: Presenter
     private lateinit var keteConfig: KeteConfig
 
+    private lateinit var predictLayout: View
+    private lateinit var predictText1: Button
+    private lateinit var predictText2: Button
+    private lateinit var predictText3: Button
+    private lateinit var predictManual: Button
+
+    private var textPreviewerBuilder = StringBuilder()
+
     private var isLoaded = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -62,6 +76,14 @@ class MainActivity : AppCompatActivity(), OnWorkerThreadListener {
             loaderView = bind(R.id.loader_view)
             progressText = bind(R.id.progress_text_percentage) as TextView
             progressInfoText = bind(R.id.progress_info_text) as TextView
+            predictLayout = bind(R.id.text_predicted)
+            predictText1 = bind(R.id.predict1) as Button
+            predictText2 = bind(R.id.predict2) as Button
+            predictText3 = bind(R.id.predict3) as Button
+            predictManual = bind(R.id.predict_manual) as Button
+            predictManual.setOnClickListener {
+                showManualPredict()
+            }
             val jsonIntent = intent.getStringExtra(KeteConfig.KETE_STRING_EXTRAS) ?: null
             init(jsonIntent)
         } catch (e: Exception) {
@@ -127,7 +149,7 @@ class MainActivity : AppCompatActivity(), OnWorkerThreadListener {
         }
     }
 
-    private fun showErrorLayout(e: Exception) {
+    fun showErrorLayout(e: Exception) {
         if (Looper.myLooper() == Looper.getMainLooper()) {
             showErrorLayoutWithMessage(e.message)
         } else {
@@ -144,8 +166,126 @@ class MainActivity : AppCompatActivity(), OnWorkerThreadListener {
         textError.text = message?.let { it }
     }
 
-    fun setTextPreview(charSeq: String) {
-        textPreviewer.text = charSeq
+    private fun addTextPreview(charSeq: String) {
+        textPreviewerBuilder.append(" ").append(charSeq)
+        textPreviewer.text = textPreviewerBuilder.toString()
+    }
+
+    fun removeLatestString() {
+        if (textPreviewerBuilder.isNotEmpty()) {
+            textPreviewerBuilder.replace(textPreviewerBuilder.lastIndexOf(' '), textPreviewerBuilder.length, "")
+            textPreviewer.text = textPreviewerBuilder.toString()
+        }
+    }
+
+    // Track when show predict
+    private var userTrackingBuilder: Any? = null
+    // Save avgDistance of first predict => Add to builder when clean predict
+    private var firstAvgDistance: Float = 0f
+
+
+    fun showManualPredict() {
+        val dialogBuilder = AlertDialog.Builder(this)
+        dialogBuilder.setTitle("Từ dự đoán")
+
+        val input = EditText(this)
+        input.inputType = InputType.TYPE_CLASS_TEXT
+        dialogBuilder.setView(input)
+
+        dialogBuilder.setPositiveButton("OK") { _, _ ->
+            predictText1.setOnClickListener(null)
+            predictText2.setOnClickListener(null)
+            predictText3.setOnClickListener(null)
+            predictLayout.visibility = View.INVISIBLE
+            if (userTrackingBuilder != null && userTrackingBuilder is UserTracking.Builder) {
+                val userTracking = userTrackingBuilder as UserTracking.Builder
+                userTracking.addChosen(input.text.toString().toUpperCase())
+                        .addAvgDistance(-1f)
+                KeteExec.doBackground(Runnable {
+                    userTracking.request()
+                })
+                // Add text
+                addTextPreview(input.text.toString().toUpperCase())
+            }
+        }
+        dialogBuilder.setNegativeButton("Cancel") { dialog, _ ->
+            dialog.cancel()
+        }
+
+        dialogBuilder.show()
+    }
+
+    fun showPredict(result: PredictorResult, obj: Any?) {
+        userTrackingBuilder = obj
+        val predictorOnClick = View.OnClickListener {
+            val idx: Int
+            when {
+                it.id == R.id.predict1 -> {
+                    idx = 0
+                    addTextPreview(result.getResult()[0].second)
+                }
+                it.id == R.id.predict2 -> {
+                    idx = 1
+                    addTextPreview(result.getResult()[1].second)
+                }
+                else -> {
+                    idx = 2
+                    addTextPreview(result.getResult()[2].second)
+                }
+            }
+            if (obj != null && obj is UserTracking.Builder) {
+                KeteExec.doBackground(Runnable {
+                    obj.addPredicted(result.getResult()[0].second)
+                    obj.addChosen(result.getResult()[idx].second)
+                            .addAvgDistance(result.getResult()[idx].first)
+                    obj.request()
+                })
+            }
+            predictLayout.visibility = View.INVISIBLE
+        }
+
+        predictText1.visibility = View.GONE
+        predictText2.visibility = View.GONE
+        predictText3.visibility = View.GONE
+
+        val len = result.getResult().size
+        if (len > 0) {
+            predictText1.text = result.getResult()[0].second
+            predictText1.visibility = View.VISIBLE
+            firstAvgDistance = result.getResult()[0].first
+        }
+        if (len > 1) {
+            predictText2.text = result.getResult()[1].second
+            predictText2.visibility = View.VISIBLE
+        }
+        if (len > 2) {
+            predictText3.text = result.getResult()[2].second
+            predictText3.visibility = View.VISIBLE
+        }
+        predictText1.setOnClickListener(predictorOnClick)
+        predictText2.setOnClickListener(predictorOnClick)
+        predictText3.setOnClickListener(predictorOnClick)
+        predictLayout.visibility = View.VISIBLE
+    }
+
+    fun clearPredict() {
+        if (predictLayout.visibility == View.VISIBLE) {
+            if (userTrackingBuilder != null && userTrackingBuilder is UserTracking.Builder && predictText1.visibility == View.VISIBLE) {
+                val userTracking = userTrackingBuilder as UserTracking.Builder
+                userTracking.addPredicted(predictText1.text.toString())
+                userTracking.addChosen(predictText1.text.toString())
+                        .addAvgDistance(firstAvgDistance)
+                KeteExec.doBackground(Runnable {
+                    userTracking.request()
+                })
+                // Add text
+                addTextPreview(predictText1.text.toString())
+            }
+        }
+        predictText1.setOnClickListener(null)
+        predictText2.setOnClickListener(null)
+        predictText3.setOnClickListener(null)
+        predictLayout.visibility = View.INVISIBLE
     }
 
     @UiThread
@@ -163,20 +303,13 @@ class MainActivity : AppCompatActivity(), OnWorkerThreadListener {
         infoBuilder.append("Layout id:              ")
                 .append(BoldString(Information.LAYOUT_ID ?: "unknown"))
                 .newLine()
-                .append("Average distance:  ")
-                .append(BoldString(Information.AVERAGE_DISTANCE?.toString()
-                        ?: "invalid")).append("px")
-                .newLine()
-                .append("Conflict:               ")
-                .append(BoldString(Information.CONFLICT_PERCENT?.toString()
-                        ?: "invalid")).append("%")
-                .newLine()
 
         AlertDialog.Builder(this).setMessage(infoBuilder.toCharSequence())
                 .setNeutralButton("OK", null).create().show()
     }
 
     private fun init(jsonIntent: String?) {
+        predictLayout.visibility = View.INVISIBLE
         // Step 1: Show loading + set isLoaded = false
         loaderView.visibility = View.VISIBLE
         setProgressText(0)
@@ -224,6 +357,8 @@ private class Presenter : Algorithm.Callback<PredictorResult> {
     val predictor: Predictor
     val mainView: MainActivity
 
+    private var firstButton: KeteButton? = null
+
     @WorkerThread
     constructor(view: MainActivity, keteConfig: KeteConfig, threadListener: OnWorkerThreadListener) {
         //Step 1: Init database
@@ -232,6 +367,7 @@ private class Presenter : Algorithm.Callback<PredictorResult> {
         mainView = view
 
         gestureListener = object : KeteGestureListenerAdapter() {
+            private var startTime: Long = 0L
             override fun onSwipe(startPos: MotionEvent, endPos: MotionEvent,
                                  startButton: KeteButton?, endButton: KeteButton?) {
                 super.onSwipe(startPos, endPos, startButton, endButton)
@@ -240,22 +376,38 @@ private class Presenter : Algorithm.Callback<PredictorResult> {
 
             override fun onPressDown(event: MotionEvent, button: KeteButton?) {
                 super.onPressDown(event, button)
+                firstButton = button
+                startTime = System.nanoTime()
                 pathBuilder.appendPoint(getPercentagePosition(event.x, event.y))
 
             }
 
             override fun onKeyUp(event: MotionEvent) {
                 super.onKeyUp(event)
+                val endTime = System.nanoTime() - startTime
                 val path = pathBuilder.build()
                 pathBuilder.reset()
+                mainView.clearPredict()
                 if (path.isValid()) {
                     KeteExec.doBackground(Runnable {
                         try {
-                            predictor.doCalculate(path, this@Presenter)
+                            val builder = UserTracking.Builder()
+                                    .addLayoutId(Information.LAYOUT_ID!!)
+                                    .addTime(endTime / 1000000f)
+                                    .addInputMethod(SQLiteHelper.VNI_LAST_INPUT_METHOD)
+                                    .addPoint(path.toPolylineModel().getPointList())
+                            predictor.doCalculate(builder, path, this@Presenter)
                         } catch (e: Exception) {
-                            mainView.showErrorLayoutWithMessage("Database error. Please delete data and try again.")
+                            e.printStackTrace()
+                            mainView.showErrorLayout(RuntimeException("Database error. Please delete data and try again."))
                         }
                     })
+                } else {
+                    firstButton?.let {
+                        if ("DEL" == it.getConfig()?.char) {
+                            mainView.removeLatestString()
+                        }
+                    }
                 }
             }
         }
@@ -277,19 +429,9 @@ private class Presenter : Algorithm.Callback<PredictorResult> {
     }
 
     @AnyThread
-    override fun onDone(result: PredictorResult) {
-        val stringList = result.getResult()
-        val builder = StringBuilder()
-        for (i in 0 until stringList.size) {
-            builder.append(
-                    String.format(
-                            "Predict: %s  -- Average distance: %f", stringList[i].second,
-                            stringList[i].first
-                    )
-            ).append("\n")
-        }
+    override fun onDone(obj: Any?, result: PredictorResult) {
         Handler(Looper.getMainLooper()).post {
-            mainView.setTextPreview(builder.toString())
+            mainView.showPredict(result, obj)
         }
     }
 }

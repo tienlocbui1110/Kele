@@ -17,7 +17,7 @@ class SQLiteHelper(context: Context) : SQLiteOpenHelper(context, DB_NAME, null, 
 
         private const val DICTIONARY_PATH = "dictionary.txt"
         private const val ALTERNATIVE_DIC_VNI_LAST = "vni_dic.txt"
-        private const val VNI_LAST_INPUT_METHOD = "vni_sign_in_last"
+        const val VNI_LAST_INPUT_METHOD = "vni_sign_in_last"
 
         private const val CREATE_TABLE_LAYOUT = """CREATE TABLE ${KeteContract.TABLE_LAYOUT}(
             ${KeteContract.Layout.COL_ID} TEXT PRIMARY KEY NOT NULL,
@@ -182,9 +182,10 @@ class SQLiteHelper(context: Context) : SQLiteOpenHelper(context, DB_NAME, null, 
 
         // Step 2: checking input_method
         count = getRowCount(KeteContract.TABLE_INPUT_METHOD)
+        var inputMethodId = -1L
         if (count == 0) {
             // Add default method
-            addInputMethod(VNI_LAST_INPUT_METHOD)
+            inputMethodId = addInputMethod(VNI_LAST_INPUT_METHOD)
         }
         // Step 3: checking alternative dictionary
         count = getRowCount(KeteContract.TABLE_ALTERNATIVE_DICTIONARY)
@@ -192,8 +193,9 @@ class SQLiteHelper(context: Context) : SQLiteOpenHelper(context, DB_NAME, null, 
             val infoText = "Rebuild swipe database"
             // Add dictionary to database from asset
             val words = mContext.assets.open(ALTERNATIVE_DIC_VNI_LAST).bufferedReader().readLines()
-            val inputMethod = getInputMethodId(VNI_LAST_INPUT_METHOD) ?: throw RuntimeException(
-                    "input method $VNI_LAST_INPUT_METHOD not found in database.")
+            inputMethodId = if (inputMethodId != -1L) inputMethodId else
+                getInputMethodId(VNI_LAST_INPUT_METHOD) ?: throw RuntimeException(
+                        "input method $VNI_LAST_INPUT_METHOD not found in database.")
             val iterator = words.iterator()
             var i = 0
             val wordLen = words.size
@@ -207,7 +209,7 @@ class SQLiteHelper(context: Context) : SQLiteOpenHelper(context, DB_NAME, null, 
                     val splitWord = word.split(" - ")
                     if (splitWord.size != 2)
                         continue
-                    addAlternativeWord(splitWord[1], inputMethod, splitWord[0])
+                    addAlternativeWord(splitWord[1], inputMethodId, splitWord[0])
                     if (i % 100 == 0)
                         threadListener.onUpdate(i * 100 / wordLen, infoText)
                 }
@@ -235,20 +237,20 @@ class SQLiteHelper(context: Context) : SQLiteOpenHelper(context, DB_NAME, null, 
         writableDatabase.insert(KeteContract.TABLE_ORIGINAL_DICTIONARY, null, contentValues)
     }
 
-    private fun addAlternativeWord(alternativeWord: String, inputMethod: Int, originalWord: String) {
+    private fun addAlternativeWord(alternativeWord: String, inputMethodId: Long, originalWord: String) {
         val contentValues = ContentValues()
 
         contentValues.put(KeteContract.AltDictionary.COL_ALT_WORD, alternativeWord)
-        contentValues.put(KeteContract.AltDictionary.COL_INPUT_METHOD, inputMethod)
+        contentValues.put(KeteContract.AltDictionary.COL_INPUT_METHOD, inputMethodId)
         contentValues.put(KeteContract.AltDictionary.COL_ORG_WORD, originalWord)
 
         writableDatabase.insert(KeteContract.TABLE_ALTERNATIVE_DICTIONARY, null, contentValues)
     }
 
-    private fun addInputMethod(inputMethod: String) {
+    private fun addInputMethod(inputMethod: String): Long {
         val contentValues = ContentValues()
         contentValues.put(KeteContract.InputMethod.COL_TYPE, inputMethod)
-        writableDatabase.insert(KeteContract.TABLE_INPUT_METHOD, null, contentValues)
+        return writableDatabase.insert(KeteContract.TABLE_INPUT_METHOD, null, contentValues)
     }
 
     private fun addLayout(layoutId: String, layoutHash: String) {
@@ -283,12 +285,12 @@ class SQLiteHelper(context: Context) : SQLiteOpenHelper(context, DB_NAME, null, 
         return result
     }
 
-    private fun getInputMethodId(type: String): Int? {
+    private fun getInputMethodId(type: String): Long? {
         val cursor = readableDatabase.query(KeteContract.TABLE_INPUT_METHOD, arrayOf(KeteContract.InputMethod.COL_ID),
                 "${KeteContract.InputMethod.COL_TYPE}=?", arrayOf(type), null, null, null)
         val result = if (cursor.count == 0) null else {
             cursor.moveToFirst()
-            cursor.getInt(
+            cursor.getLong(
                     cursor.getColumnIndex(KeteContract.InputMethod.COL_ID))
         }
         cursor.close()

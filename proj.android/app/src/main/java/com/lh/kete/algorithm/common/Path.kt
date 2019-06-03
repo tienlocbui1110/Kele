@@ -5,7 +5,7 @@ import java.util.*
 
 class Path private constructor(private val mPoints: List<Point>) {
     private var mLength: Float = 0f
-
+    private var polylineCached: PolylineModel? = null
     init {
         if (mPoints.size <= 1) {
             mLength = 0f
@@ -17,7 +17,8 @@ class Path private constructor(private val mPoints: List<Point>) {
     }
 
     fun toPolylineModel(): PolylineModel {
-        return PolylineModel.Builder(this).build()
+        polylineCached = polylineCached?:PolylineModel.Builder(this).build()
+        return polylineCached?: PolylineModel.Builder(this).build()
     }
 
     // Unit: %

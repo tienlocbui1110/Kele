@@ -1,0 +1,17 @@
+{
+    "layoutId": "00001",
+    "time": 3.7,
+    "predicted": "CHÀO",
+    "chosen": "CHÀO",
+    "input_method": "vni_last_method",
+    "points": [
+        {
+            "x": 2.2,
+            "y": 4.4
+        },
+        {
+            "x": 2.3,
+            "y": 4.5
+        }
+    ]
+}

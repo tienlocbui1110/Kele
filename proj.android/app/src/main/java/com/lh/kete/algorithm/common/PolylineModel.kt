@@ -20,7 +20,7 @@ class PolylineModel private constructor(private val mPoints: ArrayList<Point>, p
     }
 
     companion object {
-        const val N_POINTS: Int = 25
+        const val N_POINTS: Int = 50
     }
 
     class Builder {
@@ -67,11 +67,14 @@ class PolylineModel private constructor(private val mPoints: ArrayList<Point>, p
                 }
 
                 // Nếu không có nextPoint thì lấy point cuối cùng - Có thể length sai, hoặc sai số từ float
-                if (nextPoint >= pointList.size)
+                if (nextPoint >= pointList.size) {
+                    nPoints.add(pointList.last())
                     break
+                }
                 // Lấy iterPoint làm điểm tiếp theo
-                else
+                else {
                     nPoints.add(Point(iterPoint.x, iterPoint.y))
+                }
             }
         }
 
