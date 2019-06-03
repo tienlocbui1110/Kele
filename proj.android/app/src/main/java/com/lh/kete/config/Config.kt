@@ -12,11 +12,9 @@ class Config {
     }
 
     companion object {
-        val HOST = if (BuildConfig.DEBUG) {
-            "http://192.168.1.2:3000"
-        } else {
-            "http://35.240.187.44"
-        }
+//        const val HOST = "http://192.168.1.2:3000"
+        const val HOST = "http://35.240.187.44"
+
 
         private var layout: String = Layout.QWERTY
 

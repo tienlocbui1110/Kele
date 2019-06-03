@@ -47,5 +47,5 @@
             }
         }
     },
-    "required": ["layoutId", "predicted", "chosen", "input_method", "time", "points"]
+    "required": ["layoutId", "chosen", "input_method", "time", "points"]
 }
