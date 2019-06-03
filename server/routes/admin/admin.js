@@ -351,7 +351,7 @@ function calculateConflict(layoutId, inputMethodId, n) {
             for (var i = 0; i < models.length - 1; i++)
                 for (var j = i + 1; j < models.length; j++) {
                     let avg = Algorithm.averageDistanceFromTwoModel(models[i], models[j])
-                    if (avg <= 0.1) {
+                    if (avg <= 0.25) {
                         Conflict.insert(pointModels[i].id, pointModels[j].id, avg, (err, result) => {
                             if (err) {
                                 console.log(`Conflict inserting error: ${err}`)
