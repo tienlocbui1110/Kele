@@ -17,4 +17,8 @@ PointModelDetails.insert = (modelId, points, callback) => {
     })
 }
 
+PointModelDetails.getFromModelSortIdx = (modelId, callback) => {
+    db.query(`SELECT * FROM ${TABLE_POINT_MODEL_DETAILS} WHERE model=? ORDER BY idx`, [modelId], callback)
+}
+
 module.exports = PointModelDetails

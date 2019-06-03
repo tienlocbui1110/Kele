@@ -1,5 +1,7 @@
 package com.lh.kete.config
 
+import com.lh.kete.BuildConfig
+
 class Config {
     //    private var layout
     class Layout {
@@ -10,7 +12,11 @@ class Config {
     }
 
     companion object {
-        const val HOST = "http://192.168.1.2:3000"
+        val HOST = if (BuildConfig.DEBUG) {
+            "http://192.168.1.2:3000"
+        } else {
+            "http://35.240.187.44"
+        }
 
         private var layout: String = Layout.QWERTY
 

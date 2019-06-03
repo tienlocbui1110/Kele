@@ -5,4 +5,5 @@
     <string name="layout_qwerty">QWERTY</string>
     <string name="layout_modern">MODERN</string>
     <string name="menu_show_info">Info</string>
+    <string name="text_different">[Khác]</string>
 </resources>

@@ -10,18 +10,23 @@ const PointModel = require("../../model/point_model")
 var isReady = false
 var validator;
 
-fs.readFile("data/schema-validator/schema_user.json", (err, data) => {
+fs.readFile("data/schema-validator/schema_user.json", "utf-8", (err, data) => {
     if (err) throw err
     validator = ajv.compile(JSON.parse(data))
+    isReady = true
 })
 
 router.post("/", (req, res) => {
+    if (!isReady) {
+        res.send("Not ready.")
+        return
+    }
     let data = req.body
     var valid = validator(data)
     if (!valid) {
         let errorJSON = JSON.stringify({ "User": validator.errors }, null, 4)
         console.log(errorJSON)
-        res.statusCode = 400
+        res.status(400)
         res.send(errorJSON)
     } else {
         // Post valid. Insert to UserTracking

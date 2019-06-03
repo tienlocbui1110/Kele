@@ -1,0 +1,57 @@
+{
+    "$id": "http://kete.com/layout.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Layout",
+    "type": "object",
+    "properties": {
+        "version": {
+            "type": "integer"
+        },
+        "id": {
+            "type": "string",
+            "minLength": 1
+        },
+        "button": {
+            "type": "array",
+            "minLength": 2,
+            "items": {
+                "type": "object",
+                "properties": {
+                    "char": {
+                        "type": "string",
+                        "minLength": 1
+                    },
+                    "computing_char": {
+                        "type": "string",
+                        "minLength": 1
+                    },
+                    "width": {
+                        "type": "number",
+                        "minimum": 0,
+                        "maximum": 100
+                    },
+                    "height": {
+                        "type": "number",
+                        "minimum": 0,
+                        "maximum": 100
+                    },
+                    "x": {
+                        "type": "number",
+                        "minimum": 0,
+                        "maximum": 100
+                    },
+                    "y": {
+                        "type": "number",
+                        "minimum": 0,
+                        "maximum": 100
+                    }
+                },
+                "required": ["width", "height", "x", "y"]
+            }
+        }
+    },
+    "required": [
+        "id",
+        "button"
+    ]
+}

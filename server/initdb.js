@@ -78,6 +78,7 @@ db.connect((err, connection) => {
         layout VARCHAR(10),
         points INT UNSIGNED,
         time INT,
+        avg_distance FLOAT,
         input_method TINYINT UNSIGNED NOT NULL,
         predicted VARCHAR(12) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin,
         user_chosen VARCHAR(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin,

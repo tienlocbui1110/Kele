@@ -129,6 +129,34 @@
       "y": 26.5
     },
     {
+      "char": "F",
+      "width": 5,
+      "height": 10,
+      "x": 0,
+      "y": 60.25
+    },
+    {
+      "char": "J",
+      "width": 5,
+      "height": 10,
+      "x": 6,
+      "y": 60.25
+    },
+    {
+      "char": "W",
+      "width": 5,
+      "height": 10,
+      "x": 12,
+      "y": 60.25
+    },
+    {
+      "char": "Z",
+      "width": 5,
+      "height": 10,
+      "x": 18,
+      "y": 60.25
+    },
+    {
       "char": "S",
       "width": 9.1,
       "height": 22.5,
@@ -157,70 +185,79 @@
       "y": 51.0
     },
     {
-      "char": "1",
+      "char": "´",
+      "computing_char": "1",
       "width": 9.1,
       "height": 22.5,
       "x": 0,
       "y": 75.5
     },
     {
-      "char": "2",
+      "char": "`",
+      "computing_char": "2",
       "width": 9.1,
       "height": 22.5,
       "x": 10.1,
       "y": 75.5
     },
     {
-      "char": "3",
+      "char": "?",
+      "computing_char": "3",
       "width": 9.1,
       "height": 22.5,
       "x": 20.2,
       "y": 75.5
     },
     {
-      "char": "4",
+      "char": "~",
+      "computing_char": "4",
       "width": 9.1,
       "height": 22.5,
       "x": 30.3,
       "y": 75.5
     },
     {
-      "char": "5",
+      "char": ".",
+      "computing_char": "5",
       "width": 9.1,
       "height": 22.5,
       "x": 40.4,
       "y": 75.5
     },
     {
-      "char": "6",
+      "char": "^",
+      "computing_char": "6",
       "width": 9.1,
       "height": 22.5,
       "x": 50.5,
       "y": 75.5
     },
     {
-      "char": "7",
+      "char": " ̉",
+      "computing_char": "7",
       "width": 9.1,
       "height": 22.5,
       "x": 60.6,
       "y": 75.5
     },
     {
-      "char": "8",
+      "char": "ˇ",
+      "computing_char": "8",
       "width": 9.1,
       "height": 22.5,
       "x": 70.7,
       "y": 75.5
     },
     {
-      "char": "9",
+      "char": "-",
+      "computing_char": "9",
       "width": 9.1,
       "height": 22.5,
       "x": 80.8,
       "y": 75.5
     },
     {
-      "char": "0",
+      "char": "DEL",
       "width": 9.1,
       "height": 22.5,
       "x": 90.9,

@@ -12,7 +12,7 @@ PointModel.insert = (data, points, callback) => {
     data.n = points.length
     data.first_x = points[0].x
     data.first_y = points[0].y
-    db.query(`INSERT INTO ${TABLE_POINT_MODEL}(layout, n, first_x, first_y, word, input_method, type) VALUES ?`, [[[data.layout, data.n, data.first_x, data.first_y, data.word, data.input_method, data.input_method]]], (err, result) => {
+    db.query(`INSERT INTO ${TABLE_POINT_MODEL}(layout, n, first_x, first_y, word, input_method, type) VALUES ?`, [[[data.layout, data.n, data.first_x, data.first_y, data.word, data.input_method, data.type]]], (err, result) => {
         if (err) {
             callback(err)
             return
@@ -31,6 +31,10 @@ PointModel.insert = (data, points, callback) => {
             callback(err, result)
         }
     })
+}
+
+PointModel.get = (layoutId, n, input_method, type, callback) => {
+    db.query(`SELECT * FROM ${TABLE_POINT_MODEL} WHERE layout=? AND n=? AND input_method=? AND type=?`, [layoutId,n, input_method, type], callback)
 }
 
 module.exports = PointModel
