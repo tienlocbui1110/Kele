@@ -6,10 +6,9 @@ import com.lh.kete.config.Config
 import okhttp3.MediaType
 import okhttp3.OkHttpClient
 import okhttp3.Request
-import okhttp3.RequestBody.Companion.toRequestBody
+import okhttp3.RequestBody
 import org.json.JSONArray
 import org.json.JSONObject
-import java.lang.Exception
 import java.util.concurrent.TimeUnit
 
 
@@ -69,7 +68,7 @@ class UserTracking {
             if (!isRequest) {
                 try {
                     isRequest = true
-                    val body = obj.toString().toRequestBody(JSON_TYPE)
+                    val body = RequestBody.create(JSON_TYPE, obj.toString())
                     val request = Request.Builder()
                             .url(Config.HOST + "/user")
                             .post(body)
