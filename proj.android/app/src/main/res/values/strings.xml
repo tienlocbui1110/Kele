@@ -4,6 +4,8 @@
     <string name="kete_no_config">Keyboard had no config!</string>
     <string name="layout_qwerty">QWERTY</string>
     <string name="layout_modern">MODERN</string>
-    <string name="menu_show_info">Info</string>
+    <string name="menu_setting">Setting</string>
     <string name="text_different">[Khác]</string>
+    <string name="layout_prefs">layout_prefs</string>
+    <string name="points_prefs">points_prefs</string>
 </resources>

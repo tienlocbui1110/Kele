@@ -4,15 +4,11 @@ import com.lh.kete.utils.KeteUtils
 import java.lang.RuntimeException
 import java.lang.StringBuilder
 
-class PolylineModel private constructor(private val mPoints: ArrayList<Point>, private val mLength: Float) {
+class PolylineModel private constructor(private val mPoints: ArrayList<Point>) {
 
     // Unit: %
     internal fun getPointList(): List<Point> {
         return mPoints
-    }
-
-    fun getLength(): Float {
-        return mLength
     }
 
     fun isValid(): Boolean {
@@ -20,16 +16,16 @@ class PolylineModel private constructor(private val mPoints: ArrayList<Point>, p
     }
 
     companion object {
-        const val N_POINTS: Int = 50
+        var N_POINTS: Int = 0
     }
 
     class Builder {
         private var nPoints = ArrayList<Point>()
         private var mLength: Float
 
-        constructor(points: ArrayList<Point>, len: Float) {
+        constructor(points: ArrayList<Point>) {
             this.nPoints = points
-            mLength = len
+            mLength = 0f
         }
 
         constructor(path: Path) {
@@ -79,7 +75,7 @@ class PolylineModel private constructor(private val mPoints: ArrayList<Point>, p
         }
 
         fun build(): PolylineModel {
-            return PolylineModel(nPoints, mLength)
+            return PolylineModel(nPoints)
         }
     }
 }

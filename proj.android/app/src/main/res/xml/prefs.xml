@@ -1,0 +1,19 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:key="root">
+
+    <ListPreference
+        android:entries="@array/layout_prefs_name"
+        android:entryValues="@array/layout_prefs_value"
+        android:key="@string/layout_prefs"
+        android:title="Chọn layout"
+        app:iconSpaceReserved="false" />
+
+    <ListPreference
+        android:entries="@array/points_prefs_value"
+        android:entryValues="@array/points_prefs_value"
+        android:key="@string/points_prefs"
+        android:title="Số lượng điểm"
+        app:iconSpaceReserved="false" />
+
+</PreferenceScreen>

@@ -21,6 +21,8 @@ class Predictor : Algorithm<Path, PredictorResult> {
     private var nOperation = 0
     private val FLOAT_ERROR = 0.03f
 
+    private val memModel = ArrayList<Pair<PolylineModel, String>>()
+
     constructor(activity: MainActivity, kete: KeteConfig, listener: OnWorkerThreadListener) {
         //kete to point"
         for (i in 0 until kete.buttonConfig.size) {
@@ -32,10 +34,46 @@ class Predictor : Algorithm<Path, PredictorResult> {
             buttonMapper[button.computingChar ?: button.char] = Point(fX, fY)
         }
         buildBaseModel(activity, listener)
+        buildMemModel(activity, listener)
         listener.onCompleted()
     }
 
     override fun doCalculate(obj: Any?, path: Path, callback: Algorithm.Callback<PredictorResult>) {
+//        doCalculateInDatabase(obj, path, callback)
+        doCalculateWithMem(obj, path, callback)
+    }
+
+    private fun doCalculateWithMem(obj: Any?, path: Path, callback: Algorithm.Callback<PredictorResult>) {
+        // Predict
+        val userModel = path.toPolylineModel()
+        val result = PredictorResult()
+        val xRange = 10f
+        val yRange = 20f
+        val minX = userModel.getPointList()[0].x - xRange
+        val maxX = userModel.getPointList()[0].x + xRange
+        val minY = userModel.getPointList()[0].y - yRange
+        val maxY = userModel.getPointList()[0].y + yRange
+
+        for (i in 0 until memModel.size) {
+            val baseModel = memModel[i].first
+            val predictWord = memModel[i].second
+            if (baseModel.getPointList()[0].x in minX..maxX && baseModel.getPointList()[0].y in minY..maxY) {
+                var avgDistance = 0f
+                for (j in 0 until PolylineModel.N_POINTS) {
+                    avgDistance += KeteUtils.distance(
+                            userModel.getPointList()[j].x,
+                            userModel.getPointList()[j].y,
+                            baseModel.getPointList()[j].x,
+                            baseModel.getPointList()[j].y
+                    )
+                }
+                result.addResult(predictWord, avgDistance / PolylineModel.N_POINTS)
+            }
+        }
+        callback.onDone(obj, result)
+    }
+
+    private fun doCalculateInDatabase(obj: Any?, path: Path, callback: Algorithm.Callback<PredictorResult>) {
         val userModel = path.toPolylineModel()
         val result = PredictorResult()
         val db = SQLiteHelper(MainApplication.getAppContext()).readableDatabase
@@ -97,7 +135,7 @@ class Predictor : Algorithm<Path, PredictorResult> {
             }
 
             // Predict
-            val baseModel = PolylineModel.Builder(points, cursor.getFloat(nIdx)).build()
+            val baseModel = PolylineModel.Builder(points).build()
             val predictWord = cursor.getString(originIdx)
             var avgDistance = 0f
             for (i in 0 until PolylineModel.N_POINTS) {
@@ -122,7 +160,8 @@ class Predictor : Algorithm<Path, PredictorResult> {
         // Check if current config have Point Model
         val pointCursor = db.rawQuery("""
             SELECT * FROM ${KeteContract.TABLE_POINT_MODEL}
-            WHERE ${KeteContract.PointModel.COL_LAYOUT} = "${Information.LAYOUT_ID}"
+            WHERE ${KeteContract.PointModel.COL_LAYOUT} = "${Information.LAYOUT_ID}" AND
+                    ${KeteContract.PointModel.COL_N} = ${PolylineModel.N_POINTS}
         """.trimIndent(), null)
         // Database doesn't have model
         if (pointCursor.count == 0) {
@@ -156,6 +195,65 @@ class Predictor : Algorithm<Path, PredictorResult> {
             }
         }
         pointCursor.close()
+        dbHelper.close()
+    }
+
+    private fun buildMemModel(activity: Activity, listener: OnWorkerThreadListener) {
+        val dbHelper = SQLiteHelper(activity)
+        val db = dbHelper.writableDatabase
+
+        val cursor = db.rawQuery("""
+            SELECT ${KeteContract.PointModel.COL_ID}, ${KeteContract.PointModel.COL_N}, ${KeteContract.AltDictionary.COL_ORG_WORD}
+            FROM ${KeteContract.TABLE_POINT_MODEL} model JOIN ${KeteContract.TABLE_ALTERNATIVE_DICTIONARY} dic
+            ON model.${KeteContract.PointModel.COL_WORD} = dic.${KeteContract.AltDictionary.COL_ALT_WORD}
+                AND model.${KeteContract.PointModel.COL_INPUT_METHOD} = dic.${KeteContract.AltDictionary.COL_INPUT_METHOD}
+                AND model.${KeteContract.PointModel.COL_N} = ${PolylineModel.N_POINTS}
+            """.trimIndent(), null)
+
+        val modelIdIdx = cursor.getColumnIndex(KeteContract.PointModel.COL_ID)
+        val originIdx = cursor.getColumnIndex(KeteContract.AltDictionary.COL_ORG_WORD)
+        val nIdx = cursor.getColumnIndex(KeteContract.PointModel.COL_N)
+
+        while (!cursor.isLast) {
+            cursor.moveToNext()
+            val pointId = cursor.getInt(modelIdIdx)
+            // Query point at polyline
+            val cursorDetails = db.rawQuery("""
+            SELECT ${KeteContract.PointModelDetails.COL_INDEX}, ${KeteContract.PointModelDetails.COL_X},
+                    ${KeteContract.PointModelDetails.COL_Y}
+            FROM ${KeteContract.TABLE_POINT_MODEL_DETAILS}
+            WHERE ${KeteContract.PointModelDetails.COL_MODEL}=?
+        """.trimIndent(), arrayOf(pointId.toString()))
+            if (cursorDetails.count == 0) {
+                cursorDetails.close()
+                continue
+            }
+
+            // Construct ArrayList
+            val points = arrayListOf<Point>()
+            for (i in 0 until cursor.getInt(nIdx))
+                points.add(Point(0f, 0f))
+
+
+            val iIdx = cursorDetails.getColumnIndex(KeteContract.PointModelDetails.COL_INDEX)
+            val xIdx = cursorDetails.getColumnIndex(KeteContract.PointModelDetails.COL_X)
+            val yIdx = cursorDetails.getColumnIndex(KeteContract.PointModelDetails.COL_Y)
+            while (!cursorDetails.isLast) {
+                cursorDetails.moveToNext()
+                val x = cursorDetails.getFloat(xIdx)
+                val y = cursorDetails.getFloat(yIdx)
+                val idx = cursorDetails.getInt(iIdx)
+                points[idx] = Point(x, y)
+            }
+
+            // Predict
+            val baseModel = PolylineModel.Builder(points).build()
+            val predictWord = cursor.getString(originIdx)
+            memModel.add(Pair(baseModel, predictWord))
+            listener.onUpdate((cursor.position * 100f / cursor.count).toInt(), "Building memory model...")
+            cursorDetails.close()
+        }
+        cursor.close()
         dbHelper.close()
     }
 

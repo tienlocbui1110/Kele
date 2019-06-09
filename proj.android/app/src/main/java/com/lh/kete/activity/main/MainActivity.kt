@@ -1,31 +1,32 @@
 package com.lh.kete.activity.main
 
+import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import android.support.annotation.AnyThread
-import android.support.annotation.IdRes
-import android.support.annotation.MainThread
-import android.support.annotation.UiThread
-import android.support.annotation.WorkerThread
+import android.support.annotation.*
 import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
+import android.support.v7.preference.PreferenceManager
+import android.text.InputType
 import android.view.Menu
 import android.view.MenuItem
 import android.view.MotionEvent
 import android.view.View
 import android.widget.Button
+import android.widget.EditText
 import android.widget.TextView
 import com.google.gson.GsonBuilder
 import com.lh.kete.MainApplication
 import com.lh.kete.R
+import com.lh.kete.activity.pref.SettingActivity
 import com.lh.kete.algorithm.Algorithm
 import com.lh.kete.algorithm.common.Path
 import com.lh.kete.algorithm.common.Point
+import com.lh.kete.algorithm.common.PolylineModel
 import com.lh.kete.algorithm.simplegesture.Predictor
 import com.lh.kete.algorithm.simplegesture.PredictorResult
-import com.lh.kete.algorithm.string.AdvancedStringBuilder
-import com.lh.kete.algorithm.string.BoldString
 import com.lh.kete.config.Config
 import com.lh.kete.data.Information
 import com.lh.kete.data.KeteConfig
@@ -38,10 +39,6 @@ import com.lh.kete.threadpool.KeteExec
 import com.lh.kete.utils.KeteUtils
 import com.lh.kete.views.KeteButton
 import com.lh.kete.views.KeteLayout
-import java.lang.RuntimeException
-import java.lang.StringBuilder
-import android.text.InputType
-import android.widget.EditText
 
 
 /**
@@ -84,10 +81,18 @@ class MainActivity : AppCompatActivity(), OnWorkerThreadListener {
             predictManual.setOnClickListener {
                 showManualPredict()
             }
-            val jsonIntent = intent.getStringExtra(KeteConfig.KETE_STRING_EXTRAS) ?: null
-            init(jsonIntent)
+
+            checkingPrefs()
+            init()
         } catch (e: Exception) {
             showErrorLayout(e)
+        }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        if (checkingPrefs()) {
+            init()
         }
     }
 
@@ -101,22 +106,34 @@ class MainActivity : AppCompatActivity(), OnWorkerThreadListener {
         if (!isLoaded) return super.onOptionsItemSelected(item)
 
         return when (item.itemId) {
-            R.id.menu_layout_qwerty -> {
-                Config.changeLayoutAsset(Config.Layout.QWERTY)
-                init(null)
-                true
-            }
-            R.id.menu_layout_modern -> {
-                Config.changeLayoutAsset(Config.Layout.MODERN)
-                init(null)
-                true
-            }
-            R.id.menu_layout_show_info -> {
-                showLayoutInfo()
+            R.id.menu_setting -> {
+                val settingIntent = Intent(this, SettingActivity::class.java)
+                startActivity(settingIntent)
                 true
             }
             else -> super.onOptionsItemSelected(item)
         }
+    }
+
+    private fun checkingPrefs(): Boolean {
+        var flag = false
+        val prefs = PreferenceManager.getDefaultSharedPreferences(this)
+        var layout = prefs.getString(resources.getString(R.string.layout_prefs), null)
+        if (layout == null) {
+            prefs.edit().putString(resources.getString(R.string.layout_prefs), resources.getString(R.string.layout_qwerty)).apply()
+            layout = resources.getString(R.string.layout_qwerty)
+        }
+
+        if (layout != Information.LAYOUT_ASSET)
+            flag = true
+        Information.LAYOUT_ASSET = layout
+
+        val nPoints = prefs.getString(resources.getString(R.string.points_prefs), "50")?.toInt()
+        if (nPoints != PolylineModel.N_POINTS)
+            flag = true
+        PolylineModel.N_POINTS = nPoints ?: 50
+
+        return flag
     }
 
     /**
@@ -298,17 +315,7 @@ class MainActivity : AppCompatActivity(), OnWorkerThreadListener {
         progressInfoText.text = text
     }
 
-    private fun showLayoutInfo() {
-        val infoBuilder = AdvancedStringBuilder()
-        infoBuilder.append("Layout id:              ")
-                .append(BoldString(Information.LAYOUT_ID ?: "unknown"))
-                .newLine()
-
-        AlertDialog.Builder(this).setMessage(infoBuilder.toCharSequence())
-                .setNeutralButton("OK", null).create().show()
-    }
-
-    private fun init(jsonIntent: String?) {
+    private fun init() {
         predictLayout.visibility = View.INVISIBLE
         // Step 1: Show loading + set isLoaded = false
         loaderView.visibility = View.VISIBLE
@@ -318,8 +325,7 @@ class MainActivity : AppCompatActivity(), OnWorkerThreadListener {
         KeteExec.doBackground(Runnable {
             try {
                 // Step 2: read json from file or intent
-                val jsonLayout = jsonIntent
-                        ?: KeteUtils.readJsonConfigFromAssets(this, Config.getLayoutAsset())
+                val jsonLayout = KeteUtils.readJsonConfigFromAssets(this, Information.LAYOUT_ASSET!!)
                 // Step 3: CalculateHash of layout
                 Information.LAYOUT_HASH = KeteUtils.md5(jsonLayout)
                 // Step 4: Convert json string to keyboard config.

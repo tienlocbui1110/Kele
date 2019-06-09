@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="layout_prefs_name">
+        <item>QWERTY</item>
+        <item>MODERN</item>
+    </string-array>
+    <string-array name="layout_prefs_value">
+        <item>default_layout.json</item>
+        <item>modern_layout.json</item>
+    </string-array>
+    <string-array name="points_prefs_value">
+        <item>10</item>
+        <item>25</item>
+        <item>50</item>
+        <item>100</item>
+    </string-array>
+</resources>
