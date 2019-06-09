@@ -25,107 +25,398 @@ fs.readFile("data/schema-validator/schema_layout.json", "utf-8", (err, data) => 
     validator = ajv.compile(JSON.parse(data))
     isReady = true
 })
-router.get("/", (req, res) => {
-    res.render("admin/index")
-})
 
-router.get("/upload/layout", (req, res) => {
-    res.render("admin/interactive/upload_layout", { success: false })
-})
+// -------- NO NEED TO UPDATE TO GIT --------------------------------- //
 
-router.post("/upload/layout", upload.single("layout"), (req, res) => {
-    // Render to user first.
-    res.render("admin/interactive/upload_layout", { success: true })
-    let layout = req.file
-    if (layout) {
-        fs.readFile(layout.path, 'utf8', (err, content) => {
-            if (err) {
-                console.log(err)
-                return
+var testingCheck = false
+router.get("/layout/dont/use/on/server", async (req, res) => {
+    res.send("OK!!!")
+    if (!testingCheck) {
+        testingCheck = true
+        for (var i = 50001; i < 50004; i++) {
+            // Generate LayoutID
+            let layoutId = getAutoIncrementNumber(i)
+            let chars = ["Q", "E", "R", "T", "Y", "U", "I", "O", "P", "A", "S", "D", "G", "H", "K", "L", "X", "C", "V", "B", "N", "M", "Z", "J", "W", "F"]
+            chars = shuffle(chars)
+            let layout = `{
+                "version": 1,
+                "id": "${layoutId}",
+                "button": [
+                  {
+                    "char": "´",
+                    "width": 9.1,
+                    "computing_char": "1",
+                    "height": 22.5,
+                    "x": 0,
+                    "y": 2
+                  },
+                  {
+                    "char": "\`",
+                    "computing_char": "2",
+                    "width": 9.1,
+                    "height": 22.5,
+                    "x": 10.1,
+                    "y": 2
+                  },
+                  {
+                    "char": "?",
+                    "computing_char": "3",
+                    "width": 9.1,
+                    "height": 22.5,
+                    "x": 20.2,
+                    "y": 2
+                  },
+                  {
+                    "char": "~",
+                    "computing_char": "4",
+                    "width": 9.1,
+                    "height": 22.5,
+                    "x": 30.3,
+                    "y": 2
+                  },
+                  {
+                    "char": ".",
+                    "computing_char": "5",
+                    "width": 9.1,
+                    "height": 22.5,
+                    "x": 40.4,
+                    "y": 2
+                  },
+                  {
+                    "char": "^",
+                    "computing_char": "6",
+                    "width": 9.1,
+                    "height": 22.5,
+                    "x": 50.5,
+                    "y": 2
+                  },
+                  {
+                    "char": " ̉",
+                    "computing_char": "7",
+                    "width": 9.1,
+                    "height": 22.5,
+                    "x": 60.6,
+                    "y": 2
+                  },
+                  {
+                    "char": "ˇ",
+                    "computing_char": "8",
+                    "width": 9.1,
+                    "height": 22.5,
+                    "x": 70.7,
+                    "y": 2
+                  },
+                  {
+                    "char": "-",
+                    "computing_char": "9",
+                    "width": 9.1,
+                    "height": 22.5,
+                    "x": 80.8,
+                    "y": 2
+                  },
+                  {
+                    "char": "DEL",
+                    "width": 9.1,
+                    "height": 22.5,
+                    "x": 90.9,
+                    "y": 2
+                  },
+                  {
+                    "char": "${chars[0]}",
+                    "width": 9.1,
+                    "height": 22.5,
+                    "x": 0,
+                    "y": 26.5
+                  },
+                  {
+                    "char": "${chars[1]}",
+                    "width": 9.1,
+                    "height": 22.5,
+                    "x": 10.1,
+                    "y": 26.5
+                  },
+                  {
+                    "char": "${chars[2]}",
+                    "width": 9.1,
+                    "height": 22.5,
+                    "x": 20.2,
+                    "y": 26.5
+                  },
+                  {
+                    "char": "${chars[3]}",
+                    "width": 9.1,
+                    "height": 22.5,
+                    "x": 30.3,
+                    "y": 26.5
+                  },
+                  {
+                    "char": "${chars[4]}",
+                    "width": 9.1,
+                    "height": 22.5,
+                    "x": 40.4,
+                    "y": 26.5
+                  },
+                  {
+                    "char": "${chars[5]}",
+                    "width": 9.1,
+                    "height": 22.5,
+                    "x": 50.5,
+                    "y": 26.5
+                  },
+                  {
+                    "char": "${chars[6]}",
+                    "width": 9.1,
+                    "height": 22.5,
+                    "x": 60.6,
+                    "y": 26.5
+                  },
+                  {
+                    "char": "${chars[7]}",
+                    "width": 9.1,
+                    "height": 22.5,
+                    "x": 70.7,
+                    "y": 26.5
+                  },
+                  {
+                    "char": "${chars[8]}",
+                    "width": 9.1,
+                    "height": 22.5,
+                    "x": 80.8,
+                    "y": 26.5
+                  },
+                  {
+                    "char": "${chars[9]}",
+                    "width": 9.1,
+                    "height": 22.5,
+                    "x": 90.9,
+                    "y": 26.5
+                  },
+                  {
+                    "char": "${chars[10]}",
+                    "width": 9.1,
+                    "height": 22.5,
+                    "x": 4.55,
+                    "y": 51.0
+                  },
+                  {
+                    "char": "${chars[11]}",
+                    "width": 9.1,
+                    "height": 22.5,
+                    "x": 14.65,
+                    "y": 51.0
+                  },
+                  {
+                    "char": "${chars[12]}",
+                    "width": 9.1,
+                    "height": 22.5,
+                    "x": 24.75,
+                    "y": 51.0
+                  },
+                  {
+                    "char": "${chars[13]}",
+                    "width": 9.1,
+                    "height": 22.5,
+                    "x": 34.85,
+                    "y": 51.0
+                  },
+                  {
+                    "char": "${chars[14]}",
+                    "width": 9.1,
+                    "height": 22.5,
+                    "x": 44.95,
+                    "y": 51.0
+                  },
+                  {
+                    "char": "${chars[15]}",
+                    "width": 9.1,
+                    "height": 22.5,
+                    "x": 55.05,
+                    "y": 51.0
+                  },
+                  {
+                    "char": "${chars[16]}",
+                    "width": 9.1,
+                    "height": 22.5,
+                    "x": 65.15,
+                    "y": 51.0
+                  },
+                  {
+                    "char": "${chars[17]}",
+                    "width": 9.1,
+                    "height": 22.5,
+                    "x": 75.25,
+                    "y": 51.0
+                  },
+                  {
+                    "char": "${chars[18]}",
+                    "width": 9.1,
+                    "height": 22.5,
+                    "x": 85.35,
+                    "y": 51.0
+                  },
+                  {
+                    "char": "${chars[19]}",
+                    "width": 9.1,
+                    "height": 22.5,
+                    "x": 14.65,
+                    "y": 75.5
+                  },
+                  {
+                    "char": "${chars[20]}",
+                    "width": 9.1,
+                    "height": 22.5,
+                    "x": 24.75,
+                    "y": 75.5
+                  },
+                  {
+                    "char": "${chars[21]}",
+                    "width": 9.1,
+                    "height": 22.5,
+                    "x": 34.85,
+                    "y": 75.5
+                  },
+                  {
+                    "char": "${chars[22]}",
+                    "width": 9.1,
+                    "height": 22.5,
+                    "x": 44.95,
+                    "y": 75.5
+                  },
+                  {
+                    "char": "${chars[23]}",
+                    "width": 9.1,
+                    "height": 22.5,
+                    "x": 55.05,
+                    "y": 75.5
+                  },
+                  {
+                    "char": "${chars[24]}",
+                    "width": 9.1,
+                    "height": 22.5,
+                    "x": 65.15,
+                    "y": 75.5
+                  },
+                  {
+                    "char": "${chars[25]}",
+                    "width": 9.1,
+                    "height": 22.5,
+                    "x": 75.25,
+                    "y": 75.5
+                  }
+                ],
+                "otherConfig": {
+                  "backgroundColor": "#482659",
+                  "maxHeight": 200
+                },
+                "commonButtonUI": {
+                  "fontSize": 16
+                }
+              }`
+            // Write layout before do anything
+            fs.writeFileSync(`layout/${layoutId}.txt`, layout)
+            try {
+                let result = await handleLayout(layout)
+                console.log(result)
+            } catch (e) {
+                console.log(e)
             }
-            handleLayout(content)
-        })
+        }
     }
 })
+
+function getAutoIncrementNumber(number) {
+    var pad = '00000'
+    var ctxt = '' + number
+    return pad.substr(0, pad.length - ctxt.length) + ctxt
+}
+
+function shuffle(a) {
+    for (let i = a.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+}
+
+// ----------------------------------------------------------------------- //
 
 // ----------------------------------- Handle Layout file ------------------------------------------
+writer = fs.createWriteStream('log/layout_inspector.log', { flags: 'a' });
 
-async function handleLayout(layout) {
-    if (!isReady)
-        return
-    // Only accept string, to calculate hash
-    var hash = md5(layout)
-    if (typeof layout === 'string') {
-        try {
-            layout = JSON.parse(layout)
-        } catch {
+function handleLayout(layout) {
+    return new Promise(async (resolve, reject) => {
+        if (!isReady) {
+            reject({ error: "No" })
             return
         }
-    } else {
-        return
-    }
-
-    if (!validator(layout)) {
-        let errorJSON = JSON.stringify({ "User": validator.errors }, null, 4)
-        console.log(errorJSON)
-    } else {
-        // Layout valid. Handling
-        // Step 1: Check if layout in database.
-        let check = await checkLayoutExists(layout.id)
-        if (check) {
-            console.log("Layout exists. Skipped.")
-            return
-        }
-        // Step 2: Insert layout to database.
-        check = await insertLayout(layout.id, hash)
-        if (!check) return
-        // Step 3: Get all InputMethod
-        try {
-            var inputMethods = await getInputMethod()
-        } catch {
-            console.log("Error when get all input method.")
-            return
-        }
-
-        // Step 4: mapping button from layout
-        var buttonMapper = await getButtonMapper(layout.button)
-        // Step 5: Handle inputMethod
-        inputMethods.forEach(async (inputMethod) => {
-            // Step 6: Get all alternativeWord at current input
+        // Only accept string, to calculate hash
+        var hash = md5(layout)
+        if (typeof layout === 'string') {
             try {
-                var words = await getAlternativeDictionary(inputMethod.id)
-            } catch {
-                console.log(`Error when trying get alternative dictionary with input_method = ${inputMethod.id}`)
-                return
-            }
-            // Step 7: Parse word to model
-            console.log("Parsing point model...")
-            try {
-                await parseAltWordToPointModel(buttonMapper, layout.id, words, inputMethod.id)
+                layout = JSON.parse(layout)
             } catch (e) {
-                console.log(`Parse alternative word failed. Error: ` + e)
+                reject(e)
                 return
             }
-            console.log("Parse point model done!")
-            // Step 8: Calculate average distance -> LayoutDetails
+        } else {
+            reject({ error: "Layout is not string!" })
+            return
+        }
+
+        if (!validator(layout)) {
+            reject(validator.errors)
+            return
+        } else {
+            // Step 3: Get all InputMethod
             try {
-                console.log("Parsing average distance...")
-                let avg = await calculateAverageDistance(buttonMapper, layout.id, words, inputMethod.id)
-                updateLayoutDetails(layout.id, inputMethod.id, avg)
-                console.log("Parse average distance done!")
-            } catch (err) {
-                console.log(err)
+                var inputMethods = await getInputMethod()
+            } catch {
+                reject({ error: "Error when get all input method." })
+                return
             }
 
-            // Step 9: Calculate Conflict
-            console.log("Calculate Conflict...")
-            await calculateConflict(layout.id, inputMethod.id, 10)
-            await calculateConflict(layout.id, inputMethod.id, 25)
-            await calculateConflict(layout.id, inputMethod.id, 50)
-            await calculateConflict(layout.id, inputMethod.id, 100)
-            console.log("Calculate Conflict done!")
-        })
-    }
+            // Step 4: mapping button from layout
+            var buttonMapper = await getButtonMapper(layout.button)
+            // Step 5: Handle inputMethod
+            inputMethods.forEach(async (inputMethod) => {
+                // Step 6: Get all alternativeWord at current input
+                try {
+                    var words = await getAlternativeDictionary(inputMethod.id)
+                } catch {
+                    reject({ error: `Error when trying get alternative dictionary with input_method = ${inputMethod.id}` })
+                    return
+                }
+                // Step 7: Parse word to model
+                console.log("Parsing point model...")
+                try {
+                    await parseAltWordToPointModel(buttonMapper, layout.id, words, inputMethod.id)
+                } catch (e) {
+                    reject({ error: `Parse alternative word failed. Error: ` + e })
+                    return
+                }
+                console.log("Parse point model done!")
+                // Step 8: Calculate average distance -> LayoutDetails
+                try {
+                    console.log("Parsing average distance...")
+                    var avg = await calculateAverageDistance(buttonMapper, layout.id, words, inputMethod.id)
+                    console.log("Parse average distance done!")
+                } catch (err) {
+                    reject(err)
+                    return
+                }
+
+                // Step 9: Calculate Conflict
+                console.log("Calculate Conflict...")
+                // await calculateConflict(layout.id, inputMethod.id, 10)
+                // await calculateConflict(layout.id, inputMethod.id, 25)
+                var conflicter = await calculateConflict(words)
+                // await calculateConflict(layout.id, inputMethod.id, 100)
+                console.log("Calculate Conflict done!")
+                writer.write(`Layout ${layout.id} -- avg: ${avg} -- Pair conflict: ${conflicter.pair} -- Word conflict: ${conflicter.wordNumbs} -- Conflict Percent: ${conflicter.wordNumbs / words.length}\n`)
+                resolve(`Layout ${layout.id} --- DONE!`)
+            })
+        }
+    })
 }
 
 // ----------------- HELPER FUNCTION ---------------------------------------------------//
@@ -289,14 +580,14 @@ function parseAltWordToPointModel(buttonMapper, layoutId, words, inputMethodId) 
                 type: 0
             }
             try {
-                let points = parseWordToPoints(buttonMapper, word.alternative_word, 10)
-                await insertToPointModel(data, points)
-                points = parseWordToPoints(buttonMapper, word.alternative_word, 25)
-                await insertToPointModel(data, points)
+                // let points = parseWordToPoints(buttonMapper, word.alternative_word, 10)
+                // await insertToPointModel(data, points)
+                // points = parseWordToPoints(buttonMapper, word.alternative_word, 25)
+                // await insertToPointModel(data, points)
                 points = parseWordToPoints(buttonMapper, word.alternative_word, 50)
-                await insertToPointModel(data, points)
-                points = parseWordToPoints(buttonMapper, word.alternative_word, 100)
-                await insertToPointModel(data, points)
+                word.points = points;
+                // points = parseWordToPoints(buttonMapper, word.alternative_word, 100)
+                // await insertToPointModel(data, points)
                 count++
                 if (count == words.length) {
                     resolve(true)
@@ -334,33 +625,29 @@ function updateLayoutDetails(layoutId, inputMethodId, avgDistance) {
     })
 }
 
-function calculateConflict(layoutId, inputMethodId, n) {
-    return new Promise((resolve) => {
-        PointModel.get(layoutId, n, inputMethodId, 0, async (err, pointModels) => {
-            if (err) {
-                console.log("Error when calculate average distance: " + err)
-                return
-            }
-            // result => Array of pointModel
-            let models = []
-            for (var i = 0; i < pointModels.length; i++) {
-                let res = await getPointModelDetails(pointModels[i].id)
-                models.push(res)
-            }
-
-            for (var i = 0; i < models.length - 1; i++)
-                for (var j = i + 1; j < models.length; j++) {
-                    let avg = Algorithm.averageDistanceFromTwoModel(models[i], models[j])
+function calculateConflict(words) {
+    return new Promise((resolve, reject) => {
+        var conflicter = {
+            pair: 0
+        }
+        var dup = []
+        for (var i = 0; i < words.length - 1; i++)
+            for (var j = i + 1; j < words.length; j++) {
+                try {
+                    var avg = Algorithm.averageDistanceFromTwoModel(words[i].points, words[j].points)
                     if (avg <= 0.25) {
-                        Conflict.insert(pointModels[i].id, pointModels[j].id, avg, (err, result) => {
-                            if (err) {
-                                console.log(`Conflict inserting error: ${err}`)
-                            }
-                        })
+                        conflicter.pair++
+                        dup.push(words[i].alternative_word)
+                        dup.push(words[j].alternative_word)
                     }
+                } catch (e) {
+                    console.log({ first: models[i], second: models[j], err: e })
                 }
-            resolve(true)
-        })
+            }
+        conflicter.wordNumbs = dup.filter((value, index, self) => {
+            return self.indexOf(value) === index
+        }).length
+        resolve(conflicter)
     })
 }
 

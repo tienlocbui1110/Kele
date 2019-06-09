@@ -1,0 +1,274 @@
+{
+                "version": 1,
+                "id": "03177",
+                "button": [
+                  {
+                    "char": "´",
+                    "width": 9.1,
+                    "computing_char": "1",
+                    "height": 22.5,
+                    "x": 0,
+                    "y": 2
+                  },
+                  {
+                    "char": "`",
+                    "computing_char": "2",
+                    "width": 9.1,
+                    "height": 22.5,
+                    "x": 10.1,
+                    "y": 2
+                  },
+                  {
+                    "char": "?",
+                    "computing_char": "3",
+                    "width": 9.1,
+                    "height": 22.5,
+                    "x": 20.2,
+                    "y": 2
+                  },
+                  {
+                    "char": "~",
+                    "computing_char": "4",
+                    "width": 9.1,
+                    "height": 22.5,
+                    "x": 30.3,
+                    "y": 2
+                  },
+                  {
+                    "char": ".",
+                    "computing_char": "5",
+                    "width": 9.1,
+                    "height": 22.5,
+                    "x": 40.4,
+                    "y": 2
+                  },
+                  {
+                    "char": "^",
+                    "computing_char": "6",
+                    "width": 9.1,
+                    "height": 22.5,
+                    "x": 50.5,
+                    "y": 2
+                  },
+                  {
+                    "char": " ̉",
+                    "computing_char": "7",
+                    "width": 9.1,
+                    "height": 22.5,
+                    "x": 60.6,
+                    "y": 2
+                  },
+                  {
+                    "char": "ˇ",
+                    "computing_char": "8",
+                    "width": 9.1,
+                    "height": 22.5,
+                    "x": 70.7,
+                    "y": 2
+                  },
+                  {
+                    "char": "-",
+                    "computing_char": "9",
+                    "width": 9.1,
+                    "height": 22.5,
+                    "x": 80.8,
+                    "y": 2
+                  },
+                  {
+                    "char": "DEL",
+                    "width": 9.1,
+                    "height": 22.5,
+                    "x": 90.9,
+                    "y": 2
+                  },
+                  {
+                    "char": "F",
+                    "width": 9.1,
+                    "height": 22.5,
+                    "x": 0,
+                    "y": 26.5
+                  },
+                  {
+                    "char": "X",
+                    "width": 9.1,
+                    "height": 22.5,
+                    "x": 10.1,
+                    "y": 26.5
+                  },
+                  {
+                    "char": "C",
+                    "width": 9.1,
+                    "height": 22.5,
+                    "x": 20.2,
+                    "y": 26.5
+                  },
+                  {
+                    "char": "I",
+                    "width": 9.1,
+                    "height": 22.5,
+                    "x": 30.3,
+                    "y": 26.5
+                  },
+                  {
+                    "char": "N",
+                    "width": 9.1,
+                    "height": 22.5,
+                    "x": 40.4,
+                    "y": 26.5
+                  },
+                  {
+                    "char": "T",
+                    "width": 9.1,
+                    "height": 22.5,
+                    "x": 50.5,
+                    "y": 26.5
+                  },
+                  {
+                    "char": "D",
+                    "width": 9.1,
+                    "height": 22.5,
+                    "x": 60.6,
+                    "y": 26.5
+                  },
+                  {
+                    "char": "Q",
+                    "width": 9.1,
+                    "height": 22.5,
+                    "x": 70.7,
+                    "y": 26.5
+                  },
+                  {
+                    "char": "L",
+                    "width": 9.1,
+                    "height": 22.5,
+                    "x": 80.8,
+                    "y": 26.5
+                  },
+                  {
+                    "char": "P",
+                    "width": 9.1,
+                    "height": 22.5,
+                    "x": 90.9,
+                    "y": 26.5
+                  },
+                  {
+                    "char": "E",
+                    "width": 9.1,
+                    "height": 22.5,
+                    "x": 4.55,
+                    "y": 51.0
+                  },
+                  {
+                    "char": "B",
+                    "width": 9.1,
+                    "height": 22.5,
+                    "x": 14.65,
+                    "y": 51.0
+                  },
+                  {
+                    "char": "S",
+                    "width": 9.1,
+                    "height": 22.5,
+                    "x": 24.75,
+                    "y": 51.0
+                  },
+                  {
+                    "char": "Y",
+                    "width": 9.1,
+                    "height": 22.5,
+                    "x": 34.85,
+                    "y": 51.0
+                  },
+                  {
+                    "char": "O",
+                    "width": 9.1,
+                    "height": 22.5,
+                    "x": 44.95,
+                    "y": 51.0
+                  },
+                  {
+                    "char": "K",
+                    "width": 9.1,
+                    "height": 22.5,
+                    "x": 55.05,
+                    "y": 51.0
+                  },
+                  {
+                    "char": "H",
+                    "width": 9.1,
+                    "height": 22.5,
+                    "x": 65.15,
+                    "y": 51.0
+                  },
+                  {
+                    "char": "Z",
+                    "width": 9.1,
+                    "height": 22.5,
+                    "x": 75.25,
+                    "y": 51.0
+                  },
+                  {
+                    "char": "R",
+                    "width": 9.1,
+                    "height": 22.5,
+                    "x": 85.35,
+                    "y": 51.0
+                  },
+                  {
+                    "char": "G",
+                    "width": 9.1,
+                    "height": 22.5,
+                    "x": 14.65,
+                    "y": 75.5
+                  },
+                  {
+                    "char": "A",
+                    "width": 9.1,
+                    "height": 22.5,
+                    "x": 24.75,
+                    "y": 75.5
+                  },
+                  {
+                    "char": "J",
+                    "width": 9.1,
+                    "height": 22.5,
+                    "x": 34.85,
+                    "y": 75.5
+                  },
+                  {
+                    "char": "M",
+                    "width": 9.1,
+                    "height": 22.5,
+                    "x": 44.95,
+                    "y": 75.5
+                  },
+                  {
+                    "char": "W",
+                    "width": 9.1,
+                    "height": 22.5,
+                    "x": 55.05,
+                    "y": 75.5
+                  },
+                  {
+                    "char": "V",
+                    "width": 9.1,
+                    "height": 22.5,
+                    "x": 65.15,
+                    "y": 75.5
+                  },
+                  {
+                    "char": "U",
+                    "width": 9.1,
+                    "height": 22.5,
+                    "x": 75.25,
+                    "y": 75.5
+                  }
+                ],
+                "otherConfig": {
+                  "backgroundColor": "#482659",
+                  "maxHeight": 200
+                },
+                "commonButtonUI": {
+                  "fontSize": 16
+                }
+              }

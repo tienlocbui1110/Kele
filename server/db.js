@@ -4,7 +4,7 @@ const pool = mysql.createPool({
     user: 'root',
     password: '',
     database: 'Kete',
-    connectionLimit : 100,
+    connectionLimit : 50,
     multipleStatements: true
 });
 
@@ -12,8 +12,6 @@ module.exports = {
     query: (query, value, callback) => {
         pool.getConnection((err, connection) => {
             if (err) {
-                if (connection != 'undefined')
-                    connection.release();
                 callback(err)
                 return
             }
@@ -26,7 +24,6 @@ module.exports = {
     connect: (callback) => {
         pool.getConnection((err, connection) => {
             if (err) {
-                connection.release();
                 callback(err)
                 return
             }

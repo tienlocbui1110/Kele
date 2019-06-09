@@ -12,29 +12,53 @@ PointModel.insert = (data, points, callback) => {
     data.n = points.length
     data.first_x = points[0].x
     data.first_y = points[0].y
-    db.query(`INSERT INTO ${TABLE_POINT_MODEL}(layout, n, first_x, first_y, word, input_method, type) VALUES ?`, [[[data.layout, data.n, data.first_x, data.first_y, data.word, data.input_method, data.type]]], (err, result) => {
-        if (err) {
-            callback(err)
-            return
-        }
-        if (result.affectedRows != 0) {
-            // Add To PointModelDetails
-            let id = result.insertId
-            PointModelDetails.insert(id, points, (err) => {
+    db.connect((err, cnn) => {
+        cnn.beginTransaction(function (err, cjsa) {
+            if (err) throw err
+            cnn.query(`INSERT INTO ${TABLE_POINT_MODEL}(layout, n, first_x, first_y, word, input_method, type) VALUES ?`, [[[data.layout, data.n, data.first_x, data.first_y, data.word, data.input_method, data.type]]], (err, result) => {
                 if (err) {
-                    callback(err)
-                    return
+                    cnn.rollback(() => {
+                        throw err
+                    })
                 }
-                callback(err, result)
+                if (result.affectedRows != 0) {
+                    // Add To PointModelDetails
+                    let id = result.insertId
+                    PointModelDetails.insert(id, points, cnn, (err) => {
+                        if (err) {
+                            cnn.rollback(() => {
+                                callback(err)
+                            })
+                            return
+                        }
+                        cnn.commit(function (err) {
+                            if (err) {
+                                cnn.rollback(function () {
+                                    throw err;
+                                });
+                            }
+                            cnn.release()
+                            callback(err, result)
+                        })
+                    })
+                } else {
+                    cnn.commit(function (err) {
+                        if (err) {
+                            cnn.rollback(function () {
+                                throw err;
+                            });
+                        }
+                        cnn.release()
+                        callback(err, result)
+                    })
+                }
             })
-        } else {
-            callback(err, result)
-        }
+        })
     })
 }
 
 PointModel.get = (layoutId, n, input_method, type, callback) => {
-    db.query(`SELECT * FROM ${TABLE_POINT_MODEL} WHERE layout=? AND n=? AND input_method=? AND type=?`, [layoutId,n, input_method, type], callback)
+    db.query(`SELECT * FROM ${TABLE_POINT_MODEL} WHERE layout=? AND n=? AND input_method=? AND type=?`, [layoutId, n, input_method, type], callback)
 }
 
 module.exports = PointModel

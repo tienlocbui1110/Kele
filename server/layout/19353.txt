@@ -1,0 +1,274 @@
+{
+                "version": 1,
+                "id": "19353",
+                "button": [
+                  {
+                    "char": "Y",
+                    "width": 9.1,
+                    "height": 22.5,
+                    "x": 0,
+                    "y": 2
+                  },
+                  {
+                    "char": "O",
+                    "width": 9.1,
+                    "height": 22.5,
+                    "x": 10.1,
+                    "y": 2
+                  },
+                  {
+                    "char": "G",
+                    "width": 9.1,
+                    "height": 22.5,
+                    "x": 20.2,
+                    "y": 2
+                  },
+                  {
+                    "char": "H",
+                    "width": 9.1,
+                    "height": 22.5,
+                    "x": 40.4,
+                    "y": 2
+                  },
+                  {
+                    "char": "L",
+                    "width": 9.1,
+                    "height": 22.5,
+                    "x": 50.5,
+                    "y": 2
+                  },
+                  {
+                    "char": "B",
+                    "width": 9.1,
+                    "height": 22.5,
+                    "x": 60.6,
+                    "y": 2
+                  },
+                  {
+                    "char": "K",
+                    "width": 9.1,
+                    "height": 22.5,
+                    "x": 70.7,
+                    "y": 2
+                  },
+                  {
+                    "char": "Q",
+                    "width": 9.1,
+                    "height": 22.5,
+                    "x": 80.8,
+                    "y": 2
+                  },
+                  {
+                    "char": "N",
+                    "width": 9.1,
+                    "height": 22.5,
+                    "x": 90.9,
+                    "y": 2
+                  },
+                  {
+                    "char": "U",
+                    "width": 9.1,
+                    "height": 22.5,
+                    "x": 0,
+                    "y": 26.5
+                  },
+                  {
+                    "char": "R",
+                    "width": 9.1,
+                    "height": 22.5,
+                    "x": 10.1,
+                    "y": 26.5
+                  },
+                  {
+                    "char": "P",
+                    "width": 9.1,
+                    "height": 22.5,
+                    "x": 20.2,
+                    "y": 26.5
+                  },
+                  {
+                    "char": "E",
+                    "width": 9.1,
+                    "height": 22.5,
+                    "x": 40.4,
+                    "y": 26.5
+                  },
+                  {
+                    "char": "A",
+                    "width": 9.1,
+                    "height": 22.5,
+                    "x": 50.5,
+                    "y": 26.5
+                  },
+                  {
+                    "char": "D",
+                    "width": 9.1,
+                    "height": 22.5,
+                    "x": 60.6,
+                    "y": 26.5
+                  },
+                  {
+                    "char": "V",
+                    "width": 9.1,
+                    "height": 22.5,
+                    "x": 70.7,
+                    "y": 26.5
+                  },
+                  {
+                    "char": "I",
+                    "width": 9.1,
+                    "height": 22.5,
+                    "x": 80.8,
+                    "y": 26.5
+                  },
+                  {
+                    "char": "S",
+                    "width": 9.1,
+                    "height": 22.5,
+                    "x": 90.9,
+                    "y": 26.5
+                  },
+                  {
+                    "char": "F",
+                    "width": 5,
+                    "height": 10,
+                    "x": 0,
+                    "y": 60.25
+                  },
+                  {
+                    "char": "J",
+                    "width": 5,
+                    "height": 10,
+                    "x": 6,
+                    "y": 60.25
+                  },
+                  {
+                    "char": "W",
+                    "width": 5,
+                    "height": 10,
+                    "x": 12,
+                    "y": 60.25
+                  },
+                  {
+                    "char": "Z",
+                    "width": 5,
+                    "height": 10,
+                    "x": 18,
+                    "y": 60.25
+                  },
+                  {
+                    "char": "T",
+                    "width": 9.1,
+                    "height": 22.5,
+                    "x": 50.5,
+                    "y": 51.0
+                  },
+                  {
+                    "char": "X",
+                    "width": 9.1,
+                    "height": 22.5,
+                    "x": 60.6,
+                    "y": 51.0
+                  },
+                  {
+                    "char": "M",
+                    "width": 9.1,
+                    "height": 22.5,
+                    "x": 70.7,
+                    "y": 51.0
+                  },
+                  {
+                    "char": "C",
+                    "width": 9.1,
+                    "height": 22.5,
+                    "x": 80.8,
+                    "y": 51.0
+                  },
+                  {
+                    "char": "´",
+                    "computing_char": "1",
+                    "width": 9.1,
+                    "height": 22.5,
+                    "x": 0,
+                    "y": 75.5
+                  },
+                  {
+                    "char": "`",
+                    "computing_char": "2",
+                    "width": 9.1,
+                    "height": 22.5,
+                    "x": 10.1,
+                    "y": 75.5
+                  },
+                  {
+                    "char": "?",
+                    "computing_char": "3",
+                    "width": 9.1,
+                    "height": 22.5,
+                    "x": 20.2,
+                    "y": 75.5
+                  },
+                  {
+                    "char": "~",
+                    "computing_char": "4",
+                    "width": 9.1,
+                    "height": 22.5,
+                    "x": 30.3,
+                    "y": 75.5
+                  },
+                  {
+                    "char": ".",
+                    "computing_char": "5",
+                    "width": 9.1,
+                    "height": 22.5,
+                    "x": 40.4,
+                    "y": 75.5
+                  },
+                  {
+                    "char": "^",
+                    "computing_char": "6",
+                    "width": 9.1,
+                    "height": 22.5,
+                    "x": 50.5,
+                    "y": 75.5
+                  },
+                  {
+                    "char": " ̉",
+                    "computing_char": "7",
+                    "width": 9.1,
+                    "height": 22.5,
+                    "x": 60.6,
+                    "y": 75.5
+                  },
+                  {
+                    "char": "ˇ",
+                    "computing_char": "8",
+                    "width": 9.1,
+                    "height": 22.5,
+                    "x": 70.7,
+                    "y": 75.5
+                  },
+                  {
+                    "char": "-",
+                    "computing_char": "9",
+                    "width": 9.1,
+                    "height": 22.5,
+                    "x": 80.8,
+                    "y": 75.5
+                  },
+                  {
+                    "char": "DEL",
+                    "width": 9.1,
+                    "height": 22.5,
+                    "x": 90.9,
+                    "y": 75.5
+                  }
+                ],
+                "otherConfig": {
+                  "backgroundColor": "#482659",
+                  "maxHeight": 200
+                },
+                "commonButtonUI": {
+                  "fontSize": 16
+                }
+              }
