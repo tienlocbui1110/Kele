@@ -2,16 +2,22 @@
 <resources>
     <string-array name="layout_prefs_name">
         <item>QWERTY</item>
-        <item>MODERN</item>
     </string-array>
     <string-array name="layout_prefs_value">
-        <item>default_layout.json</item>
-        <item>modern_layout.json</item>
+        <item>@string/layout_qwerty</item>
     </string-array>
     <string-array name="points_prefs_value">
         <item>10</item>
         <item>25</item>
         <item>50</item>
         <item>100</item>
+    </string-array>
+    <string-array name="method_prefs_name">
+        <item>Euclid distance</item>
+        <item>Cosine similarity</item>
+    </string-array>
+    <string-array name="method_prefs_value">
+        <item>@string/euclid_method</item>
+        <item>@string/cosine_method</item>
     </string-array>
 </resources>

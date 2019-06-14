@@ -1,7 +1,6 @@
 package com.lh.kete.activity.main
 
 import android.content.Intent
-import android.content.SharedPreferences
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -25,9 +24,10 @@ import com.lh.kete.algorithm.Algorithm
 import com.lh.kete.algorithm.common.Path
 import com.lh.kete.algorithm.common.Point
 import com.lh.kete.algorithm.common.PolylineModel
-import com.lh.kete.algorithm.simplegesture.Predictor
-import com.lh.kete.algorithm.simplegesture.PredictorResult
-import com.lh.kete.config.Config
+import com.lh.kete.algorithm.predictor.CosineSimilarity
+import com.lh.kete.algorithm.predictor.EuclidPredictor
+import com.lh.kete.algorithm.predictor.Predictor
+import com.lh.kete.algorithm.predictor.PredictorResult
 import com.lh.kete.data.Information
 import com.lh.kete.data.KeteConfig
 import com.lh.kete.db.SQLiteHelper
@@ -45,6 +45,7 @@ import com.lh.kete.views.KeteLayout
  * Created by Tien Loc Bui on 18/03/2019.
  */
 
+@Suppress("LocalVariableName")
 class MainActivity : AppCompatActivity(), OnWorkerThreadListener {
     private lateinit var keteLayout: KeteLayout
     private lateinit var textPreviewer: TextView
@@ -116,11 +117,14 @@ class MainActivity : AppCompatActivity(), OnWorkerThreadListener {
     }
 
     private fun checkingPrefs(): Boolean {
+        val DEFAULT_POINTS_N = 50
+        // ------ Layout preferences --------------------------------------------------------- //
         var flag = false
         val prefs = PreferenceManager.getDefaultSharedPreferences(this)
         var layout = prefs.getString(resources.getString(R.string.layout_prefs), null)
         if (layout == null) {
-            prefs.edit().putString(resources.getString(R.string.layout_prefs), resources.getString(R.string.layout_qwerty)).apply()
+            prefs.edit().putString(resources.getString(R.string.layout_prefs),
+                    resources.getString(R.string.layout_qwerty)).apply()
             layout = resources.getString(R.string.layout_qwerty)
         }
 
@@ -128,11 +132,29 @@ class MainActivity : AppCompatActivity(), OnWorkerThreadListener {
             flag = true
         Information.LAYOUT_ASSET = layout
 
-        val nPoints = prefs.getString(resources.getString(R.string.points_prefs), "50")?.toInt()
+        // ------ Point preferences --------------------------------------------------------- //
+        var nPoints = prefs.getString(resources.getString(R.string.points_prefs), null)?.toInt()
+        if (nPoints == null) {
+            prefs.edit().putString(resources.getString(R.string.points_prefs), "50").apply()
+            nPoints = DEFAULT_POINTS_N
+        }
+
         if (nPoints != PolylineModel.N_POINTS)
             flag = true
-        PolylineModel.N_POINTS = nPoints ?: 50
+        PolylineModel.N_POINTS = nPoints
 
+        // ------ Method preferences --------------------------------------------------------- //
+
+        var method = prefs.getString(resources.getString(R.string.method_prefs), null)
+        if (method == null) {
+            prefs.edit().putString(resources.getString(R.string.method_prefs),
+                    resources.getString(R.string.euclid_method)).apply()
+            method = resources.getString(R.string.euclid_method)
+        }
+
+        if (method != Information.METHOD)
+            flag = true
+        Information.METHOD = method
         return flag
     }
 
@@ -367,10 +389,16 @@ private class Presenter : Algorithm.Callback<PredictorResult> {
 
     @WorkerThread
     constructor(view: MainActivity, keteConfig: KeteConfig, threadListener: OnWorkerThreadListener) {
-        //Step 1: Init database
-        initDatabase(threadListener)
-        predictor = Predictor(view, keteConfig, threadListener)
         mainView = view
+
+        // Checking and init database if needed
+        initDatabase(threadListener)
+
+        // Choose Predictor
+        when (Information.METHOD) {
+            mainView.resources.getString(R.string.cosine_method) -> predictor = CosineSimilarity(mainView, keteConfig, threadListener)
+            else -> predictor = EuclidPredictor(mainView, keteConfig, threadListener)
+        }
 
         gestureListener = object : KeteGestureListenerAdapter() {
             private var startTime: Long = 0L
@@ -405,7 +433,8 @@ private class Presenter : Algorithm.Callback<PredictorResult> {
                             predictor.doCalculate(builder, path, this@Presenter)
                         } catch (e: Exception) {
                             e.printStackTrace()
-                            mainView.showErrorLayout(RuntimeException("Database error. Please delete data and try again."))
+                            mainView.showErrorLayout(
+                                    RuntimeException("Database error. Please delete data and try again."))
                         }
                     })
                 } else {

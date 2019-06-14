@@ -16,4 +16,11 @@
         android:title="Số lượng điểm"
         app:iconSpaceReserved="false" />
 
+    <ListPreference
+        android:entries="@array/method_prefs_name"
+        android:entryValues="@array/method_prefs_value"
+        android:key="@string/method_prefs"
+        android:title="Method"
+        app:iconSpaceReserved="false" />
+
 </PreferenceScreen>

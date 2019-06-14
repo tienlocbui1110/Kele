@@ -1,4 +1,4 @@
-package com.lh.kete.algorithm.simplegesture
+package com.lh.kete.algorithm.predictor
 
 import java.util.*
 

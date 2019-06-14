@@ -65,20 +65,20 @@ class UserTracking {
         }
 
         fun request() {
-            if (!isRequest) {
-                try {
-                    isRequest = true
-                    val body = RequestBody.create(JSON_TYPE, obj.toString())
-                    val request = Request.Builder()
-                            .url(Config.HOST + "/user")
-                            .post(body)
-                            .build()
-                    client.newCall(request).execute()
-                } catch (e: Exception) {
-                    e.printStackTrace()
-                    Log.d("UserTracking", e.message)
-                }
-            }
+//            if (!isRequest) {
+//                try {
+//                    isRequest = true
+//                    val body = RequestBody.create(JSON_TYPE, obj.toString())
+//                    val request = Request.Builder()
+//                            .url(Config.HOST + "/user")
+//                            .post(body)
+//                            .build()
+//                    client.newCall(request).execute()
+//                } catch (e: Exception) {
+//                    e.printStackTrace()
+//                    Log.d("UserTracking", e.message)
+//                }
+//            }
         }
     }
 }

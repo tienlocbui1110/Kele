@@ -126,6 +126,10 @@ class SQLiteHelper(context: Context) : SQLiteOpenHelper(context, DB_NAME, null, 
         return result
     }
 
+    /**
+     * No need to use this. Save in memory instead.
+     */
+    @Deprecated("No need to use this table.")
     fun insertToModel(model: PolylineModel, nPoints: Int, layoutId: String, firstX: Float, firstY: Float,
                       altWord: String, inputMethod: Int) {
         val contentValues1 = ContentValues()

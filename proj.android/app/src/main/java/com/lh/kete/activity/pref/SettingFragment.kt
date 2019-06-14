@@ -14,17 +14,14 @@ class SettingFragment : PreferenceFragmentCompat() {
         for (i in 0 until preferenceScreen.preferenceCount) {
             onPreferenceChanged(preferenceScreen.getPreference(i))
         }
-        preferenceScreen.sharedPreferences.registerOnSharedPreferenceChangeListener{ a, b ->
-
-        }
     }
 
     private fun onPreferenceChanged(pref: Preference) {
         if (pref is ListPreference) {
-            pref.setSummary(preferenceManager.sharedPreferences.getString(pref.key, ""))
-            pref.setOnPreferenceChangeListener { preference, key ->
+            pref.setSummary(pref.entry)
+            pref.setOnPreferenceChangeListener { preference, _ ->
                 if (preference is ListPreference) {
-                    preference.setSummary(key as String)
+                    preference.setSummary(preference.entry)
                 }
                 true
             }
