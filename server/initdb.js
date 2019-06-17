@@ -83,8 +83,7 @@ db.connect((err, connection) => {
         user_chosen VARCHAR(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin,
         FOREIGN KEY (layout) REFERENCES ${TABLE_LAYOUT}(id),
         FOREIGN KEY (input_method) REFERENCES ${TABLE_INPUT_METHOD}(id),
-        FOREIGN KEY (points) REFERENCES ${TABLE_POINT_MODEL}(id),
-        FOREIGN KEY (predicted) REFERENCES ${TABLE_ORG_DICTIONARY}(word)
+        FOREIGN KEY (points) REFERENCES ${TABLE_POINT_MODEL}(id)
     )`
 
     let CREATE_TABLE_POINT = `CREATE TABLE IF NOT EXISTS ${TABLE_POINT}(
