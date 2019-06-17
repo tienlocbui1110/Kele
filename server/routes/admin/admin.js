@@ -222,7 +222,7 @@ function getEqualPointSegment(points, nPoint) {
     for (var i = 1; i < points.length; i++) {
         length += Algorithm.distance(points[i], points[i - 1])
     }
-    let interval = length / nPoint
+    let interval = length / (nPoint - 1)
     let iterPoint = points[0]
     result.push(iterPoint)
     let nextPoint = 1

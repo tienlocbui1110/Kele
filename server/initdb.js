@@ -80,7 +80,6 @@ db.connect((err, connection) => {
         time INT,
         avg_distance FLOAT,
         input_method TINYINT UNSIGNED NOT NULL,
-        predicted VARCHAR(12) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin,
         user_chosen VARCHAR(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin,
         FOREIGN KEY (layout) REFERENCES ${TABLE_LAYOUT}(id),
         FOREIGN KEY (input_method) REFERENCES ${TABLE_INPUT_METHOD}(id),

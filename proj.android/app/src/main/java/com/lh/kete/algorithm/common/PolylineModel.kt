@@ -31,7 +31,7 @@ class PolylineModel private constructor(private val mPoints: ArrayList<Point>) {
         constructor(path: Path) {
             mLength = path.getPathLength()
             val pointList = path.getPointList()
-            val interval = mLength / N_POINTS
+            val interval = mLength / (N_POINTS - 1)
             if (pointList.size <= 1)
                 return
             var iterPoint = pointList[0]
@@ -65,7 +65,7 @@ class PolylineModel private constructor(private val mPoints: ArrayList<Point>) {
                 // Nếu không có nextPoint thì lấy point cuối cùng - Có thể length sai, hoặc sai số từ float
                 if (nextPoint >= pointList.size) {
                     nPoints.add(pointList.last())
-                    break
+                    continue
                 }
                 // Lấy iterPoint làm điểm tiếp theo
                 else {
