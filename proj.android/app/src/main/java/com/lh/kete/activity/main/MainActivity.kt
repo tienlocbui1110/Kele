@@ -274,7 +274,6 @@ class MainActivity : AppCompatActivity(), OnWorkerThreadListener {
             }
             if (obj != null && obj is UserTracking.Builder) {
                 KeteExec.doBackground(Runnable {
-                    obj.addPredicted(result.getResult()[0].second)
                     obj.addChosen(result.getResult()[idx].second)
                             .addAvgDistance(result.getResult()[idx].first)
                     obj.request()
@@ -308,19 +307,6 @@ class MainActivity : AppCompatActivity(), OnWorkerThreadListener {
     }
 
     fun clearPredict() {
-        if (predictLayout.visibility == View.VISIBLE) {
-            if (userTrackingBuilder != null && userTrackingBuilder is UserTracking.Builder && predictText1.visibility == View.VISIBLE) {
-                val userTracking = userTrackingBuilder as UserTracking.Builder
-                userTracking.addPredicted(predictText1.text.toString())
-                userTracking.addChosen(predictText1.text.toString())
-                        .addAvgDistance(firstAvgDistance)
-                KeteExec.doBackground(Runnable {
-                    userTracking.request()
-                })
-                // Add text
-                addTextPreview(predictText1.text.toString())
-            }
-        }
         predictText1.setOnClickListener(null)
         predictText2.setOnClickListener(null)
         predictText3.setOnClickListener(null)
