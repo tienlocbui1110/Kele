@@ -5,10 +5,10 @@ import com.lh.IPackage.IDictionary;
 import java.util.ArrayList;
 import java.util.Comparator;
 
-public class PolylineDictionary implements IDictionary<SingleWord, Polyline> {
-    private ArrayList<Pair<SingleWord, Polyline>> mDictionary;
+public class SortDictionary<T> implements IDictionary<SingleWord, T> {
+    private ArrayList<Pair<SingleWord, T>> mDictionary;
 
-    public PolylineDictionary() {
+    public SortDictionary() {
         mDictionary = new ArrayList<>();
     }
 
@@ -23,12 +23,12 @@ public class PolylineDictionary implements IDictionary<SingleWord, Polyline> {
     }
 
     @Override
-    public Polyline getTranslatedWord(int index) {
+    public T getTranslatedWord(int index) {
         return mDictionary.get(index).second;
     }
 
     @Override
-    public void addWord(SingleWord original, Polyline translated) {
+    public void addWord(SingleWord original, T translated) {
         mDictionary.add(new Pair<>(original, translated));
         mDictionary.sort(Comparator.comparing(t -> t.first.getWord()));
     }

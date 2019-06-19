@@ -69,8 +69,8 @@ public class CosineTemplate extends BaseTemplate {
     // Cấu trúc: model(x0,y0,x1,y1,...xn,yn)
     // Sử dụng thuật toán cosine similarity để tìm độ tương đồng về góc của 2 vector
     private float calculateAverageCosineSimilarity(Polyline modelA, Polyline modelB) {
-        List<Point> listA = modelA.getWord();
-        List<Point> listB = modelB.getWord();
+        List<Point> listA = modelA.getPoints();
+        List<Point> listB = modelB.getPoints();
 
         float scalar = 0f;
         float sumX = 0f;

@@ -1,20 +1,14 @@
 package com.lh.component.common;
 
-import com.lh.IPackage.IWord;
-
 import java.util.ArrayList;
+import java.util.List;
 
-public class Polyline implements IWord<ArrayList<Point>> {
+public class Polyline {
     private ArrayList<Point> mPoints;
     private float mLength = -1;
 
     public Polyline() {
         mPoints = new ArrayList<>();
-    }
-
-    @Override
-    public ArrayList<Point> getWord() {
-        return mPoints;
     }
 
     public void addPoint(float x, float y) {
@@ -96,5 +90,9 @@ public class Polyline implements IWord<ArrayList<Point>> {
             mLength += EuclidDistance.calculate(getPoint(i), getPoint(i - 1));
         }
         return mLength;
+    }
+
+    public List<Point> getPoints() {
+        return mPoints;
     }
 }

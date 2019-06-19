@@ -1,6 +1,6 @@
 package com.lh.IPackage;
 
-public interface IDictionary<A extends IWord, B extends IWord> {
+public interface IDictionary<A extends IWord, B> {
     int size();
 
     A getOriginalWord(int index);
