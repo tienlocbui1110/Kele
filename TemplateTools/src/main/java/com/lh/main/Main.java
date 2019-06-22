@@ -16,15 +16,11 @@ public class Main {
         // ----- Euclid Template ----- //
         IWriter writer = new FileWriter(new File("./log/euclid.txt").toPath(), true);
         new Worker(new EuclidTemplate(dictionaryResource, layoutResource, numberOfPoints, writer)).doWork();
-/*
+
         // ----- Cosine Template ----- //
-        writer = new FileWriter(new File("./log/cosine.txt").toPath());
+        writer = new FileWriter(new File("./log/cosine.txt").toPath(), true);
         new Worker(new CosineTemplate(dictionaryResource, layoutResource, numberOfPoints, writer)).doWork();
-
-        // ----- Mahalanobis Template ----- //
-        writer = new FileWriter(new File("./log/mahalanobis.txt").toPath());
-        new Worker(new MahalanobisTemplate(dictionaryResource, layoutResource, numberOfPoints, writer)).doWork();
-
+/*
         // ----- Euclid Advanced ----- //
         writer = new FileWriter(new File("./log/euclid_adv.txt").toPath());
         new Worker(new EuclidAdvTemplate(dictionaryResource, layoutResource, numberOfPoints, writer)).doWork();

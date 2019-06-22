@@ -62,25 +62,37 @@ public class CosineTemplate extends BaseTemplate {
         }
         String predicted = nearestWord.length > 0 ? nearestWord[0] : "<undefined>";
         mWriter.writeln("WRONG - ID: " + userTracking.trackId + " - user word: " + userTracking.chosenWord + " - predict: " + predicted);
-
     }
 
     // Xem modelA và modelB là 2 vector
     // Cấu trúc: model(x0,y0,x1,y1,...xn,yn)
     // Sử dụng thuật toán cosine similarity để tìm độ tương đồng về góc của 2 vector
     private float calculateAverageCosineSimilarity(Polyline modelA, Polyline modelB) {
+        float z = 25f;
         List<Point> listA = modelA.getPoints();
         List<Point> listB = modelB.getPoints();
 
-        float scalar = 0f;
-        float sumX = 0f;
-        float sumY = 0f;
-
-        for (int i = 0; i < modelA.pointCount(); i++) {
-            scalar += (listA.get(i).x() * listB.get(i).x() + listA.get(i).y() * listB.get(i).y());
-            sumX += (listA.get(i).x() * listA.get(i).x() + listA.get(i).y() * listA.get(i).y());
-            sumY += (listB.get(i).x() * listB.get(i).x() + listB.get(i).y() * listB.get(i).y());
+        // 2-dimensions
+        float cosineSimilar = 0f;
+        for (int i = 0; i < listA.size(); i++) {
+            // Build vector
+            float[] vectorA = {listA.get(i).x(), listA.get(i).y(), z};
+            float[] vectorB = {listB.get(i).x(), listB.get(i).y(), z};
+            // Calculate cosine
+            cosineSimilar += cosine(vectorA, vectorB);
         }
-        return (float) (scalar / (Math.sqrt(sumX) * Math.sqrt(sumY)));
+        return cosineSimilar / listA.size();
+    }
+
+    // A, B is n-dimensions vector
+    private double cosine(float[] A, float[] B) {
+        float tuso = 0f;
+        float mauA = 0, mauB = 0;
+        for (int i = 0; i < A.length; i++) {
+            tuso += A[i] * B[i];
+            mauA += A[i] * A[i];
+            mauB += B[i] * B[i];
+        }
+        return tuso / (Math.sqrt(mauA) * Math.sqrt(mauB));
     }
 }
