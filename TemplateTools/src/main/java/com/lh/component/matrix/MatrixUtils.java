@@ -11,6 +11,7 @@ public class MatrixUtils {
 
     /**
      * This is sample function that implement mahalanobis distance.
+     *
      * @param args
      */
     private static void main(String[] args) {
@@ -61,5 +62,9 @@ public class MatrixUtils {
             result.setRow(i, 0, X.rows(i, i + 1).elementSum() / X.numCols());
         }
         return result;
+    }
+
+    public static double getAngleFromVectorAToB(float[] a, float[] b) {
+        return Math.atan2(a[1], a[0]) - Math.atan2(b[1], b[0]);
     }
 }

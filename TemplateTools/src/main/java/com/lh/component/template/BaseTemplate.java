@@ -34,7 +34,7 @@ public abstract class BaseTemplate implements ITemplate {
         mLayoutManager = new LayoutManager(layoutResourceReader);
         PolylineBuilder polylineBuilder = new PolylineBuilder(mLayoutManager);
         mUserTracking = new UserTracking(mLayoutManager, numberOfPoints);
-        mDictionary = new SortDictionary();
+        mDictionary = new SortDictionary<>();
 
         for (int i = 0; i < wordDictionary.size(); i++) {
             SingleWord translatedWord = wordDictionary.getTranslatedWord(i);

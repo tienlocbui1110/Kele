@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class PredictorResult {
     private float mDistance = Float.MAX_VALUE;
     private ArrayList<String> predictWord;
-    private static final float FLOAT_ERROR = 0.00001f;
+    private static final float FLOAT_ERROR = 0.001f;
 
     public PredictorResult() {
         predictWord = new ArrayList<>();

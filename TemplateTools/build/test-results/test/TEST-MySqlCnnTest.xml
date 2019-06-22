@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="MySqlCnnTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-06-17T12:04:50" hostname="loc" time="3648.227">
-  <properties/>
-  <testcase name="testConnection" classname="MySqlCnnTest" time="3648.227"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

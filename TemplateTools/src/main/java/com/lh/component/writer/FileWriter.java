@@ -5,20 +5,26 @@ import com.lh.IPackage.IWriter;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.nio.file.Path;
 
 @SuppressWarnings("ResultOfMethodCallIgnored")
 public class FileWriter implements IWriter {
     private File file;
 
-    public FileWriter(Path path) {
-        this.file = path.toFile();
-        if (!file.isDirectory() && !file.exists()) {
-            try {
+    public FileWriter(Path path, boolean resetFile) {
+        try {
+            this.file = path.toFile();
+            if (!file.isDirectory() && !file.exists()) {
                 file.createNewFile();
-            } catch (IOException e) {
-                throw new RuntimeException(e);
             }
+            if (resetFile && file.isFile()) {
+                PrintWriter writer = new PrintWriter(file);
+                writer.print("");
+                writer.close();
+            }
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
     }
 
