@@ -51,17 +51,18 @@ public class CosineTemplate extends BaseTemplate {
                 result.addResult(1 - cosineDistance, predictWord);
             }
         }
-
         // Check if predict different than user.
         String[] nearestWord = result.getResult();
-        for (String s : nearestWord) {
+        for (
+                String s : nearestWord) {
             if (userTracking.chosenWord.equals(s)) {
-                mWriter.writeln("OK - ID: " + userTracking.trackId + " - user word: " + userTracking.chosenWord + " - predict: " + s);
+                mWriter.writeln("1\t" + userTracking.chosenWord + "\t" + s);
                 return;
             }
         }
+
         String predicted = nearestWord.length > 0 ? nearestWord[0] : "<undefined>";
-        mWriter.writeln("WRONG - ID: " + userTracking.trackId + " - user word: " + userTracking.chosenWord + " - predict: " + predicted);
+        mWriter.writeln("0\t" + userTracking.chosenWord + "\t" + predicted);
     }
 
     // Xem modelA và modelB là 2 vector

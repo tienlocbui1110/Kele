@@ -101,13 +101,13 @@ public class MahalanobisTemplate extends BaseTemplate {
         for (
                 String s : nearestWord) {
             if (userTracking.chosenWord.equals(s)) {
-                mWriter.writeln("OK - ID: " + userTracking.trackId + " - user word: " + userTracking.chosenWord + " - predict: " + s);
+                mWriter.writeln("1\t" + userTracking.chosenWord + "\t" + s);
                 return;
             }
         }
 
         String predicted = nearestWord.length > 0 ? nearestWord[0] : "<undefined>";
-        mWriter.writeln("WRONG - ID: " + userTracking.trackId + " - user word: " + userTracking.chosenWord + " - predict: " + predicted);
+        mWriter.writeln("0\t" + userTracking.chosenWord + "\t" + predicted);
     }
 
     private float getMahalanobisDistance(ArrayList<SimpleMatrix> covMatrix, Polyline user, Polyline base) {
