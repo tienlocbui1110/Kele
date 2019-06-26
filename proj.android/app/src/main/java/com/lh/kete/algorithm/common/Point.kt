@@ -8,4 +8,8 @@ class Point{
         this.x = x
         this.y = y
     }
+
+    override fun toString(): String {
+        return String.format("(%f,%f)", x, y)
+    }
 }

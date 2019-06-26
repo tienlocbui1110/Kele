@@ -24,10 +24,7 @@ import com.lh.kete.algorithm.Algorithm
 import com.lh.kete.algorithm.common.Path
 import com.lh.kete.algorithm.common.Point
 import com.lh.kete.algorithm.common.PolylineModel
-import com.lh.kete.algorithm.predictor.CosineSimilarity
-import com.lh.kete.algorithm.predictor.EuclidPredictor
-import com.lh.kete.algorithm.predictor.Predictor
-import com.lh.kete.algorithm.predictor.PredictorResult
+import com.lh.kete.algorithm.predictor.*
 import com.lh.kete.data.Information
 import com.lh.kete.data.KeteConfig
 import com.lh.kete.db.SQLiteHelper
@@ -323,7 +320,7 @@ class MainActivity : AppCompatActivity(), OnWorkerThreadListener {
         progressInfoText.text = text
     }
 
-    private fun init() {
+    private fun init(jsonString: String?) {
         predictLayout.visibility = View.INVISIBLE
         // Step 1: Show loading + set isLoaded = false
         loaderView.visibility = View.VISIBLE
@@ -333,7 +330,8 @@ class MainActivity : AppCompatActivity(), OnWorkerThreadListener {
         KeteExec.doBackground(Runnable {
             try {
                 // Step 2: read json from file or intent
-                val jsonLayout = KeteUtils.readJsonConfigFromAssets(this, Information.LAYOUT_ASSET!!)
+                val jsonLayout = jsonString
+                        ?: KeteUtils.readJsonConfigFromAssets(this, Information.LAYOUT_ASSET!!)
                 // Step 3: CalculateHash of layout
                 Information.LAYOUT_HASH = KeteUtils.md5(jsonLayout)
                 // Step 4: Convert json string to keyboard config.
@@ -349,6 +347,10 @@ class MainActivity : AppCompatActivity(), OnWorkerThreadListener {
                 showErrorLayout(e)
             }
         })
+    }
+
+    private fun init() {
+        init(null)
     }
 
     private fun bind(@IdRes id: Int): View {
@@ -383,6 +385,7 @@ private class Presenter : Algorithm.Callback<PredictorResult> {
         // Choose Predictor
         when (Information.METHOD) {
             mainView.resources.getString(R.string.cosine_method) -> predictor = CosineSimilarity(mainView, keteConfig, threadListener)
+            mainView.resources.getString(R.string.mahalanobis_method) -> predictor = MahalanobisPredictor(mainView, keteConfig, threadListener)
             else -> predictor = EuclidPredictor(mainView, keteConfig, threadListener)
         }
 

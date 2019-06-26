@@ -13,4 +13,5 @@
 
     <string name="euclid_method">euclid</string>
     <string name="cosine_method">cosine</string>
+    <string name="mahalanobis_method">mahalanobis</string>
 </resources>

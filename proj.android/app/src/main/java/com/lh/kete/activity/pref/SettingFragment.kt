@@ -19,9 +19,10 @@ class SettingFragment : PreferenceFragmentCompat() {
     private fun onPreferenceChanged(pref: Preference) {
         if (pref is ListPreference) {
             pref.setSummary(pref.entry)
-            pref.setOnPreferenceChangeListener { preference, _ ->
+            pref.setOnPreferenceChangeListener { preference, value ->
                 if (preference is ListPreference) {
-                    preference.setSummary(preference.entry)
+                    val displayText = preference.entries[preference.findIndexOfValue(value as String)]
+                    preference.setSummary(displayText)
                 }
                 true
             }

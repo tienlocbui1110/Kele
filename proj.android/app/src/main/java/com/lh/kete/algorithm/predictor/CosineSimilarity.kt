@@ -6,6 +6,9 @@ import com.lh.kete.algorithm.common.Path
 import com.lh.kete.algorithm.common.PolylineModel
 import com.lh.kete.data.KeteConfig
 import com.lh.kete.listener.OnWorkerThreadListener
+import android.R.attr.y
+import android.R.attr.x
+
 
 @Suppress("PARAMETER_NAME_CHANGED_ON_OVERRIDE")
 class CosineSimilarity(activity: MainActivity, kete: KeteConfig, listener: OnWorkerThreadListener) : Predictor(activity,
@@ -51,18 +54,32 @@ class CosineSimilarity(activity: MainActivity, kete: KeteConfig, listener: OnWor
     // Cấu trúc: model(x0,y0,x1,y1,...xn,yn)
     // Sử dụng thuật toán cosine similarity để tìm độ tương đồng về góc của 2 vector
     private fun calculateAverageCosineSimilarity(modelA: PolylineModel, modelB: PolylineModel): Float {
+        val z = 25f
         val listA = modelA.getPointList()
         val listB = modelB.getPointList()
 
-        var scalar = 0f
-        var sumX = 0f
-        var sumY = 0f
-
-        for (i in 0 until PolylineModel.N_POINTS) {
-            scalar += (listA[i].x * listB[i].x + listA[i].y * listB[i].y)
-            sumX += (listA[i].x * listA[i].x + listA[i].y * listA[i].y)
-            sumY += (listB[i].x * listB[i].x + listB[i].y * listB[i].y)
+        // 2-dimensions
+        var cosineSimilar = 0f
+        for (i in listA.indices) {
+            // Build vector
+            val vectorA = floatArrayOf(listA[i].x, listA[i].y, z)
+            val vectorB = floatArrayOf(listB[i].x, listB[i].y, z)
+            // Calculate cosine
+            cosineSimilar += cosine(vectorA, vectorB).toFloat()
         }
-        return scalar / (Math.sqrt(sumX.toDouble()) * Math.sqrt(sumY.toDouble())).toFloat()
+        return cosineSimilar / listA.size
+    }
+
+    // A, B is n-dimensions vector
+    private fun cosine(A: FloatArray, B: FloatArray): Double {
+        var tuso = 0f
+        var mauA = 0f
+        var mauB = 0f
+        for (i in A.indices) {
+            tuso += A[i] * B[i]
+            mauA += A[i] * A[i]
+            mauB += B[i] * B[i]
+        }
+        return tuso / (Math.sqrt(mauA.toDouble()) * Math.sqrt(mauB.toDouble()))
     }
 }

@@ -14,7 +14,6 @@ import com.lh.kete.listener.OnWorkerThreadListener
 abstract class Predictor : Algorithm<Path, PredictorResult> {
 
     private val buttonMapper = HashMap<String, Point>()
-    private val FLOAT_ERROR = 0.03f
     private val memModel = ArrayList<Pair<PolylineModel, String>>()
 
     constructor(activity: MainActivity, kete: KeteConfig, listener: OnWorkerThreadListener) {

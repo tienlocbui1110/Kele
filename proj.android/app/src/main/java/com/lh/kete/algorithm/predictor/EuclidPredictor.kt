@@ -45,6 +45,10 @@ class EuclidPredictor(activity: MainActivity, kete: KeteConfig, listener: OnWork
             val predictWord = model[i].second
             if (baseModel.getPointList()[0].x in minX..maxX && baseModel.getPointList()[0].y in minY..maxY) {
                 var avgDistance = 0f
+                if (model[i].second == "XANG") {
+                    val i = 2
+                    System.out.println("aa")
+                }
                 for (j in 0 until PolylineModel.N_POINTS) {
                     avgDistance += KeteUtils.distance(
                             userModel.getPointList()[j].x,

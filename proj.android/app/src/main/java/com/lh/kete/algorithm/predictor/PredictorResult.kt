@@ -12,7 +12,7 @@ class PredictorResult {
                 break
             }
         }
-        if (result.isEmpty())
+        if (result.size < MAX_STACK)
             result.add(Pair(avgDistance, predition))
         verify()
     }
