@@ -1,27 +1,30 @@
 package com.lh.component.common;
 
-import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 
 public class PredictorResult {
-    private float mDistance = Float.MAX_VALUE;
-    private ArrayList<String> predictWord;
-    private static final float FLOAT_ERROR = 0;
+    private final int MAX_STACK = 5;
+    private final LinkedList<Pair<Float, String>> result = new LinkedList<>();
 
-    public PredictorResult() {
-        predictWord = new ArrayList<>();
-    }
-
-    public void addResult(float distance, String word) {
-        if (Math.abs(mDistance - distance) <= FLOAT_ERROR) {
-            predictWord.add(word);
-        } else if (distance < mDistance) {
-            predictWord.clear();
-            predictWord.add(word);
-            mDistance = distance;
+    public void addResult(String prediction, float avgDistance) {
+        for (int i= 0; i< result.size(); i++) {
+            if (avgDistance < result.get(i).first) {
+                result.add(i, new Pair<>(avgDistance, prediction));
+                break;
+            }
         }
+        if (result.size() < MAX_STACK)
+            result.add(new Pair<>(avgDistance, prediction));
+        verify();
     }
 
-    public String[] getResult() {
-        return predictWord.toArray(new String[0]);
+    public List<Pair<Float, String>> getResult() {
+        return result;
+    }
+
+    private void verify() {
+        while (result.size() > MAX_STACK)
+            result.remove(result.size() - 1);
     }
 }

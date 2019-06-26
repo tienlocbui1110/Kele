@@ -48,21 +48,9 @@ public class CosineTemplate extends BaseTemplate {
                 // Cosine nghịch biến trong khoảng từ 0deg -> 90deg
                 // Do đó Deg giảm dần khi cosine tăng dần.
                 // Mặt khác, cos chạy từ 0 -> 1. Do đó, ta sẽ lấy 1-cos làm khoảng cách cần so sánh.
-                result.addResult(1 - cosineDistance, predictWord);
+                result.addResult(predictWord, 1 - cosineDistance);
             }
         }
-        // Check if predict different than user.
-        String[] nearestWord = result.getResult();
-        for (
-                String s : nearestWord) {
-            if (userTracking.chosenWord.equals(s)) {
-                mWriter.writeln("1\t" + userTracking.chosenWord + "\t" + s);
-                return;
-            }
-        }
-
-        String predicted = nearestWord.length > 0 ? nearestWord[0] : "<undefined>";
-        mWriter.writeln("0\t" + userTracking.chosenWord + "\t" + predicted);
     }
 
     // Xem modelA và modelB là 2 vector

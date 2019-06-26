@@ -2,9 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="81991d21-7092-4c35-b6d6-31a0cbb15a5d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10.3/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.3/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10.3/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.3/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10.3/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.3/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10.3/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.3/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10.3/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.3/javaCompile/jarAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10.3/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.3/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10.3/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.3/javaCompile/taskHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10.3/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.3/taskHistory/taskHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10.3/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.3/taskHistory/taskHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/lh/component/common/Polyline.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/lh/component/common/Polyline.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/lh/component/common/PredictorResult.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/lh/component/common/PredictorResult.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/lh/component/template/CosineTemplate.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/lh/component/template/CosineTemplate.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/lh/component/template/EuclidTemplate.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/lh/component/template/EuclidTemplate.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/lh/component/template/MahalanobisTemplate.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/lh/component/template/MahalanobisTemplate.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/lh/main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/lh/main/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lh/component/common/Point.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lh/component/common/Point.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lh/component/common/Polyline.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lh/component/common/Polyline.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/lh/component/common/PredictorResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lh/component/common/PredictorResult.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/lh/component/template/CosineTemplate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lh/component/template/CosineTemplate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lh/component/template/EuclidAdvTemplate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lh/component/template/EuclidAdvTemplate.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/lh/component/template/EuclidTemplate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lh/component/template/EuclidTemplate.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/lh/component/template/MahalanobisTemplate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lh/component/template/MahalanobisTemplate.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/lh/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lh/main/Main.java" afterDir="false" />
@@ -51,58 +71,13 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/main/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="521">
-              <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/component/template/MahalanobisTemplate.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="287">
-              <caret line="107" lean-forward="true" selection-start-line="107" selection-end-line="107" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/component/template/EuclidTemplate.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="223">
-              <caret line="55" column="41" lean-forward="true" selection-start-line="55" selection-start-column="41" selection-end-line="55" selection-end-column="41" />
+            <state relative-caret-position="1950">
+              <caret line="75" column="6" selection-start-line="75" selection-start-column="6" selection-end-line="75" selection-end-column="6" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/component/template/CosineTemplate.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="417">
-              <caret line="64" column="26" selection-start-line="64" selection-start-column="26" selection-end-line="64" selection-end-column="26" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/log/cosine.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="903" column="17" lean-forward="true" selection-start-line="903" selection-start-column="17" selection-end-line="903" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -130,6 +105,9 @@
       <find>SingularMatrixException</find>
       <find>WRONG</find>
       <find>OK</find>
+      <find>0</find>
+      <find>nearestWord</find>
+      <find>XANH</find>
       <find>1</find>
     </findStrings>
   </component>
@@ -155,7 +133,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/lh/component/exception/ButtonMapperMissingException.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lh/component/common/PolylineBuilder.java" />
         <option value="$PROJECT_DIR$/src/test/java/PolylineTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lh/component/common/Point.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lh/component/common/ResourceReader.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lh/component/common/WordDictionary.java" />
         <option value="$PROJECT_DIR$/settings.gradle" />
@@ -168,28 +145,29 @@
         <option value="$PROJECT_DIR$/src/main/java/com/lh/component/common/UserTracking.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lh/IPackage/IWriter.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lh/component/writer/DefaultWriter.java" />
-        <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/src/main/java/com/lh/component/matrix/KeteMatrixUtils.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lh/component/matrix/Mtrix.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lh/IPackage/IDictionary.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lh/component/common/PolylineDictionary.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lh/component/common/SortDictionary.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lh/component/common/Polyline.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lh/component/common/SingleWord.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lh/component/template/EuclidAdvTemplate.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lh/component/template/EuclidTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lh/component/writer/FileWriter.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lh/component/template/BaseTemplate.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lh/component/matrix/MatrixUtils.java" />
-        <option value="$PROJECT_DIR$/log/euclid.txt" />
         <option value="$PROJECT_DIR$/src/test/java/MatrixTest.java" />
         <option value="$PROJECT_DIR$/log/mahalanobis.txt" />
         <option value="$PROJECT_DIR$/log/cosine.txt" />
         <option value="$PROJECT_DIR$/src/main/java/com/lh/component/common/PredictorResult.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lh/component/template/MahalanobisTemplate.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lh/component/template/CosineTemplate.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lh/component/template/EuclidTemplate.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lh/component/template/EuclidAdvTemplate.java" />
+        <option value="$PROJECT_DIR$/log/euclid.txt" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lh/component/template/MahalanobisTemplate.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lh/main/Main.java" />
+        <option value="$PROJECT_DIR$/build.gradle" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lh/component/common/Point.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lh/component/common/Polyline.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lh/component/template/EuclidTemplate.java" />
       </list>
     </option>
   </component>
@@ -268,6 +246,16 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="lh" type="462c0819:PsiDirectoryNode" />
               <item name="component" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TemplateTools" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TemplateTools" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="lh" type="462c0819:PsiDirectoryNode" />
+              <item name="component" type="462c0819:PsiDirectoryNode" />
               <item name="matrix" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -304,8 +292,8 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -532,7 +520,7 @@
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.29330382" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.29662424" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -572,6 +560,11 @@
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="Remote">
+        <watch expression="cloneUser.swipeModel.exportToCSV()" language="JAVA" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="breakpointCondition">
@@ -623,6 +616,11 @@
     </expressions>
     <expressions id="watch">
       <expression>
+        <expression-string>cloneUser.swipeModel.exportToCSV()</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
         <expression-string>a[0] * b[1] - a[1] * b[0]</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
@@ -670,45 +668,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.ejml/ejml-core/0.38/3605fc3e3b3de0343e4d0c365cd5207918ac6058/ejml-core-0.38-sources.jar!/org/ejml/data/Matrix.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="81" lean-forward="true" selection-start-line="81" selection-end-line="81" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.ejml/ejml-core/0.38/3605fc3e3b3de0343e4d0c365cd5207918ac6058/ejml-core-0.38-sources.jar!/org/ejml/data/FMatrixRMaj.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="116" column="11" selection-start-line="116" selection-start-column="11" selection-end-line="116" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.ejml/ejml-core/0.38/3605fc3e3b3de0343e4d0c365cd5207918ac6058/ejml-core-0.38-sources.jar!/org/ejml/data/ZMatrixRMaj.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="85" column="11" selection-start-line="85" selection-start-column="11" selection-end-line="85" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.ejml/ejml-core/0.38/3605fc3e3b3de0343e4d0c365cd5207918ac6058/ejml-core-0.38-sources.jar!/org/ejml/data/CMatrixRMaj.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="85" column="11" selection-start-line="85" selection-start-column="11" selection-end-line="85" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.ejml/ejml-core/0.38/3605fc3e3b3de0343e4d0c365cd5207918ac6058/ejml-core-0.38-sources.jar!/org/ejml/data/DMatrixSparseCSC.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="80" column="11" selection-start-line="80" selection-start-column="11" selection-end-line="80" selection-end-column="11" />
-          <folding>
-            <element signature="e#2458#2459#0" expanded="true" />
-            <element signature="e#2497#2498#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.ejml/ejml-core/0.38/3605fc3e3b3de0343e4d0c365cd5207918ac6058/ejml-core-0.38-sources.jar!/org/ejml/data/FMatrixSparseCSC.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
@@ -794,13 +753,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="169">
           <caret line="99" column="12" selection-start-line="99" selection-start-column="12" selection-end-line="99" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="365">
-          <caret line="15" column="39" selection-start-line="15" selection-start-column="39" selection-end-line="15" selection-end-column="39" />
         </state>
       </provider>
     </entry>
@@ -912,13 +864,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/component/template/EuclidAdvTemplate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="63" column="5" lean-forward="true" selection-start-line="63" selection-start-column="5" selection-end-line="63" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/component/common/SortDictionary.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -1003,18 +948,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/component/common/Polyline.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="91">
-          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3203#3204#0" expanded="true" />
-            <element signature="e#3233#3234#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/MatrixTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="130">
@@ -1026,58 +959,48 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/component/template/EuclidTest.java" />
+    <entry file="jar:///usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar!/java/util/LinkedList.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="294" column="37" lean-forward="true" selection-start-line="294" selection-start-column="37" selection-end-line="294" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/component/template/EuclidAdvTemplate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="364">
+          <caret line="61" column="29" selection-start-line="61" selection-start-column="29" selection-end-line="61" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/log/mahalanobis.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="731" column="40" selection-start-line="731" selection-start-column="40" selection-end-line="731" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/component/common/PredictorResult.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="6" column="31" lean-forward="true" selection-start-line="6" selection-start-column="31" selection-end-line="6" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/log/euclid.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="20" column="43" lean-forward="true" selection-start-line="20" selection-start-column="43" selection-end-line="20" selection-end-column="43" />
+        <state relative-caret-position="184">
+          <caret line="328" column="18" lean-forward="true" selection-start-line="328" selection-start-column="18" selection-end-line="328" selection-end-column="18" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/component/template/MahalanobisTemplate.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="107" lean-forward="true" selection-start-line="107" selection-end-line="107" />
+        <state relative-caret-position="910">
+          <caret line="53" column="36" lean-forward="true" selection-start-line="53" selection-start-column="36" selection-end-line="53" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/log/cosine.txt">
+    <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="903" column="17" lean-forward="true" selection-start-line="903" selection-start-column="17" selection-end-line="903" selection-end-column="17" />
+        <state relative-caret-position="261">
+          <caret line="11" column="1" lean-forward="true" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/component/template/CosineTemplate.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/component/common/PredictorResult.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="417">
-          <caret line="64" column="26" selection-start-line="64" selection-start-column="26" selection-end-line="64" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/component/template/EuclidTemplate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="55" column="41" lean-forward="true" selection-start-line="55" selection-start-column="41" selection-end-line="55" selection-end-column="41" />
+        <state relative-caret-position="34">
+          <caret line="3" column="22" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1086,8 +1009,82 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/main/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="521">
-          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+        <state relative-caret-position="442">
+          <caret line="17" column="30" lean-forward="true" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/component/template/CosineTemplate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="52" column="9" selection-start-line="52" selection-start-column="9" selection-end-line="52" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log/cosine.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="903" column="17" selection-start-line="903" selection-start-column="17" selection-end-line="903" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/component/common/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/libs/series-reducer-0.2.0.jar!/pl/luwi/series/reducer/Point.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="7" column="23" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/component/common/Point.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/libs/series-reducer-0.2.0.jar!/pl/luwi/series/reducer/SeriesReducer.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="33" column="33" lean-forward="true" selection-start-line="33" selection-start-column="33" selection-end-line="33" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/component/common/Polyline.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="223">
+          <caret line="102" column="46" selection-start-line="102" selection-start-column="46" selection-end-line="102" selection-end-column="46" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3203#3204#0" expanded="true" />
+            <element signature="e#3233#3234#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log/euclid.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="4" column="11" lean-forward="true" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/component/template/EuclidTemplate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1950">
+          <caret line="75" column="6" selection-start-line="75" selection-start-column="6" selection-end-line="75" selection-end-column="6" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

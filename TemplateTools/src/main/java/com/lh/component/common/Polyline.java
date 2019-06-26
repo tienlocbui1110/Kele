@@ -95,4 +95,22 @@ public class Polyline {
     public List<Point> getPoints() {
         return mPoints;
     }
+
+    public Polyline clone() {
+        Polyline newPolyline = new Polyline();
+        newPolyline.mLength = this.mLength;
+        for (int i = 0; i < mPoints.size(); i++) {
+            newPolyline.mPoints.add(this.mPoints.get(i));
+        }
+        return newPolyline;
+    }
+
+    public String exportToCSV(String x, String y) {
+        StringBuilder builder = new StringBuilder();
+        builder.append(x).append(",").append("y").append("\n");
+        for (int i = 0; i < mPoints.size(); i++) {
+            builder.append(mPoints.get(i).x()).append(",").append(mPoints.get(i).y()).append("\n");
+        }
+        return builder.toString();
+    }
 }

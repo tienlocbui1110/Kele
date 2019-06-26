@@ -1,6 +1,6 @@
 package com.lh.component.common;
 
-public class Point {
+public class Point implements pl.luwi.series.reducer.Point {
     private Pair<Float, Float> mPoint;
     private static final float FLOAT_ERROR = 0.00001f;
 
@@ -26,5 +26,15 @@ public class Point {
             return this.x() - ((Point) o).x() <= FLOAT_ERROR && this.y() - ((Point) o).y() <= FLOAT_ERROR;
         }
         return super.equals(o);
+    }
+
+    @Override
+    public double getX() {
+        return x();
+    }
+
+    @Override
+    public double getY() {
+        return y();
     }
 }

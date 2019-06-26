@@ -3,6 +3,10 @@ package com.lh.component.template;
 import com.lh.IPackage.IWriter;
 import com.lh.component.common.*;
 import com.lh.component.writer.DefaultWriter;
+import pl.luwi.series.reducer.SeriesReducer;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class EuclidTemplate extends BaseTemplate {
     private IWriter mWriter;
@@ -24,7 +28,10 @@ public class EuclidTemplate extends BaseTemplate {
     @Override
     public void onWorking() {
         for (int i = 0; i < mUserTracking.size(); i++) {
-            predict(mUserTracking.getUser(i));
+            User user = mUserTracking.getUser(i);
+            User cloneUser = lineReducer(user);
+            cloneUser.swipeModel.createEquidistant(user.swipeModel.pointCount());
+            predict(cloneUser);
         }
     }
 
@@ -46,21 +53,35 @@ public class EuclidTemplate extends BaseTemplate {
                 for (int j = 0; j < baseModel.pointCount(); j++) {
                     avgDistance += EuclidDistance.calculate(userTracking.swipeModel.getPoint(j), baseModel.getPoint(j));
                 }
-                result.addResult(avgDistance / baseModel.pointCount(), predictWord);
+                result.addResult(predictWord, avgDistance / baseModel.pointCount());
             }
         }
-
         // Check if predict different than user.
-        String[] nearestWord = result.getResult();
-        for (
-                String s : nearestWord) {
-            if (userTracking.chosenWord.equals(s)) {
-                mWriter.writeln("1\t" + userTracking.chosenWord + "\t" + s);
+        List<Pair<Float, String>> nearestWord = result.getResult();
+        for (int i = 0; i < nearestWord.size(); i++) {
+            if (i > 0 && !nearestWord.get(i).first.equals(nearestWord.get(i - 1).first))
+                break;
+            if (userTracking.chosenWord.equals(nearestWord.get(i).second)) {
+                mWriter.writeln("1\t" + userTracking.chosenWord + "\t" + nearestWord.get(i).second);
                 return;
             }
         }
 
-        String predicted = nearestWord.length > 0 ? nearestWord[0] : "<undefined>";
-        mWriter.writeln("0\t" + userTracking.chosenWord + "\t" + predicted);
+        mWriter.writeln("0\t" + userTracking.chosenWord + "\t" + nearestWord.get(0).second);
+    }
+
+    private User lineReducer(User user) {
+        Polyline clone = user.swipeModel.clone();
+        List<Point> points = new ArrayList<>();
+        for (int i = 0; i < clone.pointCount(); i++) {
+            points.add(clone.getPoint(i));
+        }
+        List<Point> reduced = SeriesReducer.reduce(points, 0.1);
+        Polyline cloneResult = new Polyline();
+        for (Point reduce : reduced) {
+            cloneResult.addPoint(reduce);
+        }
+        User cloneUser = new User(user.trackId, cloneResult, user.swipeTime, user.chosenWord);
+        return cloneUser;
     }
 }

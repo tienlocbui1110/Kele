@@ -18,8 +18,8 @@ public class Main {
         new Worker(new EuclidTemplate(dictionaryResource, layoutResource, numberOfPoints, writer)).doWork();
 
         // ----- Cosine Template ----- //
-        writer = new FileWriter(new File("./log/cosine.txt").toPath(), true);
-        new Worker(new CosineTemplate(dictionaryResource, layoutResource, numberOfPoints, writer)).doWork();
+//        writer = new FileWriter(new File("./log/cosine.txt").toPath(), true);
+//        new Worker(new CosineTemplate(dictionaryResource, layoutResource, numberOfPoints, writer)).doWork();
 
         // ----- Mahalanobis Template ----- //
 //        writer = new FileWriter(new File("./log/mahalanobis.txt").toPath(), true);

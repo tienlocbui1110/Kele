@@ -1,25 +1,23 @@
 package com.lh.component.template;
 
 import com.lh.IPackage.IWriter;
-import com.lh.component.common.Point;
-import com.lh.component.common.Polyline;
-import com.lh.component.common.PredictorResult;
-import com.lh.component.common.User;
+import com.lh.component.common.*;
 import com.lh.component.matrix.MatrixUtils;
 import com.lh.component.writer.DefaultWriter;
 import org.ejml.data.SingularMatrixException;
 import org.ejml.simple.SimpleMatrix;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class MahalanobisTemplate extends BaseTemplate {
     private IWriter mWriter;
-    private ArrayList<ArrayList<SimpleMatrix>> mCov;
+    private ArrayList<ArrayList<float[][]>> mCovInvert;
 
     public MahalanobisTemplate(String dictionaryResource, String layoutResource, int numberOfPoints, IWriter writer) {
         super(dictionaryResource, layoutResource, numberOfPoints);
         this.mWriter = writer;
-        mCov = new ArrayList<>();
+        mCovInvert = new ArrayList<>();
     }
 
 
@@ -39,7 +37,7 @@ public class MahalanobisTemplate extends BaseTemplate {
 
         for (int i = 0; i < mDictionary.size(); i++) {
             Polyline baseModel = mDictionary.getTranslatedWord(i);
-            ArrayList<SimpleMatrix> covs = new ArrayList<>();
+            ArrayList<float[][]> mCovInvertItem = new ArrayList<>();
             for (int j = 0; j < baseModel.pointCount() - 1; j++) {
                 Point pointA = baseModel.getPoint(j);
                 Point pointB = baseModel.getPoint(j + 1);
@@ -48,21 +46,30 @@ public class MahalanobisTemplate extends BaseTemplate {
                 float[] OyVector = {0, 1};
                 // Get angle from Oy & current vector
                 double angle = MatrixUtils.getAngleFromVectorAToB(OyVector, currentVector);
-                // TODO: calculate Scale Matrix
-                SimpleMatrix scaleMatrix = new SimpleMatrix(new float[][]{
-                        {(float) (10 + Math.sin(angle)), 0}, {0, (float) (10 + Math.cos(angle))}
-                });
+                // Scale matrix
+                float width = 9.1f, height = 22.5f, scale = height - width;
+                float[][] S = {{ width/2, 0f}, {0f, height/2}};
+                float maxScale = Math.max(S[0][0], S[1][1]);
+                S[0][0] /= maxScale;
+                S[1][1] /= maxScale;
                 // Get rotation matrix
-                SimpleMatrix R = new SimpleMatrix(new double[][]{
-                        {Math.cos(angle), -Math.sin(angle)},
-                        {Math.sin(angle), Math.cos(angle)}
-                });
-                // Get covarianceMatrix of point I.
-                SimpleMatrix cov = R.mult(scaleMatrix).mult(scaleMatrix).mult(R.invert());
-                covs.add(cov);
+                float[][] R = {{(float) Math.cos(angle), (float) -Math.sin(angle)},
+                        {(float) Math.sin(angle), (float) Math.cos(angle)}};
+//                float [][] R = {{1,0},{0,1}};
+                //Get covarianceMatrix & it invert
+                // Cov = R*S*S*R'
+                float[][] RInvert = get22Invert(R);
+                // next = R*S
+                float[][] next = mult22(R, S);
+                // next = next*S
+                next = mult22(next, S);
+                // cov = next*R'
+                float[][] cov = mult22(next, RInvert);
+                float[][] covInvert = get22Invert(cov);
+                mCovInvertItem.add(covInvert);
             }
-            covs.add(covs.get(covs.size() - 1));
-            mCov.add(covs);
+            mCovInvertItem.add(mCovInvertItem.get(mCovInvertItem.size() - 1));
+            mCovInvert.add(mCovInvertItem);
         }
     }
 
@@ -91,36 +98,53 @@ public class MahalanobisTemplate extends BaseTemplate {
             String predictWord = mDictionary.getOriginalWord(i).getWord();
             if (baseModel.getPoint(0).x() >= minX && baseModel.getPoint(0).x() <= maxX &&
                     baseModel.getPoint(0).y() >= minY && baseModel.getPoint(0).y() <= maxY) {
-                float mahalanobis = getMahalanobisDistance(mCov.get(i), userTracking.swipeModel, baseModel);
-                result.addResult((float) Math.sqrt(mahalanobis), predictWord);
+                float mahalanobis = getMahalanobisDistance(mCovInvert.get(i), userTracking.swipeModel, baseModel);
+                result.addResult(predictWord, mahalanobis);
             }
         }
 
         // Check if predict different than user.
-        String[] nearestWord = result.getResult();
-        for (
-                String s : nearestWord) {
-            if (userTracking.chosenWord.equals(s)) {
-                mWriter.writeln("1\t" + userTracking.chosenWord + "\t" + s);
+        List<Pair<Float, String>> nearestWord = result.getResult();
+        for (int i = 0; i < nearestWord.size(); i++) {
+            if (i > 0 && !nearestWord.get(i).first.equals(nearestWord.get(i - 1).first))
+                break;
+            if (userTracking.chosenWord.equals(nearestWord.get(i).second)) {
+                mWriter.writeln("1\t" + userTracking.chosenWord + "\t" + nearestWord.get(i).second);
                 return;
             }
         }
 
-        String predicted = nearestWord.length > 0 ? nearestWord[0] : "<undefined>";
-        mWriter.writeln("0\t" + userTracking.chosenWord + "\t" + predicted);
+        mWriter.writeln("0\t" + userTracking.chosenWord + "\t" + nearestWord.get(0).second);
     }
 
-    private float getMahalanobisDistance(ArrayList<SimpleMatrix> covMatrix, Polyline user, Polyline base) {
+    private float getMahalanobisDistance(ArrayList<float[][]> covInverts, Polyline user, Polyline base) {
         float mahalanobis = 0f;
         for (int i = 0; i < user.pointCount(); i++) {
-            // Step 1: Build (user - base) matrix
-            SimpleMatrix T = new SimpleMatrix(new float[][]{
-                    {user.getPoint(i).x() - base.getPoint(i).x()},
-                    {user.getPoint(i).y() - base.getPoint(i).y()}
-            });
+            float[][] covInvert = covInverts.get(i);
+            // Step 1: T = [x,y]
+            float[] T = {user.getPoint(i).x() - base.getPoint(i).x(), user.getPoint(i).y() - base.getPoint(i).y()};
             // Step 2: Calculate mahalanobis
-            mahalanobis += T.transpose().mult(covMatrix.get(i).invert()).mult(T).get(0);
+            // mahalanobis += T.transpose().mult(covMatrix[i].invert()).mult(T).get(0)
+            // <=> maha = [x*cov[0,0] + y*cov[1,0], x*cov[0,1] + y*cov[1,1]] as res * T
+            // <=> maha = res[0] * x + res[1]*y
+            float[] tmp = {T[0] * covInvert[0][0] + T[1] * covInvert[1][0], T[0] * covInvert[0][1] + T[1] * covInvert[1][1]};
+            mahalanobis += Math.sqrt(T[0] * tmp[0] + T[1] * tmp[1]);
         }
         return mahalanobis /= user.pointCount();
+    }
+
+    private float[][] get22Invert(float[][] matrix) {
+        float det = matrix[0][0] * matrix[1][1] - matrix[0][1] * matrix[1][0];
+        return new float[][]{
+                {matrix[1][1] / det, -matrix[0][1] / det},
+                {-matrix[1][0] / det, matrix[0][0] / det}
+        };
+    }
+
+    private float[][] mult22(float[][] A, float[][] B) {
+        return new float[][]{
+                {A[0][0] * B[0][0] + A[0][1] * B[1][0], A[0][0] * B[0][1] + A[0][1] * B[1][1]},
+                {A[1][0] * B[0][0] + A[1][1] * B[1][0], A[1][0] * B[0][1] + A[1][1] * B[1][1]}
+        };
     }
 }
