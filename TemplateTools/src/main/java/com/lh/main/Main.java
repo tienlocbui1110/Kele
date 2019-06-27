@@ -14,8 +14,8 @@ public class Main {
         int numberOfPoints = 50;
 
         // ----- Euclid Template ----- //
-        IWriter writer = new FileWriter(new File("./log/euclid.txt").toPath(), true);
-        new Worker(new EuclidTemplate(dictionaryResource, layoutResource, numberOfPoints, writer)).doWork();
+//        IWriter writer = new FileWriter(new File("./log/euclid.txt").toPath(), true);
+//        new Worker(new EuclidTemplate(dictionaryResource, layoutResource, numberOfPoints, writer)).doWork();
 
         // ----- Cosine Template ----- //
 //        writer = new FileWriter(new File("./log/cosine.txt").toPath(), true);
@@ -24,5 +24,10 @@ public class Main {
         // ----- Mahalanobis Template ----- //
 //        writer = new FileWriter(new File("./log/mahalanobis.txt").toPath(), true);
 //        new Worker(new MahalanobisTemplate(dictionaryResource, layoutResource, numberOfPoints, writer)).doWork();
+
+        // Conflict
+        layoutResource = "test_layout.json";
+        IWriter writer = new FileWriter(new File("./log/conflict.txt").toPath(), true);
+        new Worker(new Conflict(dictionaryResource, layoutResource, numberOfPoints, writer)).doWork();
     }
 }

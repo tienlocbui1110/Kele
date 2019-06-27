@@ -132,49 +132,49 @@ class NewEuclid(activity: MainActivity,
             }
         }
 
-//        // Calculate again
-//        val listRes = result.getResult()
-//        var recognizerError = false
-//        val recognizer = PolyRecognizerGSS()
-//        try {
-//            listRes.forEach { res ->
-//                for (i in 0 until model.size) {
-//                    if (model[i].second == res.second) {
-//                        // Lấy Polyline gốc của model
-//                        val basePolyline = memModel[i].first.clone()
-//                        val gesture = Gesture()
-//                        basePolyline.points.forEach { p ->
-//                            gesture.addPoint(TPoint(p.x, p.y, 0))
-//                        }
-//                        recognizer.addTemplate(memModel[i].second, gesture)
-//                        break
-//                    }
-//                }
-//            }
-//        } catch (e: Exception) {
-//            recognizerError = true
-//        }
-//
-//        
-//        // recognizer 
-//        val userPolyline = path.clone()
-//        val userGesture = Gesture()
-//        userPolyline.points.forEach { p ->
-//            userGesture.addPoint(TPoint(p.x, p.y, 0))
-//        }
-//        if (!recognizerError) {
-//            var newDistance = 0.0
-//            var strRes = ""
-//            val recognizeResult = recognizer.recognize(userGesture)
-//            listRes.forEach {
-//                if (recognizeResult.name == it.second) {
-//                    newDistance = 0.8 * it.first + 0.2 * (1 - recognizeResult.score)
-//                    strRes = it.second
-//                }
-//            }
-//            result.remove(strRes)
-//            result.addResult(strRes, newDistance.toFloat())
-//        }
+        // Calculate again
+        val listRes = result.getResult()
+        var recognizerError = false
+        val recognizer = PolyRecognizerGSS()
+        try {
+            listRes.forEach { res ->
+                for (i in 0 until model.size) {
+                    if (model[i].second == res.second) {
+                        // Lấy Polyline gốc của model
+                        val basePolyline = memModel[i].first.clone()
+                        val gesture = Gesture()
+                        basePolyline.points.forEach { p ->
+                            gesture.addPoint(TPoint(p.x, p.y, 0))
+                        }
+                        recognizer.addTemplate(memModel[i].second, gesture)
+                        break
+                    }
+                }
+            }
+        } catch (e: Exception) {
+            recognizerError = true
+        }
+
+
+        // recognizer 
+        val userPolyline = path.clone()
+        val userGesture = Gesture()
+        userPolyline.points.forEach { p ->
+            userGesture.addPoint(TPoint(p.x, p.y, 0))
+        }
+        if (!recognizerError) {
+            var newDistance = 0.0
+            var strRes = ""
+            val recognizeResult = recognizer.recognize(userGesture)
+            listRes.forEach {
+                if (recognizeResult.name == it.second) {
+                    newDistance = 0.9 * it.first + 0.1 * (1 - recognizeResult.score)
+                    strRes = it.second
+                }
+            }
+            result.remove(strRes)
+            result.addResult(strRes, newDistance.toFloat())
+        }
         callback.onDone(obj, result)
     }
 }

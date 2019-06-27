@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "id": "00003",
+  "id": "00001",
   "button": [
     {
       "char": "´",
@@ -43,29 +43,32 @@
       "y": 2
     },
     {
-      "char": "O",
+      "char": "^",
+      "computing_char": "6",
       "width": 9.1,
       "height": 22.5,
       "x": 50.5,
       "y": 2
     },
     {
-      "char": "^",
-      "computing_char": "6",
+      "char": " ̉",
+      "computing_char": "7",
       "width": 9.1,
       "height": 22.5,
       "x": 60.6,
       "y": 2
     },
     {
-      "char": "J",
+      "char": "ˇ",
+      "computing_char": "8",
       "width": 9.1,
       "height": 22.5,
       "x": 70.7,
       "y": 2
     },
     {
-      "char": "R",
+      "char": "-",
+      "computing_char": "9",
       "width": 9.1,
       "height": 22.5,
       "x": 80.8,
@@ -79,7 +82,7 @@
       "y": 2
     },
     {
-      "char": "M",
+      "char": "Q",
       "width": 9.1,
       "height": 22.5,
       "x": 0,
@@ -93,63 +96,63 @@
       "y": 26.5
     },
     {
-      "char": "Y",
+      "char": "E",
       "width": 9.1,
       "height": 22.5,
       "x": 20.2,
       "y": 26.5
     },
     {
-      "char": "K",
+      "char": "R",
       "width": 9.1,
       "height": 22.5,
       "x": 30.3,
       "y": 26.5
     },
     {
-      "char": "F",
+      "char": "T",
       "width": 9.1,
       "height": 22.5,
       "x": 40.4,
       "y": 26.5
     },
     {
-      "char": "Z",
+      "char": "Y",
       "width": 9.1,
       "height": 22.5,
       "x": 50.5,
       "y": 26.5
     },
     {
-      "char": "L",
+      "char": "U",
       "width": 9.1,
       "height": 22.5,
       "x": 60.6,
       "y": 26.5
     },
     {
-      "char": "G",
+      "char": "I",
       "width": 9.1,
       "height": 22.5,
       "x": 70.7,
       "y": 26.5
     },
     {
-      "char": "U",
+      "char": "O",
       "width": 9.1,
       "height": 22.5,
       "x": 80.8,
       "y": 26.5
     },
     {
-      "char": "D",
+      "char": "P",
       "width": 9.1,
       "height": 22.5,
       "x": 90.9,
       "y": 26.5
     },
     {
-      "char": "E",
+      "char": "A",
       "width": 9.1,
       "height": 22.5,
       "x": 4.55,
@@ -163,80 +166,77 @@
       "y": 51.0
     },
     {
-      "char": "P",
+      "char": "D",
       "width": 9.1,
       "height": 22.5,
       "x": 24.75,
       "y": 51.0
     },
     {
-      "char": "C",
+      "char": "F",
       "width": 9.1,
       "height": 22.5,
       "x": 34.85,
       "y": 51.0
     },
     {
-      "char": "A",
+      "char": "G",
       "width": 9.1,
       "height": 22.5,
       "x": 44.95,
-      "y": 51.0
-    },
-    {
-      "char": "Q",
-      "width": 9.1,
-      "height": 22.5,
-      "x": 55.05,
-      "y": 51.0
-    },
-    {
-      "char": "X",
-      "width": 9.1,
-      "height": 22.5,
-      "x": 65.15,
-      "y": 51.0
-    },
-    {
-      "char": "B",
-      "computing_char": "9",
-      "width": 9.1,
-      "height": 22.5,
-      "x": 75.25,
       "y": 51.0
     },
     {
       "char": "H",
       "width": 9.1,
       "height": 22.5,
+      "x": 55.05,
+      "y": 51.0
+    },
+    {
+      "char": "J",
+      "width": 9.1,
+      "height": 22.5,
+      "x": 65.15,
+      "y": 51.0
+    },
+    {
+      "char": "K",
+      "width": 9.1,
+      "height": 22.5,
+      "x": 75.25,
+      "y": 51.0
+    },
+    {
+      "char": "L",
+      "width": 9.1,
+      "height": 22.5,
       "x": 85.35,
       "y": 51.0
     },
     {
-      "char": "ˇ",
-      "computing_char": "8",
+      "char": "Z",
       "width": 9.1,
       "height": 22.5,
       "x": 14.65,
       "y": 75.5
     },
     {
-      "char": "N",
+      "char": "X",
       "width": 9.1,
       "height": 22.5,
       "x": 24.75,
       "y": 75.5
     },
     {
-      "char": "T",
+      "char": "C",
       "width": 9.1,
       "height": 22.5,
       "x": 34.85,
       "y": 75.5
     },
     {
-      "char": " ̉",
-      "computing_char": "7",
+      "char": "V",
       "width": 9.1,
       "height": 22.5,
       "x": 44.95,
@@ -250,14 +250,14 @@
       "y": 75.5
     },
     {
-      "char": "V",
+      "char": "N",
       "width": 9.1,
       "height": 22.5,
       "x": 65.15,
       "y": 75.5
     },
     {
-      "char": "I",
+      "char": "M",
       "width": 9.1,
       "height": 22.5,
       "x": 75.25,
