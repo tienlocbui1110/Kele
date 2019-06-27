@@ -1,8 +1,12 @@
 package com.lh.kete.network
 
+import android.util.Log
 import com.lh.kete.algorithm.common.Point
+import com.lh.kete.config.Config
 import okhttp3.MediaType
 import okhttp3.OkHttpClient
+import okhttp3.Request
+import okhttp3.RequestBody
 import org.json.JSONArray
 import org.json.JSONObject
 import java.util.concurrent.TimeUnit
@@ -47,8 +51,8 @@ class UserTracking {
             val pointsObj = JSONArray()
             points.forEach {
                 val pointObj = JSONObject()
-                pointObj.put("mX", it.mX)
-                pointObj.put("mY", it.mY)
+                pointObj.put("x", it.mX)
+                pointObj.put("y", it.mY)
                 pointsObj.put(pointObj)
             }
             obj.put("points", pointsObj)
@@ -56,20 +60,20 @@ class UserTracking {
         }
 
         fun request() {
-//            if (!isRequest) {
-//                try {
-//                    isRequest = true
-//                    val body = RequestBody.create(JSON_TYPE, obj.toString())
-//                    val request = Request.Builder()
-//                            .url(Config.HOST + "/user")
-//                            .post(body)
-//                            .build()
-//                    client.newCall(request).execute()
-//                } catch (e: Exception) {
-//                    e.printStackTrace()
-//                    Log.d("UserTracking", e.message)
-//                }
-//            }
+            if (!isRequest) {
+                try {
+                    isRequest = true
+                    val body = RequestBody.create(JSON_TYPE, obj.toString())
+                    val request = Request.Builder()
+                            .url(Config.HOST + "/user")
+                            .post(body)
+                            .build()
+                    client.newCall(request).execute()
+                } catch (e: Exception) {
+                    e.printStackTrace()
+                    Log.d("UserTracking", e.message)
+                }
+            }
         }
     }
 }
