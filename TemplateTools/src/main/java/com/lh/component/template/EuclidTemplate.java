@@ -3,6 +3,8 @@ package com.lh.component.template;
 import com.lh.IPackage.IWriter;
 import com.lh.component.common.*;
 import com.lh.component.writer.DefaultWriter;
+import it.unisa.di.cluelab.polyrec.Gesture;
+import it.unisa.di.cluelab.polyrec.PolyRecognizerGSS;
 import pl.luwi.series.reducer.SeriesReducer;
 
 import java.util.ArrayList;
@@ -29,9 +31,7 @@ public class EuclidTemplate extends BaseTemplate {
     public void onWorking() {
         for (int i = 0; i < mUserTracking.size(); i++) {
             User user = mUserTracking.getUser(i);
-            User cloneUser = lineReducer(user);
-            cloneUser.swipeModel.createEquidistant(user.swipeModel.pointCount());
-            predict(cloneUser);
+            predict(user);
         }
     }
 
@@ -56,6 +56,7 @@ public class EuclidTemplate extends BaseTemplate {
                 result.addResult(predictWord, avgDistance / baseModel.pointCount());
             }
         }
+
         // Check if predict different than user.
         List<Pair<Float, String>> nearestWord = result.getResult();
         for (int i = 0; i < nearestWord.size(); i++) {
@@ -68,20 +69,5 @@ public class EuclidTemplate extends BaseTemplate {
         }
 
         mWriter.writeln("0\t" + userTracking.chosenWord + "\t" + nearestWord.get(0).second);
-    }
-
-    private User lineReducer(User user) {
-        Polyline clone = user.swipeModel.clone();
-        List<Point> points = new ArrayList<>();
-        for (int i = 0; i < clone.pointCount(); i++) {
-            points.add(clone.getPoint(i));
-        }
-        List<Point> reduced = SeriesReducer.reduce(points, 0.1);
-        Polyline cloneResult = new Polyline();
-        for (Point reduce : reduced) {
-            cloneResult.addPoint(reduce);
-        }
-        User cloneUser = new User(user.trackId, cloneResult, user.swipeTime, user.chosenWord);
-        return cloneUser;
     }
 }

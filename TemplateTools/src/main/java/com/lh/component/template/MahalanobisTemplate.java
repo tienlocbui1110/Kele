@@ -5,7 +5,6 @@ import com.lh.component.common.*;
 import com.lh.component.matrix.MatrixUtils;
 import com.lh.component.writer.DefaultWriter;
 import org.ejml.data.SingularMatrixException;
-import org.ejml.simple.SimpleMatrix;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -47,11 +46,8 @@ public class MahalanobisTemplate extends BaseTemplate {
                 // Get angle from Oy & current vector
                 double angle = MatrixUtils.getAngleFromVectorAToB(OyVector, currentVector);
                 // Scale matrix
-                float width = 9.1f, height = 22.5f, scale = height - width;
-                float[][] S = {{ width/2, 0f}, {0f, height/2}};
-                float maxScale = Math.max(S[0][0], S[1][1]);
-                S[0][0] /= maxScale;
-                S[1][1] /= maxScale;
+                float width = 9.1f, height = 22.5f;
+                float[][] S = {{width / 2, 0f}, {0f, height / 2}};
                 // Get rotation matrix
                 float[][] R = {{(float) Math.cos(angle), (float) -Math.sin(angle)},
                         {(float) Math.sin(angle), (float) Math.cos(angle)}};

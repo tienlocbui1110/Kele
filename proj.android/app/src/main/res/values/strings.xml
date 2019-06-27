@@ -9,10 +9,10 @@
     <string name="points_prefs">points_prefs</string>
     <string name="method_prefs">method_prefs</string>
 
-    <string name="layout_qwerty">test_layout.json</string>
+    <string name="layout_qwerty">default_layout.json</string>
+    <string name="layout_vietnamese">vietnamese_layout.json</string>
 
     <string name="euclid_method">euclid</string>
     <string name="cosine_method">cosine</string>
     <string name="mahalanobis_method">mahalanobis</string>
-    <string name="new_method">newMethod</string>
 </resources>

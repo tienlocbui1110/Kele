@@ -14,6 +14,7 @@ public abstract class BaseTemplate implements ITemplate {
     protected IDictionary<SingleWord, Polyline> mDictionary;
     protected ILayoutManager mLayoutManager;
     protected UserTracking mUserTracking;
+    protected WordDictionary wordDictionary;
 
     public BaseTemplate(String layoutResource, int numberOfPoints) {
         this(DEFAULT_RESOURCE, layoutResource, numberOfPoints);
@@ -30,10 +31,10 @@ public abstract class BaseTemplate implements ITemplate {
         ResourceReader dictionaryResourceReader = new ResourceReader(mDictionaryResource);
         ResourceReader layoutResourceReader = new ResourceReader(mLayoutResource);
 
-        WordDictionary wordDictionary = new WordDictionary(dictionaryResourceReader);
+        wordDictionary = new WordDictionary(dictionaryResourceReader);
         mLayoutManager = new LayoutManager(layoutResourceReader);
         PolylineBuilder polylineBuilder = new PolylineBuilder(mLayoutManager);
-//        mUserTracking = new UserTracking(mLayoutManager, numberOfPoints);
+        mUserTracking = new UserTracking(mLayoutManager, numberOfPoints);
         mDictionary = new SortDictionary<>();
 
         for (int i = 0; i < wordDictionary.size(); i++) {

@@ -8,7 +8,7 @@ public class PredictorResult {
     private final LinkedList<Pair<Float, String>> result = new LinkedList<>();
 
     public void addResult(String prediction, float avgDistance) {
-        for (int i= 0; i< result.size(); i++) {
+        for (int i = 0; i < result.size(); i++) {
             if (avgDistance < result.get(i).first) {
                 result.add(i, new Pair<>(avgDistance, prediction));
                 break;
@@ -21,6 +21,18 @@ public class PredictorResult {
 
     public List<Pair<Float, String>> getResult() {
         return result;
+    }
+
+    public void remove(String s) {
+        Pair<Float, String> x = null;
+        for (int i = 0; i < result.size(); i++) {
+            if (result.get(i).second.equals(s)) {
+                x = result.get(i);
+                break;
+            }
+        }
+        if (x != null)
+            result.remove(x);
     }
 
     private void verify() {

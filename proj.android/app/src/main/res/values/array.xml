@@ -2,9 +2,11 @@
 <resources>
     <string-array name="layout_prefs_name">
         <item>QWERTY</item>
+        <item>Optimal vietnamese layout</item>
     </string-array>
     <string-array name="layout_prefs_value">
         <item>@string/layout_qwerty</item>
+        <item>@string/layout_vietnamese</item>
     </string-array>
     <string-array name="points_prefs_value">
         <item>10</item>
@@ -16,12 +18,10 @@
         <item>Euclid distance</item>
         <item>Cosine similarity</item>
         <item>Mahalanobis distance</item>
-        <item>New Method</item>
     </string-array>
     <string-array name="method_prefs_value">
         <item>@string/euclid_method</item>
         <item>@string/cosine_method</item>
         <item>@string/mahalanobis_method</item>
-        <item>@string/new_method</item>
     </string-array>
 </resources>

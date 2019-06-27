@@ -87,11 +87,8 @@ class MahalanobisPredictor(activity: MainActivity, kete: KeteConfig, listener: O
                 // Suppose that every button have same width & height
                 val width = kete.buttonConfig[0].width
                 val height = kete.buttonConfig[0].height
-                val scale = (height / width) - 1
-//                val S = arrayOf(floatArrayOf((width + (height - width) * Math.abs(Math.sin(angle))).toFloat(), 0f),
-//                        floatArrayOf(0f, (width + (height - width) * Math.abs(Math.cos(angle))).toFloat()))
-                val S = arrayOf(floatArrayOf(width, 0f),
-                        floatArrayOf(0f, height))
+                val S = arrayOf(floatArrayOf(width / 2, 0f),
+                        floatArrayOf(0f, height / 2))
                 // Step 4: Get rotation matrix
                 val R = arrayOf(floatArrayOf(Math.cos(angle).toFloat(), (-Math.sin(angle)).toFloat()),
                         floatArrayOf(Math.sin(angle).toFloat(), Math.cos(angle).toFloat()))

@@ -27,7 +27,7 @@ public class Conflict extends BaseTemplate {
         for (int i = 0; i < mDictionary.size() - 1; i++)
             for (int j = i + 1; j < mDictionary.size(); j++) {
                 float euclid = getEuclid(mDictionary.getTranslatedWord(i), mDictionary.getTranslatedWord(j));
-                if (euclid < 0.02f) {
+                if (euclid < 0.1f) {
                     mWriter.writeln(mDictionary.getOriginalWord(i) + " - " + mDictionary.getOriginalWord(j));
                 }
             }
