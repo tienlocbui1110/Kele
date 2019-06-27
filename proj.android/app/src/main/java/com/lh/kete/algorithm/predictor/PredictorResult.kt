@@ -21,6 +21,18 @@ class PredictorResult {
         return result
     }
 
+    fun remove(item: String) {
+        var needToRemove: Pair<Float, String>? = null
+        result.forEach {
+            if (it.second == item) {
+                needToRemove = it
+            }
+        }
+        needToRemove?.let {
+            result.remove(it)
+        }
+    }
+
     private fun verify() {
         while (result.size > MAX_STACK)
             result.removeAt(result.size - 1)

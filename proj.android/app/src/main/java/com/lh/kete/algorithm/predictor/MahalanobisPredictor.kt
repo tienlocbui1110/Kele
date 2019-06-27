@@ -35,16 +35,16 @@ class MahalanobisPredictor(activity: MainActivity, kete: KeteConfig, listener: O
         val result = PredictorResult()
         val xRange = 10f
         val yRange = 20f
-        val minX = userModel.getPointList()[0].x - xRange
-        val maxX = userModel.getPointList()[0].x + xRange
-        val minY = userModel.getPointList()[0].y - yRange
-        val maxY = userModel.getPointList()[0].y + yRange
+        val minX = userModel.getPointList()[0].mX - xRange
+        val maxX = userModel.getPointList()[0].mX + xRange
+        val minY = userModel.getPointList()[0].mY - yRange
+        val maxY = userModel.getPointList()[0].mY + yRange
         val model = getModel()
 
         for (i in 0 until model.size) {
             val baseModel = model[i].first
             val predictWord = model[i].second
-            if (baseModel.getPointList()[0].x in minX..maxX && baseModel.getPointList()[0].y in minY..maxY) {
+            if (baseModel.getPointList()[0].mX in minX..maxX && baseModel.getPointList()[0].mY in minY..maxY) {
                 val mahalanobis = getMahalanobisDistance(mCovInvert[i], userModel, baseModel)
                 result.addResult(predictWord, mahalanobis)
             }
@@ -56,12 +56,12 @@ class MahalanobisPredictor(activity: MainActivity, kete: KeteConfig, listener: O
         var mahalanobis = 0f
         for (i in 0 until PolylineModel.N_POINTS) {
             val covInvert = covInverts[i]
-            // Step 1: T = [x,y]
-            val T = floatArrayOf(user.getPointList()[i].x - base.getPointList()[i].x, user.getPointList()[i].y - base.getPointList()[i].y)
+            // Step 1: T = [mX,mY]
+            val T = floatArrayOf(user.getPointList()[i].mX - base.getPointList()[i].mX, user.getPointList()[i].mY - base.getPointList()[i].mY)
             // Step 2: Calculate mahalanobis
             // mahalanobis += T.transpose().mult(covMatrix[i].invert()).mult(T).get(0)
-            // <=> maha = [x*cov[0,0] + y*cov[1,0], x*cov[0,1] + y*cov[1,1]] as res * T
-            // <=> maha = res[0] * x + res[1]*y
+            // <=> maha = [mX*cov[0,0] + mY*cov[1,0], mX*cov[0,1] + mY*cov[1,1]] as res * T
+            // <=> maha = res[0] * mX + res[1]*mY
             val tmp = floatArrayOf(T[0] * covInvert[0][0] + T[1] * covInvert[1][0], T[0] * covInvert[0][1] + T[1] * covInvert[1][1])
             mahalanobis += T[0] * tmp[0] + T[1] * tmp[1]
         }
@@ -79,7 +79,7 @@ class MahalanobisPredictor(activity: MainActivity, kete: KeteConfig, listener: O
                 val pointA = baseModel.getPointList()[j]
                 val pointB = baseModel.getPointList()[j + 1]
                 // Step 1: Get current vector from point ( Suppose this vector is eigenvectors)
-                val currentVector = floatArrayOf(pointB.x - pointA.x, pointB.y - pointA.y)
+                val currentVector = floatArrayOf(pointB.mX - pointA.mX, pointB.mY - pointA.mY)
                 val OyVector = floatArrayOf(0f, 1f)
                 // Step 2: Get angle from Oy & current vector
                 val angle = getAngleFromVectorAToB(OyVector, currentVector)

@@ -148,8 +148,8 @@ class SQLiteHelper(context: Context) : SQLiteOpenHelper(context, DB_NAME, null, 
             // ModelId is auto increment, so same as rowid
             contentValues2.put(KeteContract.PointModelDetails.COL_MODEL, modelId)
             contentValues2.put(KeteContract.PointModelDetails.COL_INDEX, index)
-            contentValues2.put(KeteContract.PointModelDetails.COL_X, point.x)
-            contentValues2.put(KeteContract.PointModelDetails.COL_Y, point.y)
+            contentValues2.put(KeteContract.PointModelDetails.COL_X, point.mX)
+            contentValues2.put(KeteContract.PointModelDetails.COL_Y, point.mY)
             writableDatabase.insert(KeteContract.TABLE_POINT_MODEL_DETAILS, null, contentValues2)
         }
     }
@@ -268,8 +268,8 @@ class SQLiteHelper(context: Context) : SQLiteOpenHelper(context, DB_NAME, null, 
 
     private fun addPoint(point: Point) {
         val contentValues = ContentValues()
-        contentValues.put(KeteContract.Point.COL_X, point.x)
-        contentValues.put(KeteContract.Point.COL_Y, point.y)
+        contentValues.put(KeteContract.Point.COL_X, point.mX)
+        contentValues.put(KeteContract.Point.COL_Y, point.mY)
         try {
             writableDatabase.insertOrThrow(KeteContract.TABLE_POINT, null, contentValues)
         } catch (ignored: SQLException) {

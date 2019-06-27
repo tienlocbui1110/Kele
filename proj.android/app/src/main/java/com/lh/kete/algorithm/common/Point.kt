@@ -1,15 +1,25 @@
 package com.lh.kete.algorithm.common
 
-class Point{
-    val x: Float
-    val y: Float
+import pl.luwi.series.reducer.Point
+
+class Point : Point {
+    val mX: Float
+    val mY: Float
+
+    override fun getX(): Double {
+        return mX.toDouble()
+    }
+
+    override fun getY(): Double {
+        return mY.toDouble()
+    }
 
     constructor(x: Float, y: Float) {
-        this.x = x
-        this.y = y
+        this.mX = x
+        this.mY = y
     }
 
     override fun toString(): String {
-        return String.format("(%f,%f)", x, y)
+        return String.format("(%f,%f)", mX, mY)
     }
 }

@@ -1,8 +1,6 @@
 package com.lh.kete.algorithm.common
 
 import com.lh.kete.utils.KeteUtils
-import java.lang.RuntimeException
-import java.lang.StringBuilder
 
 class PolylineModel private constructor(private val mPoints: ArrayList<Point>) {
 
@@ -35,7 +33,7 @@ class PolylineModel private constructor(private val mPoints: ArrayList<Point>) {
             if (pointList.size <= 1)
                 return
             var iterPoint = pointList[0]
-            nPoints.add(Point(iterPoint.x, iterPoint.y))
+            nPoints.add(Point(iterPoint.mX, iterPoint.mY))
             var nextPoint = 1
             for (i in 1 until N_POINTS) {
                 // Step 1: calculate distance with next point
@@ -44,7 +42,7 @@ class PolylineModel private constructor(private val mPoints: ArrayList<Point>) {
                     if (nextPoint >= pointList.size)
                         break
                     val tmpDistance =
-                            KeteUtils.distance(iterPoint.x, iterPoint.y, pointList[nextPoint].x, pointList[nextPoint].y)
+                            KeteUtils.distance(iterPoint.mX, iterPoint.mY, pointList[nextPoint].mX, pointList[nextPoint].mY)
                     // Nếu distance + tmpDistance < interval, nghĩa là ta xét đoạn line tiếp theo.
                     if (distance + tmpDistance < interval) {
                         distance += tmpDistance
@@ -55,8 +53,8 @@ class PolylineModel private constructor(private val mPoints: ArrayList<Point>) {
                         // lấy part / tmpDistance => ra được tỉ lệ của điểm mới
                         val part = interval - distance
                         val percentagePoint = part / tmpDistance
-                        val fX = iterPoint.x + (pointList[nextPoint].x - iterPoint.x) * percentagePoint
-                        val fY = iterPoint.y + (pointList[nextPoint].y - iterPoint.y) * percentagePoint
+                        val fX = iterPoint.mX + (pointList[nextPoint].mX - iterPoint.mX) * percentagePoint
+                        val fY = iterPoint.mY + (pointList[nextPoint].mY - iterPoint.mY) * percentagePoint
                         iterPoint = Point(fX, fY)
                         break
                     }
@@ -69,7 +67,7 @@ class PolylineModel private constructor(private val mPoints: ArrayList<Point>) {
                 }
                 // Lấy iterPoint làm điểm tiếp theo
                 else {
-                    nPoints.add(Point(iterPoint.x, iterPoint.y))
+                    nPoints.add(Point(iterPoint.mX, iterPoint.mY))
                 }
             }
         }

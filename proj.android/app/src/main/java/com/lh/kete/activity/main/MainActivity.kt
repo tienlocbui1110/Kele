@@ -386,6 +386,7 @@ private class Presenter : Algorithm.Callback<PredictorResult> {
         when (Information.METHOD) {
             mainView.resources.getString(R.string.cosine_method) -> predictor = CosineSimilarity(mainView, keteConfig, threadListener)
             mainView.resources.getString(R.string.mahalanobis_method) -> predictor = MahalanobisPredictor(mainView, keteConfig, threadListener)
+            mainView.resources.getString(R.string.new_method) -> predictor = NewEuclid(mainView, keteConfig, threadListener)
             else -> predictor = EuclidPredictor(mainView, keteConfig, threadListener)
         }
 

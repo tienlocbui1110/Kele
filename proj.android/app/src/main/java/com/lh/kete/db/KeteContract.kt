@@ -42,12 +42,12 @@ object KeteContract {
     object PointModelDetails {
         const val COL_MODEL = "model"
         const val COL_INDEX = "idx"
-        const val COL_X = "x"
-        const val COL_Y = "y"
+        const val COL_X = "mX"
+        const val COL_Y = "mY"
     }
 
     object Point {
-        const val COL_X = "x"
-        const val COL_Y = "y"
+        const val COL_X = "mX"
+        const val COL_Y = "mY"
     }
 }

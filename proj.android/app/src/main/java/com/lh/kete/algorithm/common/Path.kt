@@ -11,7 +11,7 @@ class Path private constructor(private val mPoints: List<Point>) {
             mLength = 0f
         } else {
             for (i in 1 until mPoints.size) {
-                mLength += KeteUtils.distance(mPoints[i].x, mPoints[i].y, mPoints[i - 1].x, mPoints[i - 1].y)
+                mLength += KeteUtils.distance(mPoints[i].mX, mPoints[i].mY, mPoints[i - 1].mX, mPoints[i - 1].mY)
             }
         }
     }

@@ -16,10 +16,12 @@
         <item>Euclid distance</item>
         <item>Cosine similarity</item>
         <item>Mahalanobis distance</item>
+        <item>New Method</item>
     </string-array>
     <string-array name="method_prefs_value">
         <item>@string/euclid_method</item>
         <item>@string/cosine_method</item>
         <item>@string/mahalanobis_method</item>
+        <item>@string/new_method</item>
     </string-array>
 </resources>

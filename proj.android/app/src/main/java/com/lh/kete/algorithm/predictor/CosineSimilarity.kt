@@ -6,8 +6,6 @@ import com.lh.kete.algorithm.common.Path
 import com.lh.kete.algorithm.common.PolylineModel
 import com.lh.kete.data.KeteConfig
 import com.lh.kete.listener.OnWorkerThreadListener
-import android.R.attr.y
-import android.R.attr.x
 
 
 @Suppress("PARAMETER_NAME_CHANGED_ON_OVERRIDE")
@@ -29,16 +27,16 @@ class CosineSimilarity(activity: MainActivity, kete: KeteConfig, listener: OnWor
         val result = PredictorResult()
         val xRange = 10f
         val yRange = 20f
-        val minX = userModel.getPointList()[0].x - xRange
-        val maxX = userModel.getPointList()[0].x + xRange
-        val minY = userModel.getPointList()[0].y - yRange
-        val maxY = userModel.getPointList()[0].y + yRange
+        val minX = userModel.getPointList()[0].mX - xRange
+        val maxX = userModel.getPointList()[0].mX + xRange
+        val minY = userModel.getPointList()[0].mY - yRange
+        val maxY = userModel.getPointList()[0].mY + yRange
         val model = getModel()
 
         for (i in 0 until model.size) {
             val baseModel = model[i].first
             val predictWord = model[i].second
-            if (baseModel.getPointList()[0].x in minX..maxX && baseModel.getPointList()[0].y in minY..maxY) {
+            if (baseModel.getPointList()[0].mX in minX..maxX && baseModel.getPointList()[0].mY in minY..maxY) {
                 val avgDistance = calculateAverageCosineSimilarity(baseModel, userModel)
                 // Cosine nghịch biến trong khoảng từ 0deg -> 90deg
                 // Do đó Deg giảm dần khi cosine tăng dần.
@@ -62,8 +60,8 @@ class CosineSimilarity(activity: MainActivity, kete: KeteConfig, listener: OnWor
         var cosineSimilar = 0f
         for (i in listA.indices) {
             // Build vector
-            val vectorA = floatArrayOf(listA[i].x, listA[i].y, z)
-            val vectorB = floatArrayOf(listB[i].x, listB[i].y, z)
+            val vectorA = floatArrayOf(listA[i].mX, listA[i].mY, z)
+            val vectorB = floatArrayOf(listB[i].mX, listB[i].mY, z)
             // Calculate cosine
             cosineSimilar += cosine(vectorA, vectorB).toFloat()
         }
