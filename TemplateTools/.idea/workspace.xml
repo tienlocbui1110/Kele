@@ -1,27 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="81991d21-7092-4c35-b6d6-31a0cbb15a5d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10.3/fileContent/fileContent.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.3/fileContent/fileContent.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10.3/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.3/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10.3/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.3/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10.3/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.3/javaCompile/classAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10.3/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.3/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10.3/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.3/taskHistory/taskHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10.3/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.3/taskHistory/taskHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/lh/component/template/EuclidTemplate.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/lh/component/template/EuclidTemplate.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/lh/component/template/MahalanobisTemplate.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/lh/component/template/MahalanobisTemplate.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/lh/main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/lh/main/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lh/component/common/PredictorResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lh/component/common/PredictorResult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lh/component/template/BaseTemplate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lh/component/template/BaseTemplate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lh/component/template/Conflict.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lh/component/template/Conflict.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lh/component/template/EuclidTemplate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lh/component/template/EuclidTemplate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lh/component/template/MahalanobisTemplate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lh/component/template/MahalanobisTemplate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lh/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lh/main/Main.java" afterDir="false" />
-    </list>
+    <list default="true" id="81991d21-7092-4c35-b6d6-31a0cbb15a5d" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -87,7 +67,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/test_layout.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-284">
+            <state relative-caret-position="-141">
               <caret line="241" column="17" lean-forward="true" selection-start-line="241" selection-start-column="17" selection-end-line="241" selection-end-column="17" />
             </state>
           </provider>
@@ -523,7 +503,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.3071389" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -534,7 +513,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32894737" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32785088" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32785088" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3991228" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -1022,7 +1001,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/test_layout.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-284">
+        <state relative-caret-position="-141">
           <caret line="241" column="17" lean-forward="true" selection-start-line="241" selection-start-column="17" selection-end-line="241" selection-end-column="17" />
         </state>
       </provider>
