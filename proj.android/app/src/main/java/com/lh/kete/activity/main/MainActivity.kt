@@ -16,6 +16,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import com.google.gson.GsonBuilder
 import com.lh.kete.MainApplication
 import com.lh.kete.R
@@ -238,7 +239,13 @@ class MainActivity : AppCompatActivity(), OnWorkerThreadListener {
                 userTracking.addChosen(input.text.toString().toUpperCase())
                         .addAvgDistance(-1f)
                 KeteExec.doBackground(Runnable {
-                    userTracking.request()
+                    try {
+                        userTracking.request()
+                    } catch (e: Exception) {
+                        runOnUiThread {
+                            Toast.makeText(this, e.toString(), Toast.LENGTH_SHORT).show()
+                        }
+                    }
                 })
                 // Add text
                 addTextPreview(input.text.toString().toUpperCase())
@@ -273,7 +280,13 @@ class MainActivity : AppCompatActivity(), OnWorkerThreadListener {
                 KeteExec.doBackground(Runnable {
                     obj.addChosen(result.getResult()[idx].second)
                             .addAvgDistance(result.getResult()[idx].first)
-                    obj.request()
+                    try {
+                        obj.request()
+                    } catch (e: Exception) {
+                        runOnUiThread {
+                            Toast.makeText(this, e.toString(), Toast.LENGTH_SHORT).show()
+                        }
+                    }
                 })
             }
             predictLayout.visibility = View.INVISIBLE

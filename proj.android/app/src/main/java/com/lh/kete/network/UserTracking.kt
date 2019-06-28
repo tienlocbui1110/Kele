@@ -1,8 +1,10 @@
 package com.lh.kete.network
 
+import android.app.Application
 import android.util.Log
 import com.lh.kete.algorithm.common.Point
 import com.lh.kete.config.Config
+import com.lh.kete.utils.KeteUtils
 import okhttp3.MediaType
 import okhttp3.OkHttpClient
 import okhttp3.Request
@@ -61,18 +63,13 @@ class UserTracking {
 
         fun request() {
             if (!isRequest) {
-                try {
-                    isRequest = true
-                    val body = RequestBody.create(JSON_TYPE, obj.toString())
-                    val request = Request.Builder()
-                            .url(Config.HOST + "/user")
-                            .post(body)
-                            .build()
-                    client.newCall(request).execute()
-                } catch (e: Exception) {
-                    e.printStackTrace()
-                    Log.d("UserTracking", e.message)
-                }
+                isRequest = true
+                val body = RequestBody.create(JSON_TYPE, obj.toString())
+                val request = Request.Builder()
+                        .url(Config.HOST + "/user")
+                        .post(body)
+                        .build()
+                client.newCall(request).execute()
             }
         }
     }

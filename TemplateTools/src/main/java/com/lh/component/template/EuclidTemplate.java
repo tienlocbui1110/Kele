@@ -3,11 +3,7 @@ package com.lh.component.template;
 import com.lh.IPackage.IWriter;
 import com.lh.component.common.*;
 import com.lh.component.writer.DefaultWriter;
-import it.unisa.di.cluelab.polyrec.Gesture;
-import it.unisa.di.cluelab.polyrec.PolyRecognizerGSS;
-import pl.luwi.series.reducer.SeriesReducer;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class EuclidTemplate extends BaseTemplate {

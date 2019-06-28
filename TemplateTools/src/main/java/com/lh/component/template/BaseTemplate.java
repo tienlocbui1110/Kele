@@ -34,7 +34,7 @@ public abstract class BaseTemplate implements ITemplate {
         wordDictionary = new WordDictionary(dictionaryResourceReader);
         mLayoutManager = new LayoutManager(layoutResourceReader);
         PolylineBuilder polylineBuilder = new PolylineBuilder(mLayoutManager);
-        mUserTracking = new UserTracking(mLayoutManager, numberOfPoints);
+//        mUserTracking = new UserTracking(mLayoutManager, numberOfPoints);
         mDictionary = new SortDictionary<>();
 
         for (int i = 0; i < wordDictionary.size(); i++) {
