@@ -23,4 +23,11 @@
         android:title="Method"
         app:iconSpaceReserved="false" />
 
+    <ListPreference
+        android:entries="@array/epsilon_prefs_value"
+        android:entryValues="@array/epsilon_prefs_value"
+        android:key="@string/epsilon_prefs"
+        android:title="Noise reduce (epsilon)"
+        app:iconSpaceReserved="false" />
+
 </PreferenceScreen>

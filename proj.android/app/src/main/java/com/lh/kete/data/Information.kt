@@ -6,5 +6,6 @@ class Information {
         var LAYOUT_ASSET: String? = null
         var LAYOUT_ID: String? = null
         var LAYOUT_HASH: String? = null
+        var EPSILON: Float? = null
     }
 }

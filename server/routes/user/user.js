@@ -52,6 +52,9 @@ router.post("/", (req, res) => {
                     // Step 2: Add to UserTracking
                     data.input_method = tmpInputMethod
                     data.points = res.insertId
+                    if (!data.input_type) {
+                        data.input_type = 0
+                    }
                     UserTracking.insert(data, (error) => {
                         if (error) {
                             console.log(error)

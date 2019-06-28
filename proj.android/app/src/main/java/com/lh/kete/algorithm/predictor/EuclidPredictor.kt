@@ -10,8 +10,8 @@ import com.lh.kete.utils.KeteUtils
 
 @Suppress("PARAMETER_NAME_CHANGED_ON_OVERRIDE")
 class EuclidPredictor(activity: MainActivity, kete: KeteConfig, listener: OnWorkerThreadListener) : Predictor(activity,
-                                                                                                              kete,
-                                                                                                              listener) {
+        kete,
+        listener) {
     init {
         // Do nothing
         listener.onCompleted()
@@ -38,10 +38,6 @@ class EuclidPredictor(activity: MainActivity, kete: KeteConfig, listener: OnWork
             val predictWord = model[i].second
             if (baseModel.getPointList()[0].mX in minX..maxX && baseModel.getPointList()[0].mY in minY..maxY) {
                 var avgDistance = 0f
-                if (model[i].second == "XANG") {
-                    val i = 2
-                    System.out.println("aa")
-                }
                 for (j in 0 until PolylineModel.N_POINTS) {
                     avgDistance += KeteUtils.distance(
                             userModel.getPointList()[j].mX,

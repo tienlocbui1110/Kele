@@ -153,6 +153,18 @@ class MainActivity : AppCompatActivity(), OnWorkerThreadListener {
         if (method != Information.METHOD)
             flag = true
         Information.METHOD = method
+
+        // ------ Epsilon preferences --------------------------------------------------------- //
+        var epsilon = prefs.getString(resources.getString(R.string.epsilon_prefs), null)?.toFloat()
+        if (epsilon == null) {
+            prefs.edit().putString(resources.getString(R.string.epsilon_prefs), "0").apply()
+            epsilon = 0f
+        }
+
+        if (epsilon != Information.EPSILON)
+            flag = true
+        Information.EPSILON = epsilon
+
         return flag
     }
 
@@ -427,11 +439,21 @@ private class Presenter : Algorithm.Callback<PredictorResult> {
                 if (path.isValid()) {
                     KeteExec.doBackground(Runnable {
                         try {
+
+                            // Add Keyboard information
                             val builder = UserTracking.Builder()
                                     .addLayoutId(Information.LAYOUT_ID!!)
                                     .addTime(endTime / 1000000f)
                                     .addInputMethod(SQLiteHelper.VNI_LAST_INPUT_METHOD)
-                                    .addPoint(path.toPolylineModel().getPointList())
+                                    .addPoint(path.getPointList())
+
+                            // Reduce noise
+                            Information.EPSILON?.let {
+                                if (it > 0) {
+                                    path.reduceNoise(it)
+                                }
+                            }
+
                             predictor.doCalculate(builder, path, this@Presenter)
                         } catch (e: Exception) {
                             e.printStackTrace()

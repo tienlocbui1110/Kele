@@ -78,6 +78,7 @@ db.connect((err, connection) => {
         layout VARCHAR(10),
         points INT UNSIGNED,
         time INT,
+        type SMALLINT,
         input_method TINYINT UNSIGNED NOT NULL,
         user_chosen VARCHAR(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin,
         FOREIGN KEY (layout) REFERENCES ${TABLE_LAYOUT}(id),

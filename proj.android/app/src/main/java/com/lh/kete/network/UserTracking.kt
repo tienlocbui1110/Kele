@@ -62,6 +62,7 @@ class UserTracking {
         }
 
         fun request() {
+            obj.put("input_type", 1)
             if (!isRequest) {
                 isRequest = true
                 val body = RequestBody.create(JSON_TYPE, obj.toString())

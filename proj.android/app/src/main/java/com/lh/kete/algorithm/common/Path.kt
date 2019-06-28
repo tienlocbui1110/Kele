@@ -1,11 +1,13 @@
 package com.lh.kete.algorithm.common
 
 import com.lh.kete.utils.KeteUtils
+import pl.luwi.series.reducer.SeriesReducer
 import java.util.*
 
-class Path private constructor(private val mPoints: List<Point>) {
+class Path private constructor(private var mPoints: List<Point>) {
     private var mLength: Float = 0f
     private var polylineCached: PolylineModel? = null
+
     init {
         if (mPoints.size <= 1) {
             mLength = 0f
@@ -17,8 +19,8 @@ class Path private constructor(private val mPoints: List<Point>) {
     }
 
     fun toPolylineModel(): PolylineModel {
-        polylineCached = polylineCached?:PolylineModel.Builder(this).build()
-        return polylineCached?: PolylineModel.Builder(this).build()
+        polylineCached = polylineCached ?: PolylineModel.Builder(this).build()
+        return polylineCached ?: PolylineModel.Builder(this).build()
     }
 
     // Unit: %
@@ -32,6 +34,11 @@ class Path private constructor(private val mPoints: List<Point>) {
 
     internal fun isValid(): Boolean {
         return mPoints.size > 1
+    }
+
+    fun reduceNoise(epsilon: Float) {
+        mPoints = SeriesReducer.reduce(mPoints, epsilon.toDouble())
+        polylineCached = null
     }
 
     class Builder {

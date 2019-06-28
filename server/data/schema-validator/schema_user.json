@@ -11,6 +11,10 @@
         "predicted": {
             "type": ["string", "null"]
         },
+        "input_type": {
+            "type": "integer",
+            "minimum": 0
+        },
         "chosen": {
             "type": "string",
             "minLength": 1

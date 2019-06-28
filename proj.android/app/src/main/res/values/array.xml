@@ -24,4 +24,10 @@
         <item>@string/cosine_method</item>
         <item>@string/mahalanobis_method</item>
     </string-array>
+    <string-array name="epsilon_prefs_value">
+        <item>0</item>
+        <item>0.5</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
 </resources>
