@@ -73,7 +73,12 @@ public class MahalanobisTemplate extends BaseTemplate {
     public void onWorking() {
         for (int i = 0; i < mUserTracking.size(); i++) {
             try {
-                predict(mUserTracking.getUser(i));
+                User user = mUserTracking.getUser(i);
+                // Build standard polyline if user.rawData = true
+                if (user.rawData) {
+                    user.swipeModel.createEquidistant(numberOfPoints);
+                }
+                predict(user);
             } catch (SingularMatrixException e) {
                 mWriter.writeln("USER-TRACKING-FAILED");
             }
@@ -110,7 +115,10 @@ public class MahalanobisTemplate extends BaseTemplate {
             }
         }
 
-        mWriter.writeln("0\t" + userTracking.chosenWord + "\t" + nearestWord.get(0).second);
+        if (nearestWord.size() == 0)
+            mWriter.writeln("0\t" + userTracking.chosenWord + "\t" + "NULL");
+        else
+            mWriter.writeln("0\t" + userTracking.chosenWord + "\t" + nearestWord.get(0).second);
     }
 
     private float getMahalanobisDistance(ArrayList<float[][]> covInverts, Polyline user, Polyline base) {

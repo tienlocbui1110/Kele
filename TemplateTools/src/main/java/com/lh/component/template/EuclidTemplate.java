@@ -27,6 +27,10 @@ public class EuclidTemplate extends BaseTemplate {
     public void onWorking() {
         for (int i = 0; i < mUserTracking.size(); i++) {
             User user = mUserTracking.getUser(i);
+            // Build standard polyline if user.rawData = true
+            if (user.rawData) {
+                user.swipeModel.createEquidistant(numberOfPoints);
+            }
             predict(user);
         }
     }
@@ -64,6 +68,9 @@ public class EuclidTemplate extends BaseTemplate {
             }
         }
 
-        mWriter.writeln("0\t" + userTracking.chosenWord + "\t" + nearestWord.get(0).second);
+        if (nearestWord.size() == 0)
+            mWriter.writeln("0\t" + userTracking.chosenWord + "\t" + "NULL");
+        else
+            mWriter.writeln("0\t" + userTracking.chosenWord + "\t" + nearestWord.get(0).second);
     }
 }

@@ -8,9 +8,9 @@ import com.lh.component.common.*;
 public abstract class BaseTemplate implements ITemplate {
     private String mDictionaryResource;
     private String mLayoutResource;
-    private int numberOfPoints;
     private static final String DEFAULT_RESOURCE = "vni_dic.txt";
 
+    protected int numberOfPoints;
     protected IDictionary<SingleWord, Polyline> mDictionary;
     protected ILayoutManager mLayoutManager;
     protected UserTracking mUserTracking;
@@ -34,7 +34,7 @@ public abstract class BaseTemplate implements ITemplate {
         wordDictionary = new WordDictionary(dictionaryResourceReader);
         mLayoutManager = new LayoutManager(layoutResourceReader);
         PolylineBuilder polylineBuilder = new PolylineBuilder(mLayoutManager);
-//        mUserTracking = new UserTracking(mLayoutManager, numberOfPoints);
+        mUserTracking = new UserTracking(mLayoutManager, numberOfPoints);
         mDictionary = new SortDictionary<>();
 
         for (int i = 0; i < wordDictionary.size(); i++) {

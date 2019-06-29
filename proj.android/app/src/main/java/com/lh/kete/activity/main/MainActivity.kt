@@ -375,7 +375,9 @@ class MainActivity : AppCompatActivity(), OnWorkerThreadListener {
     }
 
     private fun init() {
-        init(null)
+        val intent = intent
+        val jsonString = intent.getStringExtra("kete")
+        init(jsonString)
     }
 
     private fun bind(@IdRes id: Int): View {

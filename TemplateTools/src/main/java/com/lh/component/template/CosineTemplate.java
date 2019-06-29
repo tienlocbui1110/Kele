@@ -26,7 +26,12 @@ public class CosineTemplate extends BaseTemplate {
     @Override
     public void onWorking() {
         for (int i = 0; i < mUserTracking.size(); i++) {
-            predict(mUserTracking.getUser(i));
+            User user = mUserTracking.getUser(i);
+            // Build standard polyline if user.rawData = true
+            if (user.rawData) {
+                user.swipeModel.createEquidistant(numberOfPoints);
+            }
+            predict(user);
         }
     }
 
@@ -51,6 +56,21 @@ public class CosineTemplate extends BaseTemplate {
                 result.addResult(predictWord, 1 - cosineDistance);
             }
         }
+        // Check if predict different than user.
+        List<Pair<Float, String>> nearestWord = result.getResult();
+        for (int i = 0; i < nearestWord.size(); i++) {
+            if (i > 0 && !nearestWord.get(i).first.equals(nearestWord.get(i - 1).first))
+                break;
+            if (userTracking.chosenWord.equals(nearestWord.get(i).second)) {
+                mWriter.writeln("1\t" + userTracking.chosenWord + "\t" + nearestWord.get(i).second);
+                return;
+            }
+        }
+
+        if (nearestWord.size() == 0)
+            mWriter.writeln("0\t" + userTracking.chosenWord + "\t" + "NULL");
+        else
+            mWriter.writeln("0\t" + userTracking.chosenWord + "\t" + nearestWord.get(0).second);
     }
 
     // Xem modelA và modelB là 2 vector
