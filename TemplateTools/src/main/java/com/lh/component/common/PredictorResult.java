@@ -5,9 +5,9 @@ import java.util.List;
 
 public class PredictorResult {
     private final int MAX_STACK = 5;
-    private final LinkedList<Pair<Float, String>> result = new LinkedList<>();
+    private final LinkedList<Pair<Double, String>> result = new LinkedList<>();
 
-    public void addResult(String prediction, float avgDistance) {
+    public void addResult(String prediction, double avgDistance) {
         for (int i = 0; i < result.size(); i++) {
             if (avgDistance < result.get(i).first) {
                 result.add(i, new Pair<>(avgDistance, prediction));
@@ -19,12 +19,12 @@ public class PredictorResult {
         verify();
     }
 
-    public List<Pair<Float, String>> getResult() {
+    public List<Pair<Double, String>> getResult() {
         return result;
     }
 
     public void remove(String s) {
-        Pair<Float, String> x = null;
+        Pair<Double, String> x = null;
         for (int i = 0; i < result.size(); i++) {
             if (result.get(i).second.equals(s)) {
                 x = result.get(i);

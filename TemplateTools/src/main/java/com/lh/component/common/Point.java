@@ -1,22 +1,22 @@
 package com.lh.component.common;
 
 public class Point implements pl.luwi.series.reducer.Point {
-    private Pair<Float, Float> mPoint;
-    private static final float FLOAT_ERROR = 0.00001f;
+    private Pair<Double, Double> mPoint;
+    private static final double FLOAT_ERROR = 0.00001f;
 
-    public Point(float x, float y) {
+    public Point(double x, double y) {
         mPoint = new Pair<>(x, y);
     }
 
-    public void setPosition(float newX, float newY) {
+    public void setPosition(double newX, double newY) {
         mPoint = new Pair<>(newX, newY);
     }
 
-    public float x() {
+    public double x() {
         return mPoint.first;
     }
 
-    public float y() {
+    public double y() {
         return mPoint.second;
     }
 

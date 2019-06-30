@@ -31,8 +31,8 @@ public class LayoutManager implements ILayoutManager {
             JSONArray mButtons = mObject.getJSONArray("button");
             for (int i = 0; i < mButtons.length(); i++) {
                 JSONObject button = mButtons.getJSONObject(i);
-                float posX = button.getFloat("x") + button.getFloat("width") / 2;
-                float posY = button.getFloat("y") + button.getFloat("height") / 2;
+                double posX = button.getDouble("x") + button.getDouble("width") / 2;
+                double posY = button.getDouble("y") + button.getDouble("height") / 2;
                 if (button.has("computing_char")) {
                     buttonMapper.put(button.getString("computing_char"), new Point(posX, posY));
                 } else {

@@ -1,17 +1,19 @@
 package com.lh.component.common;
 
+import pl.luwi.series.reducer.SeriesReducer;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class Polyline {
     private ArrayList<Point> mPoints;
-    private float mLength = -1;
+    private double mLength = -1;
 
     public Polyline() {
         mPoints = new ArrayList<>();
     }
 
-    public void addPoint(float x, float y) {
+    public void addPoint(double x, double y) {
         addPoint(new Point(x, y));
     }
 
@@ -30,6 +32,13 @@ public class Polyline {
         return mPoints.get(index);
     }
 
+    public void reducing(float epsilon) {
+        mLength = -1;
+        List<Point> tmp = SeriesReducer.reduce(mPoints, epsilon);
+        mPoints = new ArrayList<>();
+        mPoints.addAll(tmp);
+    }
+
     /**
      * This function will create n lines with same length, represent by mPoints.
      *
@@ -40,17 +49,17 @@ public class Polyline {
         if (pointCount() <= 1)
             return;
 
-        float interval = getLength() / (n - 1);
+        double interval = getLength() / (n - 1);
         Point flagPoint = getPoint(0);
         mNewPoints.add(flagPoint);
         int pointIndex = 1;
         for (int i = 1; i < n; i++) {
-            float distance = 0;
+            double distance = 0;
             while (distance < interval) {
                 if (pointIndex >= pointCount())
                     break;
                 // distance from currentFlag to next point
-                float nextDistance = EuclidDistance.calculate(flagPoint, getPoint(pointIndex));
+                double nextDistance = EuclidDistance.calculate(flagPoint, getPoint(pointIndex));
                 // Nếu distance + nextDistance < interval, nghĩa là ta xét đoạn line tiếp theo.
                 if (distance + nextDistance < interval) {
                     distance += nextDistance;
@@ -59,10 +68,10 @@ public class Polyline {
                     // Nếu distance + nextDistance >= interval, ta xét flagPoint dựa trên % có được.
                     // Lấy part = interval - distance => ra được khoảng cách cần ở đoạn line mới
                     // lấy part / nextDistance => ra được tỉ lệ của điểm mới
-                    float part = interval - distance;
-                    float percentagePoint = part / nextDistance;
-                    float fX = flagPoint.x() + (getPoint(pointIndex).x() - flagPoint.x()) * percentagePoint;
-                    float fY = flagPoint.y() + (getPoint(pointIndex).y() - flagPoint.y()) * percentagePoint;
+                    double part = interval - distance;
+                    double percentagePoint = part / nextDistance;
+                    double fX = flagPoint.x() + (getPoint(pointIndex).x() - flagPoint.x()) * percentagePoint;
+                    double fY = flagPoint.y() + (getPoint(pointIndex).y() - flagPoint.y()) * percentagePoint;
                     flagPoint = new Point(fX, fY);
                     break;
                 }
@@ -82,7 +91,7 @@ public class Polyline {
         mPoints = mNewPoints;
     }
 
-    public float getLength() {
+    public double getLength() {
         if (mLength >= 0)
             return mLength;
         mLength = 0;

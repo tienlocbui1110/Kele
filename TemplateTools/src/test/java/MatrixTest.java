@@ -6,8 +6,8 @@ import org.junit.Test;
 public class MatrixTest {
     @Test
     public void testAngle() {
-        float[] a = {2, 3};
-        float[] b = {-1, 4};
+        double[] a = {2, 3};
+        double[] b = {-1, 4};
         double angle = MatrixUtils.getAngleFromVectorAToB(a, b);
         SimpleMatrix vA = new SimpleMatrix(new float[][]{{2, 3}});
         SimpleMatrix rotateM = new SimpleMatrix(new double[][]{{Math.cos(angle), -Math.sin(angle)},

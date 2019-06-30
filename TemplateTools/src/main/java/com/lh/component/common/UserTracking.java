@@ -33,6 +33,7 @@ public class UserTracking implements ReadableMySQL.QueryCallback {
         // Condition: PointModel.n = numberOfPoints && PointModel.layout = layoutManager.getLayoutId()
         // Sorting by : UserTracking.id, PointModelDetails.idx
         db.query("SELECT u.id, u.time, u.user_chosen, u.type, pmd.idx, pmd.x, pmd.y  FROM UserTracking u JOIN PointModel p ON u.points = p.id AND p.n = " + numberOfPoints + " AND p.layout = '" + layoutManager.getLayoutId() + "' JOIN PointModelDetails pmd ON pmd.model = p.id ORDER BY u.id, pmd.idx", this);
+//        db.query("SELECT u.id, u.time, u.user_chosen, u.type, pmd.idx, pmd.x, pmd.y  FROM UserTracking u JOIN PointModel p ON u.points = p.id AND p.layout = '" + layoutManager.getLayoutId() + "' JOIN PointModelDetails pmd ON pmd.model = p.id ORDER BY u.id, pmd.idx", this);
     }
 
     @Override

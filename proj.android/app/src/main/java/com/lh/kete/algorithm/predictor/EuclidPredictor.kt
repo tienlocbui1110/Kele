@@ -1,5 +1,6 @@
 package com.lh.kete.algorithm.predictor
 
+import android.util.Log
 import com.lh.kete.activity.main.MainActivity
 import com.lh.kete.algorithm.Algorithm
 import com.lh.kete.algorithm.common.Path
@@ -18,7 +19,10 @@ class EuclidPredictor(activity: MainActivity, kete: KeteConfig, listener: OnWork
     }
 
     override fun doCalculate(obj: Any?, path: Path, callback: Algorithm.Callback<PredictorResult>) {
+        val begin = System.currentTimeMillis()
         doCalculateWithMem(obj, path, callback)
+        val end = System.currentTimeMillis()
+        Log.d("Predictor", (end-begin).toString())
     }
 
     private fun doCalculateWithMem(obj: Any?, path: Path, callback: Algorithm.Callback<PredictorResult>) {
