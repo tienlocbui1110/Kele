@@ -12,7 +12,7 @@ class ButtonConfig : AbstractConfig {
     // Character display on UI
     @SerializedName("char")
     @Expose
-    val char: String? = null
+    var char: String? = null
 
     // Character will use at computing in dictionary
     @SerializedName("computing_char")

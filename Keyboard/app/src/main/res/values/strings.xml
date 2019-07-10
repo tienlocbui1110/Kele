@@ -1,6 +1,6 @@
 <resources>
-    <string name="app_name" translatable="false">Keyboard</string>
-    <string name="simple_ime" translatable="false">Kete Keyboard</string>
+    <string name="app_name" translatable="false">Keyboard QWE</string>
+    <string name="simple_ime" translatable="false">Kete QWE Keyboard</string>
     <string name="subtype_en_US" translatable="false">Vi</string>
     <string name="kete_no_config">NO CONFIG</string>
     <string name="kete_error">WRONG...</string>

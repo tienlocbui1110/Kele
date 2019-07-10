@@ -36,7 +36,7 @@ import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 
 @SuppressWarnings("ALL")
-public class KeteKeyboard extends InputMethodService implements KeteGestureListener, OnWorkerThreadListener, Algorithm.Callback<PredictorResult> {
+public class KeteKeyboardQWE extends InputMethodService implements KeteGestureListener, OnWorkerThreadListener, Algorithm.Callback<PredictorResult> {
     // Variable
     private String selectedText = "";
     private KeteLayout mLayout;
@@ -59,7 +59,7 @@ public class KeteKeyboard extends InputMethodService implements KeteGestureListe
             Information.Companion.setLAYOUT_ID(keteConfig.getId());
             Information.Companion.setLAYOUT_HASH(KeteUtils.INSTANCE.md5(layoutFile));
             Information.Companion.setEPSILON(0f);
-            Information.Companion.setLAYOUT_ASSET("keyboard_layout.json");
+            Information.Companion.setLAYOUT_ASSET("qwe_keyboard.json");
             PolylineModel.Companion.setN_POINTS(50);
 
             // Verify database
@@ -228,7 +228,7 @@ public class KeteKeyboard extends InputMethodService implements KeteGestureListe
             KeteExec.Companion.doBackground(new Runnable() {
                 @Override
                 public void run() {
-                    predictor.doCalculate(null, pathBuilder.build(), KeteKeyboard.this);
+                    predictor.doCalculate(null, pathBuilder.build(), KeteKeyboardQWE.this);
                 }
             });
         }
@@ -247,7 +247,7 @@ public class KeteKeyboard extends InputMethodService implements KeteGestureListe
 
     private String readAssets() throws IOException {
         StringBuilder sb = new StringBuilder();
-        InputStream is = getAssets().open("keyboard_layout.json");
+        InputStream is = getAssets().open("qwe_keyboard.json");
         BufferedReader br = new BufferedReader(new InputStreamReader(is, StandardCharsets.UTF_8));
         String str;
         while ((str = br.readLine()) != null) {

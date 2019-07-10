@@ -1,7 +1,7 @@
 package com.lh.main;
 
 import com.lh.IPackage.IWriter;
-import com.lh.component.template.*;
+import com.lh.component.template.DistanceConflict;
 import com.lh.component.writer.FileWriter;
 
 import java.io.File;
@@ -14,8 +14,8 @@ public class Main {
         int numberOfPoints = 50;
 
         // ----- Predict with Euclid distance ----- //
-        IWriter writer = new FileWriter(new File("./log/euclid_distance_optimize_layout.txt").toPath(), true);
-        new Worker(new EuclidTemplate(dictionaryResource, layoutResource, numberOfPoints, writer)).doWork();
+//        IWriter writer = new FileWriter(new File("./log/euclid_distance_optimize_layout.txt").toPath(), true);
+//        new Worker(new EuclidTemplate(dictionaryResource, layoutResource, numberOfPoints, writer)).doWork();
 
         // ----- Predict with Cosine Template ----- //
 //        IWriter writer = new FileWriter(new File("./log/cosine_distance_optimize_layout.txt").toPath(), true);
@@ -27,13 +27,13 @@ public class Main {
 
         //QWERTY layout DistanceConflict : distance = 0
 //        layoutResource = "default_layout.json";
-//        writer = new FileWriter(new File("./log/qwe_layout_conflict.txt").toPath(), true);
+//        IWriter writer = new FileWriter(new File("./log/qwe_layout_conflict.txt").toPath(), true);
 //        new Worker(new DistanceConflict(dictionaryResource, layoutResource, numberOfPoints, writer)).doWork();
 
         //Optimize Layout DistanceConflict : distance = 0
-//        layoutResource = "test_layout.json";
-//        writer = new FileWriter(new File("./log/optimize_layout_conflict.txt").toPath(), true);
-//        new Worker(new DistanceConflict(dictionaryResource, layoutResource, numberOfPoints, writer)).doWork();
+        layoutResource = "keyboard_layout.json";
+        IWriter writer = new FileWriter(new File("./log/optimize_layout_conflict.txt").toPath(), true);
+        new Worker(new DistanceConflict(dictionaryResource, layoutResource, numberOfPoints, writer)).doWork();
 
         //QWE Similarity conflict : 0 < distance < 0.5
 //        layoutResource = "default_layout.json";

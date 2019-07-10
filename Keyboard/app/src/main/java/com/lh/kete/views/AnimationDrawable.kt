@@ -1,8 +1,6 @@
 package com.lh.kete.views
 
 import android.graphics.*
-import android.graphics.drawable.BitmapDrawable
-import android.util.Log
 import android.view.View
 import java.util.*
 

@@ -1,10 +1,9 @@
 package com.lh.kete.views
 
-import android.animation.ValueAnimator
 import android.content.Context
-import android.graphics.*
-import android.graphics.drawable.BitmapDrawable
-import android.graphics.drawable.Drawable
+import android.graphics.Canvas
+import android.graphics.Color
+import android.graphics.RectF
 import android.os.Handler
 import android.os.Looper
 import android.support.annotation.IntDef
@@ -12,11 +11,11 @@ import android.support.annotation.UiThread
 import android.support.v4.view.GestureDetectorCompat
 import android.util.AttributeSet
 import android.util.Log
-import android.view.GestureDetector
 import android.view.Gravity
 import android.view.MotionEvent
 import android.widget.FrameLayout
 import android.widget.TextView
+import com.lh.kete.R
 import com.lh.kete.adapter.FindView
 import com.lh.kete.adapter.GestureAdapter
 import com.lh.kete.data.ButtonConfig
@@ -26,9 +25,7 @@ import com.lh.kete.data.UserInterfaceConfig
 import com.lh.kete.listener.KeteGestureListener
 import com.lh.kete.listener.KeteGestureListenerAdapter
 import com.lh.kete.utils.KeteUtils
-import com.loki.keyboard.R
 import java.util.*
-import kotlin.collections.ArrayList
 
 
 /**
@@ -193,6 +190,33 @@ class KeteLayout : FrameLayout, KeteV<KeteConfig?>, FindView<KeteButton> {
             if (rect.contains(x, y)) return child else continue
         }
         return null
+    }
+
+    var isCap = false
+
+    fun changeCapBehavior() {
+        isCap = !isCap
+
+        for (i in 0 until childCount) {
+            val child = getChildAt(i)
+            if (child is KeteButton) {
+                // Caplock if computingChar.length = 1
+                child.getConfig()?.let {
+                    if (it.computingChar != null && it.computingChar.length == 1) {
+                        if (isCap)
+                            it.char = it.char?.toUpperCase()
+                        else
+                            it.char = it.char?.toLowerCase()
+                        child.invalidate()
+                    }
+                }
+            }
+        }
+        requestLayout()
+    }
+
+    fun isCaplock(): Boolean {
+        return isCap
     }
 
     fun setLayoutData(config: KeteConfig?) {

@@ -30,7 +30,7 @@ public class EuclidTemplate extends BaseTemplate {
             User user = mUserTracking.getUser(i);
             // Build standard polyline if user.rawData = true
             if (user.rawData) {
-                user.swipeModel.reducing(0);
+                user.swipeModel.reducing(1);
                 user.swipeModel.createEquidistant(numberOfPoints);
                 predict(user);
             }

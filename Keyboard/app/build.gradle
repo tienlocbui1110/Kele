@@ -5,8 +5,8 @@ apply plugin: 'kotlin-android'
 android {
     compileSdkVersion 28
     defaultConfig {
-        applicationId "com.loki.keyboard"
-        minSdkVersion 21
+        applicationId "com.lh.kete"
+        minSdkVersion 19
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"

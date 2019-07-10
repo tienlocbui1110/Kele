@@ -116,7 +116,7 @@ public class Polyline {
 
     public String exportToCSV(String x, String y) {
         StringBuilder builder = new StringBuilder();
-        builder.append(x).append(",").append("y").append("\n");
+        builder.append(x).append(",").append(y).append("\n");
         for (int i = 0; i < mPoints.size(); i++) {
             builder.append(mPoints.get(i).x()).append(",").append(mPoints.get(i).y()).append("\n");
         }

@@ -1,0 +1,325 @@
+{
+  "version": 1,
+  "id": "00004",
+  "button": [
+    {
+      "char": "´",
+      "width": 9.1,
+      "computing_char": "1",
+      "height": 17.6,
+      "x": 0,
+      "y": 2
+    },
+    {
+      "char": "`",
+      "computing_char": "2",
+      "width": 9.1,
+      "height": 17.6,
+      "x": 10.1,
+      "y": 2
+    },
+    {
+      "char": "?",
+      "computing_char": "3",
+      "width": 9.1,
+      "height": 17.6,
+      "x": 20.2,
+      "y": 2
+    },
+    {
+      "char": "~",
+      "computing_char": "4",
+      "width": 9.1,
+      "height": 17.6,
+      "x": 30.3,
+      "y": 2
+    },
+    {
+      "char": ".",
+      "computing_char": "5",
+      "width": 9.1,
+      "height": 17.6,
+      "x": 40.4,
+      "y": 2
+    },
+    {
+      "char": "o",
+      "computing_char": "O",
+      "width": 9.1,
+      "height": 17.6,
+      "x": 50.5,
+      "y": 2
+    },
+    {
+      "char": "^",
+      "computing_char": "6",
+      "width": 9.1,
+      "height": 17.6,
+      "x": 60.6,
+      "y": 2
+    },
+    {
+      "char": "j",
+      "computing_char": "J",
+      "width": 9.1,
+      "height": 17.6,
+      "x": 70.7,
+      "y": 2
+    },
+    {
+      "char": "r",
+      "computing_char": "R",
+      "width": 9.1,
+      "height": 17.6,
+      "x": 80.8,
+      "y": 2
+    },
+    {
+      "char": "DEL",
+      "computing_char": "DEL",
+      "width": 9.1,
+      "height": 17.6,
+      "x": 90.9,
+      "y": 2
+    },
+    {
+      "char": "m",
+      "computing_char": "M",
+      "width": 9.1,
+      "height": 17.6,
+      "x": 0,
+      "y": 21.6
+    },
+    {
+      "char": "w",
+      "computing_char": "W",
+      "width": 9.1,
+      "height": 17.6,
+      "x": 10.1,
+      "y": 21.6
+    },
+    {
+      "char": "y",
+      "computing_char": "Y",
+      "width": 9.1,
+      "height": 17.6,
+      "x": 20.2,
+      "y": 21.6
+    },
+    {
+      "char": "k",
+      "computing_char": "K",
+      "width": 9.1,
+      "height": 17.6,
+      "x": 30.3,
+      "y": 21.6
+    },
+    {
+      "char": "f",
+      "computing_char": "F",
+      "width": 9.1,
+      "height": 17.6,
+      "x": 40.4,
+      "y": 21.6
+    },
+    {
+      "char": "z",
+      "computing_char": "Z",
+      "width": 9.1,
+      "height": 17.6,
+      "x": 50.5,
+      "y": 21.6
+    },
+    {
+      "char": "l",
+      "computing_char": "L",
+      "width": 9.1,
+      "height": 17.6,
+      "x": 60.6,
+      "y": 21.6
+    },
+    {
+      "char": "g",
+      "computing_char": "G",
+      "width": 9.1,
+      "height": 17.6,
+      "x": 70.7,
+      "y": 21.6
+    },
+    {
+      "char": "u",
+      "computing_char": "U",
+      "width": 9.1,
+      "height": 17.6,
+      "x": 80.8,
+      "y": 21.6
+    },
+    {
+      "char": "d",
+      "computing_char": "D",
+      "width": 9.1,
+      "height": 17.6,
+      "x": 90.9,
+      "y": 21.6
+    },
+    {
+      "char": "e",
+      "computing_char": "E",
+      "width": 9.1,
+      "height": 17.6,
+      "x": 4.55,
+      "y": 41.2
+    },
+    {
+      "char": "s",
+      "computing_char": "S",
+      "width": 9.1,
+      "height": 17.6,
+      "x": 14.65,
+      "y": 41.2
+    },
+    {
+      "char": "p",
+      "computing_char": "P",
+      "width": 9.1,
+      "height": 17.6,
+      "x": 24.75,
+      "y": 41.2
+    },
+    {
+      "char": "c",
+      "computing_char": "C",
+      "width": 9.1,
+      "height": 17.6,
+      "x": 34.85,
+      "y": 41.2
+    },
+    {
+      "char": "a",
+      "computing_char": "A",
+      "width": 9.1,
+      "height": 17.6,
+      "x": 44.95,
+      "y": 41.2
+    },
+    {
+      "char": "q",
+      "computing_char": "Q",
+      "width": 9.1,
+      "height": 17.6,
+      "x": 55.05,
+      "y": 41.2
+    },
+    {
+      "char": "x",
+      "computing_char": "X",
+      "width": 9.1,
+      "height": 17.6,
+      "x": 65.15,
+      "y": 41.2
+    },
+    {
+      "char": "-",
+      "computing_char": "9",
+      "width": 9.1,
+      "height": 17.6,
+      "x": 75.25,
+      "y": 41.2
+    },
+    {
+      "char": "h",
+      "computing_char": "H",
+      "width": 9.1,
+      "height": 17.6,
+      "x": 85.35,
+      "y": 41.2
+    },
+    {
+      "char": "CAP",
+      "computing_char": "CAP",
+      "width": 13.65,
+      "height": 17.6,
+      "x": 0,
+      "y": 60.8
+    },
+    {
+      "char": "ˇ",
+      "computing_char": "8",
+      "width": 9.1,
+      "height": 17.6,
+      "x": 14.65,
+      "y": 60.8
+    },
+    {
+      "char": "n",
+      "computing_char": "N",
+      "width": 9.1,
+      "height": 17.6,
+      "x": 24.75,
+      "y": 60.8
+    },
+    {
+      "char": "t",
+      "computing_char": "T",
+      "width": 9.1,
+      "height": 17.6,
+      "x": 34.85,
+      "y": 60.8
+    },
+    {
+      "char": " ̉",
+      "computing_char": "7",
+      "width": 9.1,
+      "height": 17.6,
+      "x": 44.95,
+      "y": 60.8
+    },
+    {
+      "char": "b",
+      "computing_char": "B",
+      "width": 9.1,
+      "height": 17.6,
+      "x": 55.05,
+      "y": 60.8
+    },
+    {
+      "char": "v",
+      "computing_char": "V",
+      "width": 9.1,
+      "height": 17.6,
+      "x": 65.15,
+      "y": 60.8
+    },
+    {
+      "char": "i",
+      "computing_char": "I",
+      "width": 9.1,
+      "height": 17.6,
+      "x": 75.25,
+      "y": 60.8
+    },
+    {
+      "char": "\u21b2",
+      "computing_char": "ENTER",
+      "width": 14.65,
+      "height": 17.6,
+      "x": 85.35,
+      "y": 60.8
+    },
+    {
+      "char": " ",
+      "computing_char": "SPACE",
+      "width": 90,
+      "height": 17.6,
+      "x": 5,
+      "y": 80.4
+    }
+  ],
+  "otherConfig": {
+    "backgroundColor": "#482659",
+    "maxHeight": 300
+  },
+  "commonButtonUI": {
+    "fontSize": 16
+  }
+}

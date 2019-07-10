@@ -24,11 +24,12 @@ abstract class Predictor : Algorithm<Path, PredictorResult> {
                 continue
             val fX = button.x + button.width / 2
             val fY = button.y + button.height / 2
-            buttonMapper[button.computingChar ?: button.char] = Point(fX, fY)
+            buttonMapper[button.computingChar ?: button.char!!] = Point(fX, fY)
         }
 
 
         Log.d("Predictor", System.currentTimeMillis().toString())
+//        Thread.sleep(10000)
         buildBaseModel(context, listener)
         Log.d("Predictor", System.currentTimeMillis().toString())
     }
