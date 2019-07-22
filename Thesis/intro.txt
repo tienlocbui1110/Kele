@@ -1,0 +1,6 @@
+DictionaryHandler : Generate vietnamese word to alphabet.
+Keyboard : Keyboard that can use to typing, gliding. Build and install to Android devices.
+Tool: Preview keyboard with json file.
+server: Turn on to track user. Must be used by virtual keyboard app (proj.android).
+proj.android: Virtual keyboard app. This is not real keyboard, only use for testing.
+TemplateTools: Calculate & test without UI. This only implements algorithm.
