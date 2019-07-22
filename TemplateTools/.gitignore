@@ -1,4 +1,6 @@
 build/
 .gradle
 .idea
-log/
+out/
+/log
+!/log/git.keep
