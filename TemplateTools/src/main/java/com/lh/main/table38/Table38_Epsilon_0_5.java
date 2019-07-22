@@ -14,6 +14,6 @@ public class Table38_Epsilon_0_5 {
         String dictionaryResource = "vni_dic.txt";
         int numberOfPoints = 50;
         IWriter writer = new FileWriter(new File("./log/table38/epsilon_0_5.txt").toPath(), true);
-        new Worker(new EuclidTemplate(dictionaryResource, layoutResource, numberOfPoints, writer, 0.5f)).doWork();
+        new Worker(new EuclidTemplate(dictionaryResource, layoutResource, numberOfPoints, writer, 0.5f, true)).doWork();
     }
 }

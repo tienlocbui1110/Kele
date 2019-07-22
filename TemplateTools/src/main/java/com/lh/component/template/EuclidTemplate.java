@@ -10,11 +10,13 @@ import com.lh.component.writer.DefaultWriter;
 public class EuclidTemplate extends BaseTemplate {
     private IWriter mWriter;
     private float epsilon;
+    private boolean useForEpsilon;
 
-    public EuclidTemplate(String dictionaryResource, String layoutResource, int numberOfPoints, IWriter writer, float epsilon) {
+    public EuclidTemplate(String dictionaryResource, String layoutResource, int numberOfPoints, IWriter writer, float epsilon, boolean useForEpsilon) {
         super(dictionaryResource, layoutResource, numberOfPoints);
         this.mWriter = writer;
         this.epsilon = epsilon;
+        this.useForEpsilon = useForEpsilon;
     }
 
 
@@ -23,7 +25,7 @@ public class EuclidTemplate extends BaseTemplate {
     }
 
     public EuclidTemplate(String dictionaryResource, String layoutResource, int numberOfPoints) {
-        this(dictionaryResource, layoutResource, numberOfPoints, new DefaultWriter(), 0);
+        this(dictionaryResource, layoutResource, numberOfPoints, new DefaultWriter(), 0, false);
     }
 
     @Override
@@ -32,12 +34,12 @@ public class EuclidTemplate extends BaseTemplate {
             User user = mUserTracking.getUser(i);
             // Build standard polyline if user.rawData = true
             if (user.rawData) {
-                if (epsilon != 0)
+                if (useForEpsilon)
                     user.swipeModel.reducing(epsilon);
                 user.swipeModel.createEquidistant(numberOfPoints);
                 predict(user);
             } else {
-                if (user.swipeModel.pointCount() == numberOfPoints && epsilon == 0) {
+                if (user.swipeModel.pointCount() == numberOfPoints && !useForEpsilon) {
                     predict(user);
                 }
             }

@@ -2,45 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="81991d21-7092-4c35-b6d6-31a0cbb15a5d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lh/main/table27/Table27_N_10.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lh/main/table27/Table27_N_100.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lh/main/table27/Table27_N_25.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lh/main/table27/Table27_N_50.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lh/main/table29/Table29_N_10.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lh/main/table29/Table29_N_100.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lh/main/table29/Table29_N_25.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lh/main/table29/Table29_N_50.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lh/main/table30/Table30_N_10.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lh/main/table30/Table30_N_100.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lh/main/table30/Table30_N_25.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lh/main/table30/Table30_N_50.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lh/main/table34/Table34_Cosine.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lh/main/table34/Table34_Euclid.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lh/main/table34/Table34_Mahalanobis.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lh/main/table35/Table35_Cosine.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lh/main/table35/Table35_Euclid.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lh/main/table35/Table35_Mahalanobis.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lh/main/table36/Table36_Cosine.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lh/main/table36/Table36_Euclid.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lh/main/table36/Table36_Mahalanobis.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lh/main/table37/Table37_Cosine.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lh/main/table37/Table37_Euclid.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lh/main/table37/Table37_Mahalanobis.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lh/main/table38/Table38_Epsilon_0.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lh/main/table38/Table38_Epsilon_0_5.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lh/main/table38/Table38_Epsilon_1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lh/main/table38/Table38_Epsilon_2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10.3/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.3/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10.3/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.3/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lh/component/template/CosineTemplate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lh/component/template/CosineTemplate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lh/component/template/DistanceConflict.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lh/component/template/DistanceConflict.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/lh/component/template/EuclidTemplate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lh/component/template/EuclidTemplate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lh/component/template/MahalanobisTemplate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lh/component/template/MahalanobisTemplate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lh/component/writer/FileWriter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lh/component/writer/FileWriter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lh/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lh/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/test_layout.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/optimize_layout.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lh/main/table34/Table34_Euclid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lh/main/table34/Table34_Euclid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lh/main/table35/Table35_Euclid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lh/main/table35/Table35_Euclid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lh/main/table36/Table36_Euclid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lh/main/table36/Table36_Euclid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lh/main/table37/Table37_Euclid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lh/main/table37/Table37_Euclid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lh/main/table38/Table38_Epsilon_0.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lh/main/table38/Table38_Epsilon_0.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lh/main/table38/Table38_Epsilon_0_5.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lh/main/table38/Table38_Epsilon_0_5.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lh/main/table38/Table38_Epsilon_1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lh/main/table38/Table38_Epsilon_1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lh/main/table38/Table38_Epsilon_2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lh/main/table38/Table38_Epsilon_2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj.android/app/src/main/java/com/lh/kete/config/Config.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../proj.android/app/src/main/java/com/lh/kete/config/Config.kt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -82,63 +54,30 @@
     </system>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/main/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1415">
-              <caret line="75" column="38" selection-start-line="75" selection-start-column="38" selection-end-line="75" selection-end-column="38" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/main/table36/Table36_Mahalanobis.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="15" column="63" selection-start-line="15" selection-start-column="63" selection-end-line="15" selection-end-column="63" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/main/table37/Table37_Cosine.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="15" column="63" selection-start-line="15" selection-start-column="63" selection-end-line="15" selection-end-column="63" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/main/table37/Table37_Mahalanobis.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="15" column="31" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/component/template/EuclidTemplate.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="48" column="28" selection-start-line="48" selection-start-column="28" selection-end-line="48" selection-end-column="28" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
+    <leaf>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/main/table38/Table38_Epsilon_0.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="19" column="1" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
+            <state relative-caret-position="120">
+              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/log/table38/epsilon_0.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-7500">
+              <caret line="5" column="7" lean-forward="true" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/log/table38/epsilon_0_5.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="731">
+              <caret line="269" lean-forward="true" selection-start-line="269" selection-end-line="269" />
             </state>
           </provider>
         </entry>
@@ -146,8 +85,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/main/table38/Table38_Epsilon_0_5.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="13" column="50" selection-start-line="13" selection-start-column="50" selection-end-line="13" selection-end-column="50" />
+            <state relative-caret-position="330">
+              <caret line="16" column="108" selection-start-line="16" selection-start-column="108" selection-end-line="16" selection-end-column="108" />
             </state>
           </provider>
         </entry>
@@ -155,8 +94,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/main/table38/Table38_Epsilon_1.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="15" column="44" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
+            <state relative-caret-position="330">
+              <caret line="16" column="105" selection-start-line="16" selection-start-column="105" selection-end-line="16" selection-end-column="105" />
             </state>
           </provider>
         </entry>
@@ -164,17 +103,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/main/table38/Table38_Epsilon_2.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="13" column="30" selection-start-line="13" selection-start-column="30" selection-end-line="13" selection-end-column="30" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/main/table37/Table37_Euclid.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="12" column="48" selection-start-line="12" selection-start-column="48" selection-end-line="12" selection-end-column="48" />
+            <state relative-caret-position="330">
+              <caret line="16" column="105" selection-start-line="16" selection-start-column="105" selection-end-line="16" selection-end-column="105" />
             </state>
           </provider>
         </entry>
@@ -191,8 +121,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>ops</find>
-      <find>ops =</find>
       <find>mul</find>
       <find>print(</find>
       <find>SingularMatrixException</find>
@@ -219,8 +147,10 @@
       <find>CORRE</find>
       <find>Reducer</find>
       <find>CORRECT</find>
+      <find>CORREC</find>
       <find>CORR</find>
       <find>WRONG</find>
+      <find>COR</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -647,13 +577,13 @@
         <option value="$PROJECT_DIR$/src/main/java/com/lh/main/table37/Table37_Cosine.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lh/main/table37/Table37_Euclid.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lh/main/table37/Table37_Mahalanobis.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lh/component/template/EuclidTemplate.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lh/main/table38/Table34_Cosine.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lh/main/Main.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lh/component/template/EuclidTemplate.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lh/main/table38/Table38_Epsilon_0.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lh/main/table38/Table38_Epsilon_0_5.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lh/main/table38/Table38_Epsilon_1.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lh/main/table38/Table38_Epsilon_2.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lh/main/Main.java" />
       </list>
     </option>
   </component>
@@ -677,6 +607,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -687,6 +619,53 @@
             <path>
               <item name="TemplateTools" type="b2602c69:ProjectViewProjectNode" />
               <item name="TemplateTools" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="log" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TemplateTools" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TemplateTools" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="log" type="462c0819:PsiDirectoryNode" />
+              <item name="table29" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TemplateTools" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TemplateTools" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="log" type="462c0819:PsiDirectoryNode" />
+              <item name="table30" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TemplateTools" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TemplateTools" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="log" type="462c0819:PsiDirectoryNode" />
+              <item name="table34" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TemplateTools" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TemplateTools" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="log" type="462c0819:PsiDirectoryNode" />
+              <item name="table35" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TemplateTools" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TemplateTools" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="log" type="462c0819:PsiDirectoryNode" />
+              <item name="table36" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TemplateTools" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TemplateTools" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="log" type="462c0819:PsiDirectoryNode" />
+              <item name="table37" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TemplateTools" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TemplateTools" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="log" type="462c0819:PsiDirectoryNode" />
+              <item name="table38" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TemplateTools" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TemplateTools" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -709,6 +688,15 @@
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="lh" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TemplateTools" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TemplateTools" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="lh" type="462c0819:PsiDirectoryNode" />
+              <item name="component" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="TemplateTools" type="b2602c69:ProjectViewProjectNode" />
@@ -719,19 +707,27 @@
               <item name="lh" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="TemplateTools" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TemplateTools" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="lh" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="table38" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SearchEverywhereHistoryKey" value="Euclid&#9;PSI&#9;JAVA://com.lh.component.template.EuclidTemplate&#10;cosin&#9;FILE&#9;file:///home/cpu10241-local/Documents/Kele/TemplateTools/src/main/java/com/lh/component/template/CosineTemplate.java&#10;Maha&#9;PSI&#9;JAVA://com.lh.component.template.MahalanobisTemplate&#10;Main&#9;FILE&#9;file:///home/cpu10241-local/Documents/Kele/TemplateTools/src/main/java/com/lh/main/Main.java" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1563791901744" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1563797496637" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
@@ -765,26 +761,13 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Application.Table38_Epsilon_0">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.lh.main.Main" />
       <module name="com.lh.TemplateTools.main" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.lh.main.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Table30_N_100" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.lh.main.table30.Table30_N_100" />
-      <module name="com.lh.TemplateTools.main" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.lh.main.table30.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -824,6 +807,19 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.lh.main.table34.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Table38_Epsilon_0" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.lh.main.table38.Table38_Epsilon_0" />
+      <module name="com.lh.TemplateTools.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.lh.main.table38.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -879,19 +875,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.Table30_N_100" />
       <item itemvalue="Application.Table34_Euclid" />
       <item itemvalue="Application.Table34_Cosine" />
       <item itemvalue="Application.Table34_Mahalanobis" />
       <item itemvalue="Application.Main" />
+      <item itemvalue="Application.Table38_Epsilon_0" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Table38_Epsilon_0" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.Table34_Mahalanobis" />
         <item itemvalue="Application.Table34_Euclid" />
         <item itemvalue="Application.Table34_Cosine" />
-        <item itemvalue="Application.Table30_N_100" />
       </list>
     </recent_temporary>
   </component>
@@ -942,8 +938,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="64" y="-11" width="1857" height="1092" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.33775568" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.3416252" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -952,7 +949,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32809225" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3259958" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3259958" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3991228" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -1108,164 +1105,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/log/table27/n50.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/main/table29/table26/Table26_N_50.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/main/table29/table26/Table26_N_100.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/main/table29/table26/Table26_N_10.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/main/table29/table26/Table26_N_25.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/log/table27/n100.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="3" lean-forward="true" selection-start-column="3" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/main/table26/Table26_N_25.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="14" column="32" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/main/table26/Table26_N_50.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="14" column="32" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/main/table26/Table26_N_100.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="14" column="33" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/keyboard_layout.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-360">
-          <caret line="9" column="13" lean-forward="true" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/optimize_layout.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="12" column="5" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/main/table29/Table29_N_10.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="12" column="48" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/main/table29/Table29_N_25.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/main/table29/Table29_N_50.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="15" column="63" selection-start-line="15" selection-start-column="63" selection-end-line="15" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/main/table29/Table29_N_100.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="14" column="33" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/main/table30/Table30_N_10.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="15" column="63" selection-start-line="15" selection-start-column="63" selection-end-line="15" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/log/table29/n10.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/main/table30/Table30_N_100.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="15" column="63" selection-start-line="15" selection-start-column="63" selection-end-line="15" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/log/table30/n100.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="2" lean-forward="true" selection-start-column="2" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/log/table29/n25.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/log/table29/n50.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/log/table29/n100.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/log/table30/n10.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/log/table30/n25.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/log/table30/n50.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/main/table30/Table30_N_50.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="15" column="63" selection-start-line="15" selection-start-column="63" selection-end-line="15" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/main/table26/Table26_N_10.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="12" column="47" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="52" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/main/table30/Table30_N_25.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="15" column="63" selection-start-line="15" selection-start-column="63" selection-end-line="15" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/component/template/CosineTemplate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="32" column="24" selection-start-line="32" selection-start-column="24" selection-end-line="32" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/component/template/MahalanobisTemplate.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
@@ -1277,27 +1116,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="16" column="33" lean-forward="true" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/log/table34/mahalanobis.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="70">
-          <caret line="4" column="7" lean-forward="true" selection-start-line="4" selection-start-column="7" selection-end-line="4" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/log/table34/euclid.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="6" column="5" selection-start-line="6" selection-end-line="6" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/log/table34/cosine.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="8" column="5" lean-forward="true" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -1378,43 +1196,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/component/template/EuclidTemplate.java">
+    <entry file="file://$PROJECT_DIR$/log/table26/n100.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="48" column="28" selection-start-line="48" selection-start-column="28" selection-end-line="48" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state>
+          <caret column="3" lean-forward="true" selection-start-column="3" selection-end-column="3" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/main/table38/Table38_Epsilon_0.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="19" column="1" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/log/table26/n50.txt">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/main/table38/Table38_Epsilon_0_5.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="13" column="50" selection-start-line="13" selection-start-column="50" selection-end-line="13" selection-end-column="50" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/log/table26/n25.txt">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/main/table38/Table38_Epsilon_1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="15" column="44" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/main/table38/Table38_Epsilon_2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="13" column="30" selection-start-line="13" selection-start-column="30" selection-end-line="13" selection-end-column="30" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/log/table26/n10.txt">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/main/Main.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1423,6 +1219,184 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log/table27/n10.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log/table27/n25.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log/table27/n50.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log/table27/n100.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log/table29/n10.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log/table29/n25.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log/table29/n50.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log/table29/n100.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log/table30/n10.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log/table30/n25.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log/table30/n50.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log/table30/n100.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="2" lean-forward="true" selection-start-column="2" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log/table34/cosine.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="11" column="6" selection-start-line="11" selection-end-line="11" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log/table34/euclid.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="11" column="3" selection-start-line="11" selection-end-line="11" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log/table34/mahalanobis.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="10" column="5" lean-forward="true" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log/table35/cosine.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="9" column="5" lean-forward="true" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log/table35/euclid.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-30" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log/table35/mahalanobis.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-30" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log/table36/cosine.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="7" column="5" lean-forward="true" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log/table36/euclid.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-30" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log/table36/mahalanobis.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-30" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log/table37/cosine.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="313" lean-forward="true" selection-start-line="313" selection-end-line="313" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log/table38/epsilon_2.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="107" column="7" lean-forward="true" selection-start-line="107" selection-start-column="7" selection-end-line="107" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log/table38/epsilon_1.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="4" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log/table37/euclid.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-8970" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log/table37/mahalanobis.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-8970" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/component/template/EuclidTemplate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1080">
+          <caret line="36" column="28" selection-start-line="36" selection-start-column="28" selection-end-line="36" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/main/table38/Table38_Epsilon_0_5.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="16" column="108" selection-start-line="16" selection-start-column="108" selection-end-line="16" selection-end-column="108" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/main/table38/Table38_Epsilon_1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="16" column="105" selection-start-line="16" selection-start-column="105" selection-end-line="16" selection-end-column="105" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/main/table38/Table38_Epsilon_2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="16" column="105" selection-start-line="16" selection-start-column="105" selection-end-line="16" selection-end-column="105" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/main/table38/Table38_Epsilon_0.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log/table38/epsilon_0.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-7500">
+          <caret line="5" column="7" lean-forward="true" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log/table38/epsilon_0_5.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="731">
+          <caret line="269" lean-forward="true" selection-start-line="269" selection-end-line="269" />
         </state>
       </provider>
     </entry>

@@ -14,6 +14,6 @@ public class Table37_Euclid {
         String dictionaryResource = "vni_dic.txt";
         int numberOfPoints = 100;
         IWriter writer = new FileWriter(new File("./log/table37/euclid.txt").toPath(), true);
-        new Worker(new EuclidTemplate(dictionaryResource, layoutResource, numberOfPoints, writer, 0)).doWork();
+        new Worker(new EuclidTemplate(dictionaryResource, layoutResource, numberOfPoints, writer, 0, false)).doWork();
     }
 }

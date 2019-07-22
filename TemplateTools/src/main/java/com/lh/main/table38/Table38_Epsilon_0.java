@@ -1,7 +1,6 @@
 package com.lh.main.table38;
 
 import com.lh.IPackage.IWriter;
-import com.lh.component.template.CosineTemplate;
 import com.lh.component.template.EuclidTemplate;
 import com.lh.component.writer.FileWriter;
 import com.lh.main.Worker;
@@ -15,6 +14,6 @@ public class Table38_Epsilon_0 {
         String dictionaryResource = "vni_dic.txt";
         int numberOfPoints = 50;
         IWriter writer = new FileWriter(new File("./log/table38/epsilon_0.txt").toPath(), true);
-        new Worker(new EuclidTemplate(dictionaryResource, layoutResource, numberOfPoints, writer, 0)).doWork();
+        new Worker(new EuclidTemplate(dictionaryResource, layoutResource, numberOfPoints, writer, 0, true)).doWork();
     }
 }
