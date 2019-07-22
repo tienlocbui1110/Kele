@@ -31,6 +31,10 @@ public class CosineTemplate extends BaseTemplate {
             if (user.rawData) {
                 user.swipeModel.createEquidistant(numberOfPoints);
                 predict(user);
+            } else {
+                if (user.swipeModel.pointCount() == numberOfPoints) {
+                    predict(user);
+                }
             }
         }
     }

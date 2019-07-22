@@ -78,6 +78,10 @@ public class MahalanobisTemplate extends BaseTemplate {
                 if (user.rawData) {
                     user.swipeModel.createEquidistant(numberOfPoints);
                     predict(user);
+                } else {
+                    if (user.swipeModel.pointCount() == numberOfPoints) {
+                        predict(user);
+                    }
                 }
             } catch (SingularMatrixException e) {
                 mWriter.writeln("USER-TRACKING-FAILED");

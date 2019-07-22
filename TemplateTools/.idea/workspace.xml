@@ -2,63 +2,45 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="81991d21-7092-4c35-b6d6-31a0cbb15a5d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../Keyboard/app/src/main/java/com/lh/ketes/services/KeteKeyboard.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Keyboard/app/src/main/java/com/lh/ketes/services/KeteKeyboardQWE.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/keyboard_layout.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Keyboard/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../Keyboard/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Keyboard/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Keyboard/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Keyboard/app/src/main/assets/default_layout.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Keyboard/app/src/main/assets/qwe_keyboard.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Keyboard/app/src/main/assets/vietnamese_layout.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Keyboard/app/src/main/assets/keyboard_layout.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Keyboard/app/src/main/java/com/lh/kete/adapter/FindView.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../Keyboard/app/src/main/java/com/lh/ketes/adapter/FindView.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Keyboard/app/src/main/java/com/lh/kete/adapter/GestureAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../Keyboard/app/src/main/java/com/lh/ketes/adapter/GestureAdapter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Keyboard/app/src/main/java/com/lh/kete/algorithm/Algorithm.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../Keyboard/app/src/main/java/com/lh/ketes/algorithm/Algorithm.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Keyboard/app/src/main/java/com/lh/kete/algorithm/common/Path.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../Keyboard/app/src/main/java/com/lh/ketes/algorithm/common/Path.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Keyboard/app/src/main/java/com/lh/kete/algorithm/common/Point.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../Keyboard/app/src/main/java/com/lh/ketes/algorithm/common/Point.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Keyboard/app/src/main/java/com/lh/kete/algorithm/common/PolylineModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../Keyboard/app/src/main/java/com/lh/ketes/algorithm/common/PolylineModel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Keyboard/app/src/main/java/com/lh/kete/algorithm/predictor/CosineSimilarity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../Keyboard/app/src/main/java/com/lh/ketes/algorithm/predictor/CosineSimilarity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Keyboard/app/src/main/java/com/lh/kete/algorithm/predictor/EuclidPredictor.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../Keyboard/app/src/main/java/com/lh/ketes/algorithm/predictor/EuclidPredictor.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Keyboard/app/src/main/java/com/lh/kete/algorithm/predictor/Predictor.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../Keyboard/app/src/main/java/com/lh/ketes/algorithm/predictor/Predictor.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Keyboard/app/src/main/java/com/lh/kete/algorithm/predictor/PredictorResult.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../Keyboard/app/src/main/java/com/lh/ketes/algorithm/predictor/PredictorResult.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Keyboard/app/src/main/java/com/lh/kete/algorithm/string/AdvancedStringBuilder.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../Keyboard/app/src/main/java/com/lh/ketes/algorithm/string/AdvancedStringBuilder.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Keyboard/app/src/main/java/com/lh/kete/algorithm/string/BoldString.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../Keyboard/app/src/main/java/com/lh/ketes/algorithm/string/BoldString.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Keyboard/app/src/main/java/com/lh/kete/algorithm/string/StringType.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../Keyboard/app/src/main/java/com/lh/ketes/algorithm/string/StringType.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Keyboard/app/src/main/java/com/lh/kete/config/Config.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../Keyboard/app/src/main/java/com/lh/ketes/config/Config.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Keyboard/app/src/main/java/com/lh/kete/data/AbstractConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../Keyboard/app/src/main/java/com/lh/ketes/data/AbstractConfig.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Keyboard/app/src/main/java/com/lh/kete/data/ButtonConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../Keyboard/app/src/main/java/com/lh/ketes/data/ButtonConfig.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Keyboard/app/src/main/java/com/lh/kete/data/Information.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../Keyboard/app/src/main/java/com/lh/ketes/data/Information.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Keyboard/app/src/main/java/com/lh/kete/data/KeteConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../Keyboard/app/src/main/java/com/lh/ketes/data/KeteConfig.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Keyboard/app/src/main/java/com/lh/kete/data/LayoutConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../Keyboard/app/src/main/java/com/lh/ketes/data/LayoutConfig.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Keyboard/app/src/main/java/com/lh/kete/data/SpecialKeyList.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../Keyboard/app/src/main/java/com/lh/ketes/data/SpecialKeyList.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Keyboard/app/src/main/java/com/lh/kete/data/UserInterfaceConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../Keyboard/app/src/main/java/com/lh/ketes/data/UserInterfaceConfig.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Keyboard/app/src/main/java/com/lh/kete/db/KeteContract.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../Keyboard/app/src/main/java/com/lh/ketes/db/KeteContract.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Keyboard/app/src/main/java/com/lh/kete/db/SQLiteHelper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../Keyboard/app/src/main/java/com/lh/ketes/db/SQLiteHelper.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Keyboard/app/src/main/java/com/lh/kete/listener/KeteGestureListener.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../Keyboard/app/src/main/java/com/lh/ketes/listener/KeteGestureListener.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Keyboard/app/src/main/java/com/lh/kete/listener/KeteGestureListenerAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../Keyboard/app/src/main/java/com/lh/ketes/listener/KeteGestureListenerAdapter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Keyboard/app/src/main/java/com/lh/kete/listener/OnWorkerThreadListener.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../Keyboard/app/src/main/java/com/lh/ketes/listener/OnWorkerThreadListener.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Keyboard/app/src/main/java/com/lh/kete/services/KeteKeyboard.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Keyboard/app/src/main/java/com/lh/kete/threadpool/KeteExec.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../Keyboard/app/src/main/java/com/lh/ketes/threadpool/KeteExec.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Keyboard/app/src/main/java/com/lh/kete/utils/KeteUtils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../Keyboard/app/src/main/java/com/lh/ketes/utils/KeteUtils.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Keyboard/app/src/main/java/com/lh/kete/views/AnimationDrawable.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../Keyboard/app/src/main/java/com/lh/ketes/views/AnimationDrawable.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Keyboard/app/src/main/java/com/lh/kete/views/KeteButton.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../Keyboard/app/src/main/java/com/lh/ketes/views/KeteButton.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Keyboard/app/src/main/java/com/lh/kete/views/KeteLayout.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../Keyboard/app/src/main/java/com/lh/ketes/views/KeteLayout.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Keyboard/app/src/main/java/com/lh/kete/views/KeteV.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../Keyboard/app/src/main/java/com/lh/ketes/views/KeteV.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Keyboard/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Keyboard/app/src/main/res/values/strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10.3/fileContent/fileContent.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.3/fileContent/fileContent.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lh/main/table27/Table27_N_10.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lh/main/table27/Table27_N_100.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lh/main/table27/Table27_N_25.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lh/main/table27/Table27_N_50.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lh/main/table29/Table29_N_10.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lh/main/table29/Table29_N_100.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lh/main/table29/Table29_N_25.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lh/main/table29/Table29_N_50.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lh/main/table30/Table30_N_10.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lh/main/table30/Table30_N_100.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lh/main/table30/Table30_N_25.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lh/main/table30/Table30_N_50.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lh/main/table34/Table34_Cosine.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lh/main/table34/Table34_Euclid.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lh/main/table34/Table34_Mahalanobis.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lh/main/table35/Table35_Cosine.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lh/main/table35/Table35_Euclid.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lh/main/table35/Table35_Mahalanobis.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lh/main/table36/Table36_Cosine.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lh/main/table36/Table36_Euclid.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lh/main/table36/Table36_Mahalanobis.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lh/main/table37/Table37_Cosine.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lh/main/table37/Table37_Euclid.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lh/main/table37/Table37_Mahalanobis.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lh/main/table38/Table38_Epsilon_0.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lh/main/table38/Table38_Epsilon_0_5.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lh/main/table38/Table38_Epsilon_1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lh/main/table38/Table38_Epsilon_2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.10.3/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.3/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.10.3/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.3/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10.3/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.3/javaCompile/classAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10.3/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.3/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10.3/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.3/taskHistory/taskHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10.3/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.3/taskHistory/taskHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/lh/component/common/Polyline.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/lh/component/common/Polyline.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/lh/component/template/EuclidTemplate.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/lh/component/template/EuclidTemplate.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/lh/main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/lh/main/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lh/component/common/Polyline.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lh/component/common/Polyline.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lh/component/common/UserTracking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lh/component/common/UserTracking.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lh/component/template/CosineTemplate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lh/component/template/CosineTemplate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lh/component/template/DistanceConflict.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lh/component/template/DistanceConflict.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/lh/component/template/EuclidTemplate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lh/component/template/EuclidTemplate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lh/component/template/MahalanobisTemplate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lh/component/template/MahalanobisTemplate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lh/component/writer/FileWriter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lh/component/writer/FileWriter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/lh/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lh/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/test_layout.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/optimize_layout.json" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -104,8 +86,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/main/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3">
-              <caret line="34" column="9" selection-start-line="34" selection-start-column="9" selection-end-line="34" selection-end-column="9" />
+            <state relative-caret-position="1415">
+              <caret line="75" column="38" selection-start-line="75" selection-start-column="38" selection-end-line="75" selection-end-column="38" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -114,19 +96,85 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/log/optimize_layout_conflict.txt">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/main/table36/Table36_Mahalanobis.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="2" lean-forward="true" selection-start-column="2" selection-end-column="2" />
+            <state relative-caret-position="300">
+              <caret line="15" column="63" selection-start-line="15" selection-start-column="63" selection-end-line="15" selection-end-column="63" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/component/template/DistanceConflict.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/main/table37/Table37_Cosine.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="754">
-              <caret line="31" column="36" lean-forward="true" selection-start-line="31" selection-start-column="36" selection-end-line="31" selection-end-column="36" />
+            <state relative-caret-position="300">
+              <caret line="15" column="63" selection-start-line="15" selection-start-column="63" selection-end-line="15" selection-end-column="63" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/main/table37/Table37_Mahalanobis.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="15" column="31" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/component/template/EuclidTemplate.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="360">
+              <caret line="48" column="28" selection-start-line="48" selection-start-column="28" selection-end-line="48" selection-end-column="28" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/main/table38/Table38_Epsilon_0.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="390">
+              <caret line="19" column="1" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/main/table38/Table38_Epsilon_0_5.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="13" column="50" selection-start-line="13" selection-start-column="50" selection-end-line="13" selection-end-column="50" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/main/table38/Table38_Epsilon_1.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="15" column="44" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/main/table38/Table38_Epsilon_2.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="13" column="30" selection-start-line="13" selection-start-column="30" selection-end-line="13" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/main/table37/Table37_Euclid.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="12" column="48" selection-start-line="12" selection-start-column="48" selection-end-line="12" selection-end-column="48" />
             </state>
           </provider>
         </entry>
@@ -163,16 +211,16 @@
       <find>1</find>
       <find>đò</find>
       <find>float</find>
-      <find>đò</find>
       <find>14.65</find>
       <find>đồ</find>
       <find>&quot;C&quot;</find>
       <find>WRON</find>
       <find>numberOfPoint</find>
-      <find>WRONG</find>
       <find>CORRE</find>
       <find>Reducer</find>
       <find>CORRECT</find>
+      <find>CORR</find>
+      <find>WRONG</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -185,59 +233,426 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="GradleLocalSettings">
+    <option name="myGradleHomes">
+      <map>
+        <entry key="$PROJECT_DIR$" value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3" />
+      </map>
+    </option>
+    <option name="myGradleVersions">
+      <map>
+        <entry key="$PROJECT_DIR$" value="4.10.3" />
+      </map>
+    </option>
+    <option name="availableProjects">
+      <map>
+        <entry>
+          <key>
+            <ExternalProjectPojo>
+              <option name="name" value="TemplateTools" />
+              <option name="path" value="$PROJECT_DIR$" />
+            </ExternalProjectPojo>
+          </key>
+          <value>
+            <list>
+              <ExternalProjectPojo>
+                <option name="name" value="TemplateTools" />
+                <option name="path" value="$PROJECT_DIR$" />
+              </ExternalProjectPojo>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="availableTasks">
+      <map>
+        <entry key="$PROJECT_DIR$">
+          <value>
+            <list>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays the components produced by root project 'TemplateTools'. [incubating]" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="components" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles and tests this project and all projects that depend on it." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="buildDependents" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays the sub-projects of root project 'TemplateTools'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="projects" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles main classes." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="classes" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays the dependent components of components in root project 'TemplateTools'. [incubating]" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="dependentComponents" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays all buildscript dependencies declared in root project 'TemplateTools'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="buildEnvironment" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Generates Gradle wrapper files." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="wrapper" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles test classes." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="testClasses" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Generates Javadoc API documentation for the main source code." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="javadoc" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles a jar archive containing the main classes." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="jar" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays the configuration model of root project 'TemplateTools'. [incubating]" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="model" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Processes main resources." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="processResources" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays the tasks runnable from root project 'TemplateTools'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="tasks" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Initializes a new Gradle build." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="init" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Runs the unit tests." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="test" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Compiles main Java source." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="compileJava" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays the insight into a specific dependency in root project 'TemplateTools'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="dependencyInsight" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Runs all checks." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="check" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles the outputs of this project." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="assemble" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Deletes the build directory." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="clean" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Compiles test Java source." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="compileTestJava" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays all dependencies declared in root project 'TemplateTools'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="dependencies" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Processes test resources." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="processTestResources" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays a help message." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="help" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles and tests this project." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="build" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles and tests this project and all projects it depends on." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="buildNeeded" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays the properties of root project 'TemplateTools'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="properties" />
+              </ExternalTaskPojo>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="modificationStamps">
+      <map>
+        <entry key="$PROJECT_DIR$" value="6245979773000" />
+        <entry key="$PROJECT_DIR$/.gradle" value="0" />
+        <entry key="$PROJECT_DIR$/build.gradle" value="37710604" />
+        <entry key="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" value="2683517160" />
+        <entry key="$PROJECT_DIR$/settings.gradle" value="3761802739" />
+      </map>
+    </option>
+    <option name="projectBuildClasspath">
+      <map>
+        <entry key="$PROJECT_DIR$">
+          <value>
+            <ExternalProjectBuildClasspathPojo>
+              <option name="modulesBuildClasspath">
+                <map>
+                  <entry key="$PROJECT_DIR$">
+                    <value>
+                      <ExternalModuleBuildClasspathPojo>
+                        <option name="path" value="$PROJECT_DIR$" />
+                      </ExternalModuleBuildClasspathPojo>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+              <option name="name" value="TemplateTools" />
+              <option name="projectBuildClasspath">
+                <list>
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/src/model-groovy" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/src/core-api" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/src/build-option" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/src/javascript" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/src/language-jvm" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/src/diagnostics" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/src/platform-jvm" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/src/internal-integ-testing" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/src/workers" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/src/persistent-cache" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/src/jacoco" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/src/osgi" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/src/announce" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/src/platform-base" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/src/ivy" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/src/publish" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/src/ide-native" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/src/core" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/src/testing-jvm" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/src/language-java" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/src/build-cache" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/src/logging" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/src/wrapper" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/src/resources-s3" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/src/native" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/src/platform-native" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/src/testing-base" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/src/ear" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/src/composite-builds" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/src/scala" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/src/installation-beacon" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/src/test-kit" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/src/internal-performance-testing" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/src/build-init" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/src/signing" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/src/model-core" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/src/language-native" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/src/launcher" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/src/plugin-development" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/src/ide" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/src/maven" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/src/reporting" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/src/messaging" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/src/language-scala" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/src/code-quality" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/src/antlr" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/src/tooling-api" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/src/plugin-use" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/src/testing-native" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/src/resources" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/src/dependency-management" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/src/build-comparison" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/src/process-services" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/src/base-services" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/src/testing-junit-platform" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/src/build-cache-http" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/src/base-services-groovy" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/src/cli" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/src/tooling-api-builders" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/src/ide-play" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/src/jvm-services" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/src/resources-sftp" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/src/docs" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/src/plugins" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/src/version-control" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/src/language-groovy" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/src/resources-gcs" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/src/internal-testing" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/src/internal-android-performance-testing" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/src/platform-play" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/src/resources-http" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/src/tooling-native" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/lib/gradle-runtime-api-info-4.10.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/lib/gradle-kotlin-dsl-provider-plugins-1.0-rc-6.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/lib/gradle-api-metadata-4.10.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/lib/ant-1.9.11.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/lib/gradle-kotlin-dsl-tooling-models-1.0-rc-6.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/lib/gradle-build-option-4.10.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/lib/gradle-tooling-api-4.10.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/lib/gradle-logging-4.10.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/lib/ant-launcher-1.9.11.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/lib/gradle-resources-4.10.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/lib/gradle-persistent-cache-4.10.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/lib/gradle-kotlin-dsl-1.0-rc-6.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/lib/gradle-model-groovy-4.10.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/lib/gradle-jvm-services-4.10.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/lib/gradle-native-4.10.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/lib/gradle-messaging-4.10.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/lib/gradle-cli-4.10.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/lib/gradle-docs-4.10.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/lib/gradle-core-api-4.10.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/lib/gradle-wrapper-4.10.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/lib/gradle-base-services-4.10.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/lib/groovy-all-2.4.15.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/lib/gradle-kotlin-dsl-tooling-builders-1.0-rc-6.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/lib/gradle-core-4.10.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/lib/gradle-base-services-groovy-4.10.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/lib/gradle-installation-beacon-4.10.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/lib/gradle-model-core-4.10.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/lib/gradle-build-cache-4.10.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/lib/gradle-process-services-4.10.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/lib/gradle-launcher-4.10.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/lib/plugins/gradle-build-comparison-4.10.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/lib/plugins/gradle-scala-4.10.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/lib/plugins/gradle-platform-play-4.10.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/lib/plugins/gradle-tooling-native-4.10.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/lib/plugins/gradle-jacoco-4.10.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/lib/plugins/gradle-maven-4.10.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/lib/plugins/gradle-build-cache-http-4.10.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/lib/plugins/gradle-platform-base-4.10.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/lib/plugins/gradle-test-kit-4.10.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/lib/plugins/gradle-testing-junit-platform-4.10.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/lib/plugins/gradle-antlr-4.10.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/lib/plugins/gradle-build-init-4.10.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/lib/plugins/gradle-diagnostics-4.10.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/lib/plugins/gradle-javascript-4.10.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/lib/plugins/gradle-plugin-use-4.10.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/lib/plugins/gradle-language-native-4.10.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/lib/plugins/gradle-language-java-4.10.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/lib/plugins/gradle-resources-s3-4.10.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/lib/plugins/gradle-version-control-4.10.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/lib/plugins/gradle-tooling-api-builders-4.10.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/lib/plugins/gradle-language-scala-4.10.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/lib/plugins/gradle-signing-4.10.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/lib/plugins/gradle-announce-4.10.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/lib/plugins/gradle-testing-jvm-4.10.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/lib/plugins/gradle-resources-http-4.10.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/lib/plugins/gradle-testing-base-4.10.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/lib/plugins/gradle-resources-sftp-4.10.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/lib/plugins/gradle-ide-native-4.10.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/lib/plugins/gradle-resources-gcs-4.10.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/lib/plugins/gradle-osgi-4.10.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/lib/plugins/gradle-ear-4.10.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/lib/plugins/gradle-ide-4.10.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/lib/plugins/gradle-plugins-4.10.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/lib/plugins/ivy-2.2.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/lib/plugins/gradle-dependency-management-4.10.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/lib/plugins/gradle-ide-play-4.10.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/lib/plugins/gradle-testing-native-4.10.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/lib/plugins/gradle-reporting-4.10.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/lib/plugins/gradle-code-quality-4.10.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/lib/plugins/gradle-ivy-4.10.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/lib/plugins/gradle-platform-jvm-4.10.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/lib/plugins/gradle-plugin-development-4.10.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/lib/plugins/gradle-language-groovy-4.10.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/lib/plugins/gradle-language-jvm-4.10.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/lib/plugins/gradle-platform-native-4.10.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/lib/plugins/gradle-workers-4.10.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/lib/plugins/gradle-publish-4.10.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/lib/plugins/gradle-composite-builds-4.10.3.jar" />
+                </list>
+              </option>
+            </ExternalProjectBuildClasspathPojo>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="projectSyncType">
+      <map>
+        <entry key="$PROJECT_DIR$" value="RE_IMPORT" />
+      </map>
+    </option>
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/lh/component/common/Pair.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lh/component/common/SingleWordDictionary.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lh/IPackage/IWord.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lh/component/common/Dictionary.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lh/IPackage/IButton.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lh/IPackage/ILayoutManager.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lh/component/exception/ButtonMapperMissingException.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lh/component/common/PolylineBuilder.java" />
-        <option value="$PROJECT_DIR$/src/test/java/PolylineTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lh/component/common/ResourceReader.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lh/component/common/WordDictionary.java" />
-        <option value="$PROJECT_DIR$/settings.gradle" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lh/component/common/MySQL.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lh/component/common/KeteDatabaseConfig.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lh/component/common/ReadableMySQL.java" />
-        <option value="$PROJECT_DIR$/src/test/java/MySqlCnnTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lh/IPackage/IUser.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lh/IPackage/IWriter.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lh/component/writer/DefaultWriter.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lh/component/matrix/KeteMatrixUtils.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lh/component/matrix/Mtrix.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lh/IPackage/IDictionary.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lh/component/common/PolylineDictionary.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lh/component/common/SortDictionary.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lh/component/common/SingleWord.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lh/component/template/EuclidTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lh/component/writer/FileWriter.java" />
-        <option value="$PROJECT_DIR$/log/mahalanobis.txt" />
-        <option value="$PROJECT_DIR$/log/cosine.txt" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lh/component/template/EuclidAdvTemplate.java" />
-        <option value="$PROJECT_DIR$/log/euclid.txt" />
-        <option value="$PROJECT_DIR$/build.gradle" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lh/component/template/BaseTemplate.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lh/component/common/User.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lh/component/common/PredictorResult.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lh/component/common/Point.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lh/component/matrix/MatrixUtils.java" />
-        <option value="$PROJECT_DIR$/src/test/java/MatrixTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lh/component/common/LayoutManager.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lh/component/common/EuclidDistance.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lh/component/template/Conflict.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lh/component/template/SimilarityDistanceConflict.java" />
-        <option value="$PROJECT_DIR$/log/qwe_layout_similarity_conflict.txt" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lh/component/template/CosineTemplate.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lh/component/template/MahalanobisTemplate.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lh/component/common/Polyline.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lh/component/common/UserTracking.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lh/component/template/EuclidTemplate.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lh/component/template/DistanceConflict.java" />
         <option value="$PROJECT_DIR$/src/main/resources/test_layout.json" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lh/main/table26/Table26_50.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lh/component/writer/FileWriter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lh/main/table26/Table26_N_25.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lh/main/table26/Table26_N_10.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lh/main/table26/Table26_N_50.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lh/main/table26/Table26_N_100.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lh/component/template/DistanceConflict.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lh/main/table27/Table26_N_25.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lh/main/table27/Table26_N_50.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lh/main/table27/Table27_N_100.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lh/main/table27/Table27_N_50.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lh/main/table27/Table27_N_25.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lh/main/table27/Table27_N_10.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lh/main/table29/table26/Table26_N_25.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lh/main/table29/Table26_N_10.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lh/main/table29/Table26_N_25.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lh/main/table29/Table26_N_50.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lh/main/table29/Table26_N_100.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lh/main/table30/Table27_N_10.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lh/main/table30/Table27_N_25.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lh/main/table30/Table27_N_50.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lh/main/table30/Table27_N_100.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lh/main/table30/Table30_N_25.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lh/main/table34/Table30_N_10.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lh/main/table34/Table34_Cosine.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lh/main/table34/Table34_Mahalanobis.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lh/main/table34/Table34_Euclid.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lh/component/template/MahalanobisTemplate.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lh/component/template/CosineTemplate.java" />
+        <option value="$PROJECT_DIR$/log/table34/mahalanobis.txt" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lh/main/table35/Table34_Cosine.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lh/main/table35/Table35_Mahalanobis.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lh/main/table35/Table35_Euclid.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lh/main/table35/Table35_Cosine.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lh/main/table36/Table34_Cosine.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lh/main/table37/Table35_Euclid.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lh/main/table36/Table36_Cosine.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lh/main/table36/Table36_Euclid.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lh/main/table36/Table36_Mahalanobis.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lh/main/table37/Table37_Cosine.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lh/main/table37/Table37_Euclid.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lh/main/table37/Table37_Mahalanobis.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lh/component/template/EuclidTemplate.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lh/main/table38/Table34_Cosine.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lh/main/table38/Table38_Epsilon_0.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lh/main/table38/Table38_Epsilon_0_5.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lh/main/table38/Table38_Epsilon_1.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lh/main/table38/Table38_Epsilon_2.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lh/main/Main.java" />
       </list>
     </option>
@@ -272,11 +687,6 @@
             <path>
               <item name="TemplateTools" type="b2602c69:ProjectViewProjectNode" />
               <item name="TemplateTools" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="log" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TemplateTools" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TemplateTools" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -307,34 +717,7 @@
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="lh" type="462c0819:PsiDirectoryNode" />
-              <item name="component" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TemplateTools" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TemplateTools" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="lh" type="462c0819:PsiDirectoryNode" />
-              <item name="component" type="462c0819:PsiDirectoryNode" />
-              <item name="common" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TemplateTools" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TemplateTools" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="lh" type="462c0819:PsiDirectoryNode" />
-              <item name="component" type="462c0819:PsiDirectoryNode" />
-              <item name="template" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TemplateTools" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TemplateTools" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -347,9 +730,9 @@
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="SearchEverywhereHistoryKey" value="Main&#9;FILE&#9;file:///home/cpu10241-local/Documents/Kele/TemplateTools/src/main/java/com/lh/main/Main.java" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1561713447557" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources" />
+    <property name="SearchEverywhereHistoryKey" value="Euclid&#9;PSI&#9;JAVA://com.lh.component.template.EuclidTemplate&#10;cosin&#9;FILE&#9;file:///home/cpu10241-local/Documents/Kele/TemplateTools/src/main/java/com/lh/component/template/CosineTemplate.java&#10;Maha&#9;PSI&#9;JAVA://com.lh.component.template.MahalanobisTemplate&#10;Main&#9;FILE&#9;file:///home/cpu10241-local/Documents/Kele/TemplateTools/src/main/java/com/lh/main/Main.java" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1563791901744" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -357,11 +740,17 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.lh.main.table38" />
+      <recent name="com.lh.main.table26" />
       <recent name="com.lh.component.template" />
       <recent name="" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/resources" />
+      <recent name="$PROJECT_DIR$/src/main/java/com/lh/main/table37" />
+      <recent name="$PROJECT_DIR$/src/main/java/com/lh/main/table36" />
+      <recent name="$PROJECT_DIR$/src/main/java/com/lh/main/table35" />
+      <recent name="$PROJECT_DIR$/src/main/java/com/lh/main/table34" />
+      <recent name="$PROJECT_DIR$/src/main/java/com/lh/main/table30" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -378,10 +767,8 @@
   </component>
   <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="com.lh.main.Main" />
-      <module name="TemplateTools.main" />
+      <module name="com.lh.TemplateTools.main" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.lh.main.*" />
@@ -392,12 +779,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MatrixUtils" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.lh.component.matrix.MatrixUtils" />
-      <module name="TemplateTools.main" />
+    <configuration name="Table30_N_100" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.lh.main.table30.Table30_N_100" />
+      <module name="com.lh.TemplateTools.main" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.lh.component.matrix.*" />
+          <option name="PATTERN" value="com.lh.main.table30.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -405,64 +792,44 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MatrixTest.angle" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;MatrixTest.angle&quot;" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":cleanTest" />
-            <option value=":test" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
-      <method v="2" />
+    <configuration name="Table34_Cosine" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.lh.main.table34.Table34_Cosine" />
+      <module name="com.lh.TemplateTools.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.lh.main.table34.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
-    <configuration name="MatrixTest.testAngle" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;MatrixTest.testAngle&quot;" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":cleanTest" />
-            <option value=":test" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
-      <method v="2" />
+    <configuration name="Table34_Euclid" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.lh.main.table34.Table34_Euclid" />
+      <module name="com.lh.TemplateTools.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.lh.main.table34.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
-    <configuration name="TemplateTools [dependencies]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="dependencies" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
-      <method v="2" />
+    <configuration name="Table34_Mahalanobis" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.lh.main.table34.Table34_Mahalanobis" />
+      <module name="com.lh.TemplateTools.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.lh.main.table34.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
       <module name="TemplateTool" />
@@ -512,19 +879,19 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.Table30_N_100" />
+      <item itemvalue="Application.Table34_Euclid" />
+      <item itemvalue="Application.Table34_Cosine" />
+      <item itemvalue="Application.Table34_Mahalanobis" />
       <item itemvalue="Application.Main" />
-      <item itemvalue="Application.MatrixUtils" />
-      <item itemvalue="Gradle.MatrixTest.angle" />
-      <item itemvalue="Gradle.MatrixTest.testAngle" />
-      <item itemvalue="Gradle.TemplateTools [dependencies]" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
-        <item itemvalue="Gradle.TemplateTools [dependencies]" />
-        <item itemvalue="Gradle.MatrixTest.testAngle" />
-        <item itemvalue="Gradle.MatrixTest.angle" />
-        <item itemvalue="Application.MatrixUtils" />
+        <item itemvalue="Application.Table34_Mahalanobis" />
+        <item itemvalue="Application.Table34_Euclid" />
+        <item itemvalue="Application.Table34_Cosine" />
+        <item itemvalue="Application.Table30_N_100" />
       </list>
     </recent_temporary>
   </component>
@@ -574,10 +941,9 @@
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
-    <editor active="true" />
+    <frame x="64" y="-11" width="1857" height="1092" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.33370227" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.33775568" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -585,13 +951,13 @@
       <window_info id="UI Designer" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32894737" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3267544" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32809225" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3259958" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3991228" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.3267544" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.3259958" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Build" order="10" weight="0.33004385" />
@@ -603,13 +969,16 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Maven" order="4" weight="0.32982844" />
-      <window_info anchor="right" id="Gradle" order="5" sideWeight="0.49817517" visible="true" weight="0.099612616" />
+      <window_info anchor="right" id="Gradle" order="5" sideWeight="0.49817517" visible="true" weight="0.09950249" />
       <window_info anchor="right" id="Theme Preview" order="6" />
       <window_info anchor="right" id="Capture Analysis" order="7" />
       <window_info anchor="right" id="Palette&#9;" order="8" />
       <window_info anchor="right" id="Maven Projects" order="9" />
       <window_info anchor="right" id="Coverage" order="10" sideWeight="0.5018248" side_tool="true" weight="0.099612616" />
     </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -739,376 +1108,318 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$PROJECT_DIR$/libs/series-reducer-0.2.0.jar!/pl/luwi/series/reducer/Point.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="7" column="23" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/log/table27/n50.txt">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="jar://$PROJECT_DIR$/libs/series-reducer-0.2.0.jar!/pl/luwi/series/reducer/SeriesReducer.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="33" column="33" lean-forward="true" selection-start-line="33" selection-start-column="33" selection-end-line="33" selection-end-column="33" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/main/table29/table26/Table26_N_50.java">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$USER_HOME$/.gradle/wrapper/dists/gradle-4.10.3-all/81msde2dx9p4vji0mjgtvxkcb/gradle-4.10.3/src/core-api/org/gradle/api/artifacts/dsl/RepositoryHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1286">
-          <caret line="182" column="28" selection-start-line="182" selection-start-column="28" selection-end-line="182" selection-end-column="28" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/main/table29/table26/Table26_N_100.java">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="10" column="18" lean-forward="true" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/main/table29/table26/Table26_N_10.java">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/IPackage/ILayoutManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="9" column="21" lean-forward="true" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/main/table29/table26/Table26_N_25.java">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="jar:///usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar!/java/util/LinkedList.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="271" selection-start-line="271" selection-end-line="271" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/log/mahalanobis.txt" />
-    <entry file="file://$PROJECT_DIR$/log/cosine.txt" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/vni_dic.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="6432" column="12" selection-start-line="6432" selection-start-column="12" selection-end-line="6432" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/component/common/SortDictionary.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="26" selection-start-line="26" selection-end-line="26" />
-          <folding>
-            <element signature="e#285#286#0" expanded="true" />
-            <element signature="e#332#333#0" expanded="true" />
-            <element signature="e#640#641#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/component/common/WordDictionary.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-442">
-          <caret line="8" column="16" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/component/common/PredictorResult.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-26">
-          <caret line="26" column="19" selection-start-line="26" selection-start-column="19" selection-end-line="26" selection-end-column="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar!/java/util/ArrayList.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="190" column="13" selection-start-line="190" selection-start-column="13" selection-end-line="190" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/component/matrix/MatrixUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="66" column="25" selection-start-line="66" selection-start-column="25" selection-end-line="66" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/MatrixTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="15" column="35" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/component/common/PolylineBuilder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="23" column="17" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
-          <folding>
-            <element signature="e#297#298#0" expanded="true" />
-            <element signature="e#348#349#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/default_layout.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="165" column="15" lean-forward="true" selection-start-line="165" selection-start-column="15" selection-end-line="165" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/component/common/EuclidDistance.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="4" column="30" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/log/conflict.txt" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/component/template/SimilarityDistanceConflict.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="11" column="48" lean-forward="true" selection-start-line="11" selection-start-column="48" selection-end-line="11" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/log/qwe_layout_similarity_conflict.txt">
+    <entry file="file://$PROJECT_DIR$/log/table27/n100.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="3" lean-forward="true" selection-start-column="3" selection-end-column="3" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/log/optimize_layout_similarity_conflict.txt">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/main/table26/Table26_N_25.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="3" lean-forward="true" selection-start-column="3" selection-end-column="3" />
+        <state relative-caret-position="270">
+          <caret line="14" column="32" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="32" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/log/euclid.txt" />
-    <entry file="file://$PROJECT_DIR$/log/cosine_distance.txt">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/main/table26/Table26_N_50.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="4" column="2" lean-forward="true" selection-start-line="4" selection-start-column="2" selection-end-line="4" selection-end-column="2" />
+        <state relative-caret-position="270">
+          <caret line="14" column="32" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="32" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/log/euclid_distance.txt">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/main/table26/Table26_N_100.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
-          <caret line="14" column="5" lean-forward="true" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/log/mahalanobis_distance.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="10" column="5" lean-forward="true" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar!/java/lang/Thread.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="213" selection-start-line="213" selection-end-line="213" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar!/java/util/concurrent/ThreadPoolExecutor.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="396" selection-start-line="396" selection-end-line="396" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/component/common/ReadableMySQL.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="27" selection-start-line="27" selection-end-line="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/component/common/LayoutManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
-          <caret line="23" selection-start-line="23" selection-end-line="23" />
-          <folding>
-            <element signature="e#437#438#0" expanded="true" />
-            <element signature="e#508#509#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/component/common/KeteDatabaseConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="52">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/log/cosine_distance_optimize_layout.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="6" column="7" lean-forward="true" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/component/common/Point.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="14" column="18" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
-          <folding>
-            <element signature="e#400#401#0" expanded="true" />
-            <element signature="e#435#436#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/log/mahalanobis_distance_optimize_layout.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="5" column="7" lean-forward="true" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/log/euclid_distance_optimize_layout.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="6" column="7" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/component/template/CosineTemplate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-780">
-          <caret line="3" column="33" selection-start-line="3" selection-start-column="33" selection-end-line="3" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/log/qwe_layout_conflict.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret lean-forward="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/component/template/MahalanobisTemplate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="11" column="44" selection-start-line="11" selection-start-column="44" selection-end-line="11" selection-end-column="44" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/IPackage/ITemplate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="3" column="12" lean-forward="true" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/main/Worker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="12" column="18" lean-forward="true" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
-          <folding>
-            <element signature="e#150#151#0" expanded="true" />
-            <element signature="e#190#191#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/IPackage/IDictionary.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/component/common/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="13" column="37" lean-forward="true" selection-start-line="13" selection-start-column="37" selection-end-line="13" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/component/template/EuclidTemplate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="379">
-          <caret line="65" column="22" lean-forward="true" selection-start-line="65" selection-start-column="22" selection-end-line="65" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/component/template/BaseTemplate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="7" column="22" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/component/common/Polyline.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="118" column="38" selection-start-line="118" selection-start-column="38" selection-end-line="118" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/component/common/UserTracking.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="37" selection-start-line="37" selection-end-line="37" />
-          <folding>
-            <element signature="e#657#658#0" expanded="true" />
-            <element signature="e#699#700#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="270">
+          <caret line="14" column="33" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="33" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/keyboard_layout.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-546">
+        <state relative-caret-position="-360">
           <caret line="9" column="13" lean-forward="true" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/component/template/DistanceConflict.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/optimize_layout.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="754">
-          <caret line="31" column="36" lean-forward="true" selection-start-line="31" selection-start-column="36" selection-end-line="31" selection-end-column="36" />
+        <state relative-caret-position="360">
+          <caret line="12" column="5" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/test_layout.json">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/main/table29/Table29_N_10.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="175" column="17" lean-forward="true" selection-start-line="175" selection-start-column="17" selection-end-line="175" selection-end-column="17" />
+        <state relative-caret-position="210">
+          <caret line="12" column="48" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="48" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/log/optimize_layout_conflict.txt">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/main/table29/Table29_N_25.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/main/table29/Table29_N_50.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="15" column="63" selection-start-line="15" selection-start-column="63" selection-end-line="15" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/main/table29/Table29_N_100.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="14" column="33" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/main/table30/Table30_N_10.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="15" column="63" selection-start-line="15" selection-start-column="63" selection-end-line="15" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log/table29/n10.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/main/table30/Table30_N_100.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="15" column="63" selection-start-line="15" selection-start-column="63" selection-end-line="15" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log/table30/n100.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="2" lean-forward="true" selection-start-column="2" selection-end-column="2" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/log/table29/n25.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log/table29/n50.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log/table29/n100.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log/table30/n10.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log/table30/n25.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log/table30/n50.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/main/table30/Table30_N_50.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="15" column="63" selection-start-line="15" selection-start-column="63" selection-end-line="15" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/main/table26/Table26_N_10.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="12" column="47" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="52" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/main/table30/Table30_N_25.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="15" column="63" selection-start-line="15" selection-start-column="63" selection-end-line="15" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/component/template/CosineTemplate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="32" column="24" selection-start-line="32" selection-start-column="24" selection-end-line="32" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/component/template/MahalanobisTemplate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="82" column="31" selection-start-line="82" selection-start-column="31" selection-end-line="82" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/main/table34/Table34_Euclid.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="16" column="33" lean-forward="true" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log/table34/mahalanobis.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="70">
+          <caret line="4" column="7" lean-forward="true" selection-start-line="4" selection-start-column="7" selection-end-line="4" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log/table34/euclid.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="6" column="5" selection-start-line="6" selection-end-line="6" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log/table34/cosine.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="8" column="5" lean-forward="true" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/main/table34/Table34_Mahalanobis.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="12" column="44" lean-forward="true" selection-start-line="12" selection-start-column="44" selection-end-line="12" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/main/table34/Table34_Cosine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="18" column="108" selection-start-line="18" selection-start-column="108" selection-end-line="18" selection-end-column="108" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/main/table35/Table35_Cosine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="17" column="5" lean-forward="true" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/main/table35/Table35_Euclid.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="15" column="63" selection-start-line="15" selection-start-column="63" selection-end-line="15" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/main/table35/Table35_Mahalanobis.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="11" column="17" lean-forward="true" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/main/table36/Table36_Cosine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="15" column="63" selection-start-line="15" selection-start-column="63" selection-end-line="15" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/main/table36/Table36_Euclid.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="15" column="63" selection-start-line="15" selection-start-column="63" selection-end-line="15" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/main/table36/Table36_Mahalanobis.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="15" column="63" selection-start-line="15" selection-start-column="63" selection-end-line="15" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/main/table37/Table37_Cosine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="15" column="63" selection-start-line="15" selection-start-column="63" selection-end-line="15" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/main/table37/Table37_Euclid.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="12" column="48" selection-start-line="12" selection-start-column="48" selection-end-line="12" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/main/table37/Table37_Mahalanobis.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="15" column="31" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/component/template/EuclidTemplate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="48" column="28" selection-start-line="48" selection-start-column="28" selection-end-line="48" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/main/table38/Table38_Epsilon_0.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="19" column="1" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/main/table38/Table38_Epsilon_0_5.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="13" column="50" selection-start-line="13" selection-start-column="50" selection-end-line="13" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/main/table38/Table38_Epsilon_1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="15" column="44" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/main/table38/Table38_Epsilon_2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="13" column="30" selection-start-line="13" selection-start-column="30" selection-end-line="13" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/lh/main/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3">
-          <caret line="34" column="9" selection-start-line="34" selection-start-column="9" selection-end-line="34" selection-end-column="9" />
+        <state relative-caret-position="1415">
+          <caret line="75" column="38" selection-start-line="75" selection-start-column="38" selection-end-line="75" selection-end-column="38" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

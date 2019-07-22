@@ -7,9 +7,12 @@ import com.lh.component.writer.DefaultWriter;
 public class DistanceConflict extends BaseTemplate {
     private IWriter mWriter;
     private final double error = 0.00000001;
-    public DistanceConflict(String dictionaryResource, String layoutResource, int numberOfPoints, IWriter writer) {
+    private boolean isConflict;
+
+    public DistanceConflict(String dictionaryResource, String layoutResource, int numberOfPoints, IWriter writer, boolean isConflict) {
         super(dictionaryResource, layoutResource, numberOfPoints);
         this.mWriter = writer;
+        this.isConflict = isConflict;
     }
 
 
@@ -18,7 +21,7 @@ public class DistanceConflict extends BaseTemplate {
     }
 
     public DistanceConflict(String dictionaryResource, String layoutResource, int numberOfPoints) {
-        this(dictionaryResource, layoutResource, numberOfPoints, new DefaultWriter());
+        this(dictionaryResource, layoutResource, numberOfPoints, new DefaultWriter(), true);
     }
 
     @Override
@@ -27,9 +30,18 @@ public class DistanceConflict extends BaseTemplate {
         for (int i = 0; i < mDictionary.size() - 1; i++)
             for (int j = i + 1; j < mDictionary.size(); j++) {
                 double euclid = getEuclid(mDictionary.getTranslatedWord(i), mDictionary.getTranslatedWord(j));
-                if (euclid <= error) {
-                    check[i] = true;
-                    check[j] = true;
+                if (isConflict) {
+                    // distance = 0
+                    if (euclid <= error) {
+                        check[i] = true;
+                        check[j] = true;
+                    }
+                } else {
+                    // distance 0 <= distance <= 0.5
+                    if (euclid > error && euclid <= 0.5 + error) {
+                        check[i] = true;
+                        check[j] = true;
+                    }
                 }
             }
         int count = 0;

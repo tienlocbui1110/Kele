@@ -2,5 +2,4 @@ build/
 .gradle
 .idea
 out/
-/log
-!/log/git.keep
+log/

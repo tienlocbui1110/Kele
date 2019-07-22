@@ -1,49 +1,80 @@
 package com.lh.main;
 
-import com.lh.IPackage.IWriter;
-import com.lh.component.template.DistanceConflict;
-import com.lh.component.writer.FileWriter;
-
-import java.io.File;
+import com.lh.main.table26.Table26_N_10;
+import com.lh.main.table26.Table26_N_100;
+import com.lh.main.table26.Table26_N_25;
+import com.lh.main.table26.Table26_N_50;
+import com.lh.main.table27.Table27_N_10;
+import com.lh.main.table27.Table27_N_100;
+import com.lh.main.table27.Table27_N_25;
+import com.lh.main.table27.Table27_N_50;
+import com.lh.main.table29.Table29_N_10;
+import com.lh.main.table29.Table29_N_100;
+import com.lh.main.table29.Table29_N_25;
+import com.lh.main.table29.Table29_N_50;
+import com.lh.main.table30.Table30_N_10;
+import com.lh.main.table30.Table30_N_100;
+import com.lh.main.table30.Table30_N_25;
+import com.lh.main.table30.Table30_N_50;
+import com.lh.main.table34.Table34_Cosine;
+import com.lh.main.table34.Table34_Euclid;
+import com.lh.main.table34.Table34_Mahalanobis;
+import com.lh.main.table35.Table35_Cosine;
+import com.lh.main.table35.Table35_Euclid;
+import com.lh.main.table35.Table35_Mahalanobis;
+import com.lh.main.table36.Table36_Cosine;
+import com.lh.main.table36.Table36_Euclid;
+import com.lh.main.table36.Table36_Mahalanobis;
+import com.lh.main.table37.Table37_Cosine;
+import com.lh.main.table37.Table37_Euclid;
+import com.lh.main.table37.Table37_Mahalanobis;
+import com.lh.main.table38.Table38_Epsilon_0;
+import com.lh.main.table38.Table38_Epsilon_0_5;
+import com.lh.main.table38.Table38_Epsilon_1;
+import com.lh.main.table38.Table38_Epsilon_2;
+import javafx.scene.control.Tab;
 
 public class Main {
     public static void main(String[] args) {
-        // Config
-        String layoutResource = "default_layout.json";
-        String dictionaryResource = "vni_dic.txt"; // Input_method : vni_last_sign
-        int numberOfPoints = 50;
+        Table26_N_10.main(new String[]{});
+        Table26_N_25.main(new String[]{});
+        Table26_N_50.main(new String[]{});
+        Table26_N_100.main(new String[]{});
 
-        // ----- Predict with Euclid distance ----- //
-//        IWriter writer = new FileWriter(new File("./log/euclid_distance_optimize_layout.txt").toPath(), true);
-//        new Worker(new EuclidTemplate(dictionaryResource, layoutResource, numberOfPoints, writer)).doWork();
+        Table27_N_10.main(new String[]{});
+        Table27_N_25.main(new String[]{});
+        Table27_N_50.main(new String[]{});
+        Table27_N_100.main(new String[]{});
 
-        // ----- Predict with Cosine Template ----- //
-//        IWriter writer = new FileWriter(new File("./log/cosine_distance_optimize_layout.txt").toPath(), true);
-//        new Worker(new CosineTemplate(dictionaryResource, layoutResource, numberOfPoints, writer)).doWork();
+        Table29_N_10.main(new String[]{});
+        Table29_N_25.main(new String[]{});
+        Table29_N_50.main(new String[]{});
+        Table29_N_100.main(new String[]{});
 
-        // ----- Predict with Mahalanobis Template ----- //
-//        IWriter writer = new FileWriter(new File("./log/mahalanobis_distance_optimize_layout.txt").toPath(), true);
-//        new Worker(new MahalanobisTemplate(dictionaryResource, layoutResource, numberOfPoints, writer)).doWork();
+        Table30_N_10.main(new String[]{});
+        Table30_N_25.main(new String[]{});
+        Table30_N_50.main(new String[]{});
+        Table30_N_100.main(new String[]{});
 
-        //QWERTY layout DistanceConflict : distance = 0
-//        layoutResource = "default_layout.json";
-//        IWriter writer = new FileWriter(new File("./log/qwe_layout_conflict.txt").toPath(), true);
-//        new Worker(new DistanceConflict(dictionaryResource, layoutResource, numberOfPoints, writer)).doWork();
+        Table34_Euclid.main(new String[]{});
+        Table34_Cosine.main(new String[]{});
+        Table34_Mahalanobis.main(new String[]{});
 
-        //Optimize Layout DistanceConflict : distance = 0
-        layoutResource = "keyboard_layout.json";
-        IWriter writer = new FileWriter(new File("./log/optimize_layout_conflict.txt").toPath(), true);
-        new Worker(new DistanceConflict(dictionaryResource, layoutResource, numberOfPoints, writer)).doWork();
+        Table35_Euclid.main(new String[]{});
+        Table35_Cosine.main(new String[]{});
+        Table35_Mahalanobis.main(new String[]{});
 
-        //QWE Similarity conflict : 0 < distance < 0.5
-//        layoutResource = "default_layout.json";
-//        writer = new FileWriter(new File("./log/qwe_layout_similarity_conflict.txt").toPath(), true);
-//        new Worker(new SimilarityDistanceConflict(dictionaryResource, layoutResource, numberOfPoints, writer)).doWork();
+        Table36_Euclid.main(new String[]{});
+        Table36_Cosine.main(new String[]{});
+        Table36_Mahalanobis.main(new String[]{});
 
-        //Optimize layout Similarity conflict : 0 < distance < 0.5
-//        layoutResource = "test_layout.json";
-//        writer = new FileWriter(new File("./log/optimize_layout_similarity_conflict.txt").toPath(), true);
-//        new Worker(new SimilarityDistanceConflict(dictionaryResource, layoutResource, numberOfPoints, writer)).doWork();
+        Table37_Euclid.main(new String[]{});
+        Table37_Cosine.main(new String[]{});
+        Table37_Mahalanobis.main(new String[]{});
 
+        Table38_Epsilon_0.main(new String[]{});
+        Table38_Epsilon_0_5.main(new String[]{});
+        Table38_Epsilon_1.main(new String[]{});
+        Table38_Epsilon_2.main(new String[]{});
     }
 }

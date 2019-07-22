@@ -15,6 +15,7 @@ public class FileWriter implements IWriter {
     public FileWriter(Path path, boolean resetFile) {
         try {
             this.file = path.toFile();
+            file.getParentFile().mkdirs();
             if (!file.isDirectory() && !file.exists()) {
                 file.createNewFile();
             }
